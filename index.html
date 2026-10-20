@@ -54,6 +54,7 @@ a{color:inherit}
 .skip{position:fixed;inset-inline-start:12px;top:-60px;z-index:50;background:var(--ink);color:var(--paper);padding:10px 16px;border-radius:999px;font:500 1rem/1 var(--sans);text-decoration:none}
 .skip:focus{top:12px}
 .wrap{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
+main{overflow-x:clip}
 
 /* ---------- nav: one floating paper pill over the content (material over the shade) ---------- */
 .nav{position:fixed;top:12px;left:0;right:0;z-index:20;pointer-events:none;padding:0 12px}
@@ -67,7 +68,6 @@ html[dir="rtl"] .nav-in{padding:0 16px 0 8px}
 .links a{display:block;padding:10px 12px;border-radius:999px;font:500 .95rem/1 var(--sans);text-decoration:none;color:var(--ink)}
 .links a:hover{background:rgba(22,23,27,.07)}
 .btn-lang{font:500 1rem/1 var(--sans);color:var(--paper);background:var(--ink);border:0;border-radius:999px;padding:12px 18px;cursor:pointer;min-height:44px}
-.btn-lang:active{transform:scale(.97)}
 @media (max-width:860px){.links{display:none}.btn-lang{margin-inline-start:auto}}
 @media (prefers-reduced-transparency:reduce){.nav-in{background:var(--paper);-webkit-backdrop-filter:none;backdrop-filter:none}}
 
@@ -83,8 +83,7 @@ html[lang="ar"] .hero h1{line-height:1.25}
 html[lang="ar"] .promise{line-height:1.5;max-width:none}
 .cta{display:flex;flex-wrap:wrap;gap:12px;margin:34px 0 0}
 .btn{display:inline-flex;align-items:center;min-height:48px;padding:0 24px;border-radius:999px;font:900 1.1875rem/1 var(--sans);text-decoration:none;white-space:nowrap;
- transition:transform .2s var(--e-settle),box-shadow .2s var(--e-settle)}
-.btn:active{transform:scale(.97)}
+}
 .btn-paper{background:var(--paper);color:var(--ink)}
 .btn-ink{background:var(--ink);color:var(--paper)}
 .btn:hover{box-shadow:0 8px 22px rgba(22,23,27,.22)}
@@ -189,13 +188,119 @@ html:not(.js) .btn-ghost{display:none}
 
 @media (prefers-reduced-motion:reduce){.hero,.mark .face{transition-duration:.2s}}
 
-/* ---------- reveal on scroll (motion only; content is visible without JS and under reduced motion) ---------- */
+/* ---------- motion layer (NJ motion guideline v1, calm mode) ----------
+   Static first: colour changes on hover and focus live outside the media query and are instant.
+   Everything that moves sits in no-preference, uses transform, translate, scale and opacity only, and is visible at rest and without JS. */
+@property --accent{syntax:"<color>";inherits:true;initial-value:#3D7F7A}
+:root{--accent:#3D7F7A;--dir:1;--gold:#D9A93F;--goldhi:#FFF6DC;--e-snap:cubic-bezier(.34,1.56,.64,1);
+ --arrow:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14M13 6l6 6-6 6'/%3E%3C/svg%3E")}
+html[dir="rtl"]{--dir:-1}
+.prog{position:fixed;inset:0 0 auto 0;height:3px;z-index:25;background:var(--accent);transform:scaleX(0);transform-origin:0 50%;pointer-events:none}
+html[dir="rtl"] .prog{transform-origin:100% 50%}
+.nav-in{position:relative}
+.links{position:relative}
+.links a{position:relative}
+.links a:is(:hover,:focus-visible){background:color-mix(in srgb,var(--accent) 14%,transparent)}
+.links a[aria-current]{background:color-mix(in srgb,var(--accent) 8%,transparent)}
+.ind{position:absolute;left:0;bottom:9px;width:100px;height:3px;border-radius:2px;background:var(--accent);opacity:0;pointer-events:none;transform-origin:0 50%}
+.nav.is-scrolled .nav-in{background:rgba(239,234,224,.96);box-shadow:inset 0 1px 0 rgba(255,255,255,.5),0 14px 36px rgba(22,23,27,.22),0 0 0 1px color-mix(in srgb,var(--accent) 22%,transparent)}
+.bm{position:relative;display:block;width:28px;height:28px;flex:none;border-radius:8px;overflow:hidden}
+.bm svg{display:block}
+.bm rect{fill:var(--accent)}
+.bm path[fill="#28534F"]{fill:color-mix(in srgb,var(--accent) 65%,#000)}
+.bm::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(105deg,transparent 30%,rgba(217,169,63,.7) 43%,rgba(255,246,220,.95) 50%,rgba(217,169,63,.7) 57%,transparent 70%);transform:translateX(-130%)}
+.brand:is(:hover,:focus-visible) span:not(.bm){color:color-mix(in srgb,var(--accent) 80%,var(--ink))}
+.btn-lang:is(:hover,:focus-visible){background:color-mix(in srgb,var(--accent) 55%,var(--ink))}
+.btn-lang span{display:inline-block}
+.btn,.btn-lang,.btn-ghost,.foot a{position:relative;overflow:hidden;isolation:isolate}
+.btn::before,.btn-lang::before,.btn-ghost::before,.foot a::before{content:"";position:absolute;z-index:-1;inset-block:0;inset-inline-start:0;width:45%;pointer-events:none;
+ background:linear-gradient(105deg,transparent 0,rgba(217,169,63,.5) 40%,rgba(255,246,220,.9) 50%,rgba(217,169,63,.5) 60%,transparent 100%);transform:translateX(calc(var(--dir) * -140%))}
+.btn::after{content:"";flex:none;width:1.05em;height:1.05em;margin-inline-start:10px;background:currentColor;-webkit-mask:var(--arrow) center/contain no-repeat;mask:var(--arrow) center/contain no-repeat;transform:scaleX(var(--dir))}
+.foot a:is(:hover,:focus-visible),.btn-ghost:is(:hover,:focus-visible){border-color:var(--gold);background:rgba(239,234,224,.12)}
+.hint:hover{background:var(--paper)}
+/* cards: persona-shade edge, light that follows the pointer, gold sheen */
+.panel,.cell{position:relative;overflow:hidden;--ps:var(--gold)}
+.p-tester .panel{--ps:var(--teal)}
+.panel::before,.cell::before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;z-index:1;
+ background:linear-gradient(105deg,transparent 30%,rgba(217,169,63,.2) 44%,rgba(255,246,220,.36) 50%,rgba(217,169,63,.2) 56%,transparent 70%);transform:translateX(calc(var(--dir) * -110%))}
+.panel::after,.cell::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;z-index:1;opacity:0;
+ background:radial-gradient(circle at var(--mx,50%) var(--my,0%),rgba(255,246,220,.2),transparent 55%)}
+.panel:is(:hover,:focus-within),.cell:is(:hover,:focus-within){box-shadow:0 20px 44px color-mix(in srgb,var(--ps) 38%,transparent),0 0 0 2px color-mix(in srgb,var(--ps) 70%,transparent)}
+.panel:hover::after,.cell:hover::after{opacity:1}
+.num{transition:color .2s}
+:is(.panel,.stat,.p-teacher .top):hover .num{color:var(--goldhi)}
+.since:hover{border-top-color:var(--ox)}
+blockquote:hover{border-inline-start-color:var(--ox)}
+.chips li{cursor:default}
+.chips li:hover{background:var(--paper);color:var(--ox)}
+.facts a,.cell a{text-decoration-thickness:1px}
+.facts a:is(:hover,:focus-visible),.cell a:is(:hover,:focus-visible){text-decoration-thickness:3px}
+/* posts rows */
+.posts li{position:relative;--dir:1}
+html[dir="rtl"] .posts li,.posts li[dir="rtl"]{--dir:-1}
+.posts li::before{content:"";position:absolute;inset-inline:0;top:-1px;height:2px;background:var(--accent);transform:scaleX(0);transform-origin:calc(50% - var(--dir) * 50%) 50%}
+.posts li::after{content:"";position:absolute;inset-inline-end:0;top:20px;width:20px;height:20px;background:var(--accent);-webkit-mask:var(--arrow) center/contain no-repeat;mask:var(--arrow) center/contain no-repeat;opacity:0;transform:scaleX(var(--dir))}
+.posts li:is(:hover,:focus-within) a{color:var(--teal);text-decoration:underline;text-underline-offset:4px}
+.posts li:is(:hover,:focus-within)::before{transform:scaleX(1)}
+.posts li:is(:hover,:focus-within)::after{opacity:1}
+.tag:is(:hover,:focus-visible){opacity:.85}
+
 @media (prefers-reduced-motion:no-preference){
- .js [data-reveal]{opacity:0;transform:translateY(24px);transition:opacity .4s var(--e-settle),transform .56s var(--e-settle)}
- .js [data-reveal].in{opacity:1;transform:none}
+ html{transition:--accent .96s var(--e-move)}
+ /* section reveals: fold in from an edge (translate/opacity; `transform` stays free for hover and tilt) */
+ .js [data-reveal],.js [data-st]{opacity:0;translate:0 28px;
+  transition:opacity .4s var(--e-settle) var(--dl,0s),translate .56s var(--e-settle) var(--dl,0s),transform .24s var(--e-settle),box-shadow .3s var(--e-settle),background-color .2s,color .2s,border-color .2s}
+ .js .panel[data-reveal]{translate:calc(var(--dir) * -40px) 0}
+ .js .stat[data-reveal]{translate:calc(var(--dir) * 40px) 0}
+ .js [data-st]{--dl:calc(var(--i,0) * 70ms)}
+ .js [data-reveal].in,.js [data-st].in{opacity:1;translate:none}
  .js .verb>span{transform:translateY(105%);transition:transform .64s var(--e-settle)}
  .js .verb.in>span{transform:none}
+ /* header */
+ .nav-in{animation:navIn .72s var(--e-enter) backwards}
+ .links li{animation:navItem .56s var(--e-enter) backwards}
+ .links li:nth-child(1){animation-delay:.18s}.links li:nth-child(2){animation-delay:.23s}.links li:nth-child(3){animation-delay:.28s}.links li:nth-child(4){animation-delay:.33s}.links li:nth-child(5){animation-delay:.38s}
+ .brand,.btn-lang{animation:navItem .56s var(--e-enter) .1s backwards}
+ .intro-on .nav-in,.intro-on .links li,.intro-on .brand,.intro-on .btn-lang{animation:none}
+ @keyframes navIn{from{opacity:0;transform:translateY(-32px) scale(.96)}}
+ @keyframes navItem{from{opacity:0;transform:translateY(-10px)}}
+ .nav-in{transition:background-color .4s var(--e-settle),box-shadow .4s var(--e-settle)}
+ .ind{transition:transform .56s var(--e-move),opacity .2s var(--e-settle)}
+ .links a,.brand,.btn-lang,.btn,.btn-ghost,.foot a,.hint,.tag,.since,blockquote,.chips li,.facts li{transition:transform .4s var(--e-settle),box-shadow .3s var(--e-settle),background-color .2s var(--e-settle),color .2s var(--e-settle),border-color .2s var(--e-settle),text-decoration-thickness .2s}
+ .links a:is(:hover,:focus-visible){transform:translateY(-1px)}
+ .bm{transition:transform .4s var(--e-snap)}
+ .brand:is(:hover,:focus-visible) .bm{transform:perspective(160px) rotateY(calc(var(--dir) * -26deg)) rotate(-4deg) scale(1.1)}
+ .brand:is(:hover,:focus-visible) .bm::after{transform:translateX(130%);transition:transform .72s var(--e-move)}
+ /* buttons: lift and sheen on hover, press on pointer-down, arrow nudge */
+ .btn:is(:hover,:focus-visible),.btn-lang:is(:hover,:focus-visible),.btn-ghost:is(:hover,:focus-visible),.foot a:is(:hover,:focus-visible){transform:translateY(-2px)}
+ .btn:is(:hover,:focus-visible)::before,.btn-lang:is(:hover,:focus-visible)::before,.btn-ghost:is(:hover,:focus-visible)::before,.foot a:is(:hover,:focus-visible)::before{transform:translateX(calc(var(--dir) * 330%));transition:transform .72s var(--e-move)}
+ .btn::after{transition:transform .24s var(--e-settle)}
+ .btn:is(:hover,:focus-visible)::after{transform:translateX(calc(var(--dir) * 4px)) scaleX(var(--dir))}
+ .links a:active,.btn:active,.btn-lang:active,.btn-ghost:active,.foot a:active,.hint:active,.tag:active{transform:scale(.96);transition-duration:.12s}
+ .hint:hover{transform:translateY(-2px) scale(1.04)}
+ .tag:is(:hover,:focus-visible){transform:translateY(-2px)}
+ /* cards: spring lift and pointer tilt (vars written by script) with a light that follows the pointer */
+ .js [data-tilt]{transform:perspective(900px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translateY(var(--ly,0px))}
+ .panel:is(:hover,:focus-within),.cell:is(:hover,:focus-within){--ly:-6px}
+ .panel:hover::before,.cell:hover::before{transform:translateX(calc(var(--dir) * 110%));transition:transform .96s var(--e-move)}
+ .panel:active,.cell:active{--ly:-2px}
+ .panel::after,.cell::after{transition:opacity .4s var(--e-settle)}
+ .since:hover{transform:translateY(-2px)}
+ blockquote:hover{transform:translateX(calc(var(--dir) * 6px))}
+ .chips li:hover{transform:translateY(-3px)}
+ .facts li::before{transform-origin:calc(50% - var(--dir) * 50%) 50%;transition:transform .4s var(--e-settle)}
+ .facts li:hover{transform:translateX(calc(var(--dir) * 4px))}
+ .facts li:hover::before{transform:scaleX(2.2)}
+ /* posts rows slide, the arrow arrives */
+ .posts li>*{transition:transform .4s var(--e-settle),color .2s var(--e-settle)}
+ .posts li::before{transition:transform .56s var(--e-settle)}
+ .posts li::after{transition:transform .4s var(--e-settle),opacity .2s var(--e-settle);transform:translateX(calc(var(--dir) * -10px)) scaleX(var(--dir))}
+ .posts li:is(:hover,:focus-within)>*{transform:translateX(calc(var(--dir) * 8px))}
+ .posts li:is(:hover,:focus-within)::after{transform:translateX(0) scaleX(var(--dir))}
+ :focus-visible{animation:ring .24s var(--e-enter)}
+ @keyframes ring{from{outline-offset:9px;outline-color:transparent}}
 }
+@media (prefers-reduced-motion:reduce){.nav-in,.links li,.brand,.btn-lang,:focus-visible{animation:none}}
 
 /* ---------- intro: the approved animatic (240 f at 25 fps), played once, full viewport ---------- */
 #intro{display:none}
@@ -243,19 +348,21 @@ html[lang="ar"] #iunder{transform-origin:100% 50%}
   <button type="button" id="skipIntro" tabindex="-1"><span data-l="en">Skip intro</span><span data-l="ar">تخطي المقدمة</span></button>
 </div>
 
+<div class="prog" id="prog" aria-hidden="true"></div>
 <header class="nav">
   <div class="nav-in">
     <a class="brand" href="#top">
-      <svg viewBox="20 20 260 260" aria-hidden="true"><rect x="20" y="20" width="260" height="260" rx="56" fill="#3D7F7A"/><clipPath id="cutN"><rect x="0" y="55" width="300" height="195"/></clipPath><g clip-path="url(#cutN)"><path fill="#EFEAE0" d="M75.0 250.0L75.0 133.5L45.0 6.5L45.0 250.0Z"/><path fill="#28534F" d="M75.0 133.5L165.0 313.5L135.0 186.5L45.0 6.5Z"/><path fill="#EFEAE0" d="M165.0 313.5L165.0 85.0L135.0 55.0L135.0 186.5Z"/><path fill="#28534F" d="M165.0 85.0L215.0 85.0L245.0 55.0L135.0 55.0Z"/><path fill="#EFEAE0" d="M215.0 85.0L215.0 179.2L214.5 184.1L213.2 188.1L211.1 191.7L208.4 194.8L205.0 197.2L201.2 198.9L197.1 199.8L193.0 199.8L188.9 199.0L183.7 196.7L171.6 224.1L179.7 227.7L189.9 229.8L200.4 229.8L210.6 227.6L220.1 223.3L228.6 217.2L235.6 209.4L240.8 200.3L244.0 190.4L245.0 180.8L245.0 55.0Z"/></g></svg>
+      <span class="bm"><svg viewBox="20 20 260 260" aria-hidden="true"><rect x="20" y="20" width="260" height="260" rx="56" fill="#3D7F7A"/><clipPath id="cutN"><rect x="0" y="55" width="300" height="195"/></clipPath><g clip-path="url(#cutN)"><path fill="#EFEAE0" d="M75.0 250.0L75.0 133.5L45.0 6.5L45.0 250.0Z"/><path fill="#28534F" d="M75.0 133.5L165.0 313.5L135.0 186.5L45.0 6.5Z"/><path fill="#EFEAE0" d="M165.0 313.5L165.0 85.0L135.0 55.0L135.0 186.5Z"/><path fill="#28534F" d="M165.0 85.0L215.0 85.0L245.0 55.0L135.0 55.0Z"/><path fill="#EFEAE0" d="M215.0 85.0L215.0 179.2L214.5 184.1L213.2 188.1L211.1 191.7L208.4 194.8L205.0 197.2L201.2 198.9L197.1 199.8L193.0 199.8L188.9 199.0L183.7 196.7L171.6 224.1L179.7 227.7L189.9 229.8L200.4 229.8L210.6 227.6L220.1 223.3L228.6 217.2L235.6 209.4L240.8 200.3L244.0 190.4L245.0 180.8L245.0 55.0Z"/></g></svg></span>
       <span data-l="en">Nader Alzghoul</span><span data-l="ar">نادر الزغول</span>
     </a>
-    <ul class="links">
+    <ul class="links" id="links">
       <li><a href="#tester"><span data-l="en">Tester</span><span data-l="ar">يختبر</span></a></li>
       <li><a href="#teacher"><span data-l="en">Teacher</span><span data-l="ar">يعلّم</span></a></li>
       <li><a href="#volunteer"><span data-l="en">Volunteer</span><span data-l="ar">يتطوع</span></a></li>
       <li><a href="#professional"><span data-l="en">Professional</span><span data-l="ar">يُنجز</span></a></li>
       <li><a href="#posts"><span data-l="en">Posts</span><span data-l="ar">المنشورات</span></a></li>
     </ul>
+    <span class="ind" id="ind" aria-hidden="true"></span>
     <button type="button" class="btn-lang" id="langBtn"><span data-l="en" lang="ar">العربية</span><span data-l="ar" lang="en">English</span></button>
   </div>
 </header>
@@ -470,7 +577,7 @@ function setTag(animate){const p=PER[pi],l=lang();tag.href="#"+p.id;
  if(!animate||RM.matches)return;
  [...tag.querySelectorAll("i")].forEach((el,k)=>el.animate([{transform:"translateY(110%)"},{transform:"translateY(-8%)",offset:.7},{transform:"translateY(0)"}],
   {duration:560,delay:k*40,easing:"cubic-bezier(.2,.8,.2,1)",fill:"backwards"}))}
-function nextPersona(){pi=(pi+1)%PER.length;const c=PER[pi].c;hero.style.setProperty("--shade",c);
+function nextPersona(){pi=(pi+1)%PER.length;const c=PER[pi].c;hero.style.setProperty("--shade",c);if(typeof setAccent==="function"&&act==="top")setAccent();
  const tc=document.querySelector('meta[name="theme-color"]');if(tc)tc.content=c;
  segs.filter(s=>s.back).forEach(s=>{s.face.style.fill=dk(c);s.liftV+=RM.matches?0:-2.2});
  S.vy+=RM.matches?0:5;setTag(true);live.textContent=T[lang()].live.replace("{r}",label())}
@@ -513,7 +620,8 @@ function heroIn(){if(RM.matches)return;[...document.querySelectorAll(".hero-copy
 
 /* ================= reveal on scroll ================= */
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{rootMargin:"0px 0px -12% 0px",threshold:.12});
-document.querySelectorAll("[data-reveal], .verb").forEach(el=>io.observe(el));
+document.querySelectorAll(".facts,.chips,.posts,.grid4").forEach(g=>[...g.children].forEach((c,i)=>{c.setAttribute("data-st","");c.style.setProperty("--i",Math.min(i,7))}));
+document.querySelectorAll("[data-reveal], [data-st], .verb").forEach(el=>io.observe(el));
 
 /* ================= intro: animatic v1 (240 f at 25 fps), exact guideline beziers, hands off at f 216 ================= */
 function bez(x1,y1,x2,y2){return t=>{if(t<=0)return 0;if(t>=1)return 1;let lo=0,hi=1,u=t;for(let i=0;i<28;i++){u=(lo+hi)/2;const x=3*(1-u)**2*u*x1+3*(1-u)*u*u*x2+u**3;if(x<t)lo=u;else hi=u}return 3*(1-u)**2*u*y1+3*(1-u)*u*u*y2+u**3}}
@@ -579,6 +687,39 @@ const intro={running:false,el:$("#intro"),
   a.onfinish=done;
   if(skipped)stage.focus({preventScroll:true});else if(document.activeElement===$("#skipIntro"))document.activeElement.blur()}};
 $("#replay").addEventListener("click",()=>{if(RM.matches)return;store("nj-intro",null);intro.start()});
+
+/* ================= motion layer: header state, scrollspy, accent, progress, card tilt ================= */
+const nav=$(".nav"),ind=$("#ind"),prog=$("#prog"),linksEl=$("#links"),navLinks=[...document.querySelectorAll(".links a")];
+const ACC={tester:"#3D7F7A",teacher:"#34473B",volunteer:"#A3573B",professional:"#5A1E26",posts:"#3D7F7A"};
+let act="top",accNow="";
+function setAccent(){const c=act==="top"?PER[pi].c:ACC[act];if(c!==accNow){accNow=c;D.style.setProperty("--accent",c)}}
+function placeInd(){if(!linksEl.offsetParent){ind.style.opacity="0";return}
+ const a=navLinks.find(l=>l.getAttribute("href")==="#"+act)||navLinks[0];
+ ind.style.transform=`translateX(${linksEl.offsetLeft+a.offsetLeft+12}px) scaleX(${Math.max(8,a.offsetWidth-24)/100})`;
+ ind.style.opacity=navLinks.includes(a)&&a.getAttribute("href")==="#"+act?"1":"0"}
+function setActive(id){act=id;setAccent();placeInd();
+ navLinks.forEach(l=>{if(l.getAttribute("href")==="#"+id)l.setAttribute("aria-current","location");else l.removeAttribute("aria-current")})}
+const spy=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)setActive(e.target.id)}),{rootMargin:"-45% 0px -54% 0px"});
+["top","tester","teacher","volunteer","professional","posts"].forEach(id=>spy.observe(document.getElementById(id)));
+let sc=0;
+function onScroll(){sc=0;nav.classList.toggle("is-scrolled",scrollY>24);
+ const m=document.documentElement.scrollHeight-innerHeight;prog.style.transform=`scaleX(${m>0?Math.min(1,scrollY/m).toFixed(4):0})`}
+addEventListener("scroll",()=>{if(!sc)sc=requestAnimationFrame(onScroll)},{passive:true});onScroll();
+addEventListener("resize",placeInd);
+new MutationObserver(()=>requestAnimationFrame(placeInd)).observe(D,{attributes:true,attributeFilter:["lang"]});
+document.fonts.ready.then(placeInd);
+/* language toggle morph: the new label rises in, the button squashes once, the page breathes */
+$("#langBtn").addEventListener("click",()=>{if(RM.matches)return;const b=$("#langBtn"),v=[...b.children].find(x=>getComputedStyle(x).display!=="none");
+ if(v)v.animate([{opacity:0,transform:"translateY(70%) rotateX(-80deg)"},{opacity:1,transform:"none"}],{duration:400,easing:"cubic-bezier(.16,1,.3,1)"});
+ b.animate([{transform:"scaleX(.88)"},{transform:"none"}],{duration:400,easing:"cubic-bezier(.16,1,.3,1)"});
+ $("main").animate([{opacity:.35},{opacity:1}],{duration:400,easing:"cubic-bezier(.05,.7,.1,1)"})});
+document.addEventListener("touchstart",()=>{},{passive:true}); /* lets iOS Safari apply :active press states */
+/* cards: pointer tilt and light, written as CSS variables (transform stays on the compositor) */
+document.querySelectorAll(".panel,.cell").forEach(el=>{el.setAttribute("data-tilt","");
+ el.addEventListener("pointermove",e=>{if(e.pointerType==="touch"||RM.matches)return;const r=el.getBoundingClientRect(),x=(e.clientX-r.left)/r.width,y=(e.clientY-r.top)/r.height;
+  el.style.setProperty("--rx",((.5-y)*7).toFixed(2)+"deg");el.style.setProperty("--ry",((x-.5)*9).toFixed(2)+"deg");
+  el.style.setProperty("--mx",(x*100).toFixed(1)+"%");el.style.setProperty("--my",(y*100).toFixed(1)+"%")});
+ el.addEventListener("pointerleave",()=>{el.style.removeProperty("--rx");el.style.removeProperty("--ry")})});
 
 /* ================= boot ================= */
 applyLang(lang(),false);setTag(false);label();
