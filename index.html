@@ -68,7 +68,7 @@ html[dir="rtl"] .nav-in{padding:0 16px 0 8px}
 .links a{display:block;padding:10px 12px;border-radius:999px;font:500 .95rem/1 var(--sans);text-decoration:none;color:var(--ink)}
 .links a:hover{background:rgba(22,23,27,.07)}
 .btn-lang{font:500 1rem/1 var(--sans);color:var(--paper);background:var(--ink);border:0;border-radius:999px;padding:12px 18px;cursor:pointer;min-height:44px}
-@media (max-width:860px){.links{display:none}.btn-lang{margin-inline-start:auto}}
+@media (max-width:1100px){.links{display:none}.btn-lang{margin-inline-start:auto}}
 @media (prefers-reduced-transparency:reduce){.nav-in{background:var(--paper);-webkit-backdrop-filter:none;backdrop-filter:none}}
 
 /* ---------- hero: the persona shade, copy on one side, the interactive 3D mark on the other ---------- */
@@ -164,17 +164,98 @@ blockquote footer{font:500 1rem/1.4 var(--sans);color:var(--mute);margin-top:14p
  .grid4{grid-template-columns:1fr}.c-docs,.c-pw,.c-learn,.c-tools{grid-column:auto}
 }
 
-/* ---------- latest posts (the list between the markers is written by scripts/linkedin/sync_links.py) ---------- */
+/* ---------- paper sections: about, experience, projects, certificates (cards on paper; photos of Nader only) ---------- */
+.sec{padding:clamp(64px,9vw,120px) 0;border-top:1px solid var(--line)}
+.sec-h{font:700 clamp(2.25rem,4.6vw,3.75rem)/1.1 var(--display);margin:0 0 32px;max-width:20ch}
+html[lang="ar"] .sec-h{line-height:1.45}
+.ic{width:24px;height:24px;flex:none;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.sec .cell{background:rgba(22,23,27,.045);box-shadow:inset 0 0 0 1px var(--line)}
+.sec .cell h3{font:700 1.5rem/1.25 var(--display);letter-spacing:0;text-transform:none;margin:0}
+html[lang="ar"] .sec .cell h3{line-height:1.5}
+.sec .cell p{margin:0}
+.sec .cell a{text-underline-offset:3px}
+.when{font:900 .875rem/1.2 var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--mute)}
+.org{font:500 1.0625rem/1.4 var(--sans);color:var(--mute);margin:0}
+.ico{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--teal);color:var(--paper);flex:none}
+.ico .ic{width:22px;height:22px}
+/* about: copy on one side, three photos of Nader on the other */
+.about{padding:clamp(72px,10vw,136px) 0 clamp(56px,8vw,96px)}
+.about .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.85fr);gap:clamp(28px,5vw,80px);align-items:center}
+.about .lead{max-width:44ch;margin-bottom:16px}
+.about .chips{margin-top:24px}
+.about .chips li{background:rgba(22,23,27,.07)}
+.ph{display:grid;grid-template-columns:2fr 1fr;grid-template-rows:1fr 1fr;gap:12px;aspect-ratio:1}
+.ph img{display:block;width:100%;height:100%;object-fit:cover;border-radius:16px;background:var(--line)}
+.ph .m{grid-row:1/3}
+.ph .s{object-position:50% 20%}
+/* experience: a rail with a card per role */
+.xp .wrap{display:grid;grid-template-columns:minmax(0,.55fr) minmax(0,1.45fr);gap:clamp(28px,5vw,80px);align-items:start}
+.xp .sec-h{position:sticky;top:96px}
+.tl{list-style:none;margin:0;padding:0;display:grid;gap:16px;position:relative}
+.tl::before{content:"";position:absolute;inset-block:12px;inset-inline-start:11px;width:2px;background:var(--line)}
+.tl-i{position:relative;padding-inline-start:44px}
+.dot{position:absolute;inset-inline-start:3px;top:30px;width:18px;height:18px;border-radius:50%;background:var(--paper);border:3px solid var(--ink)}
+.tl-i.now .dot{background:var(--teal);border-color:var(--teal)}
+.xc{padding:24px 26px;display:grid;gap:8px}
+.xc .top{display:flex;justify-content:space-between;align-items:center;gap:12px}
+/* projects: one wide card with its picture beside it, two cards with the picture on top */
+.pj-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:16px}
+.pj{display:flex;flex-direction:column;padding:0;grid-column:span 3}
+.pj-w{grid-column:span 6;flex-direction:row}
+.pj .shot{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;object-position:50% 0;background:var(--line)}
+.pj-w .shot{width:min(40%,400px);height:auto;aspect-ratio:4/5;flex:none;align-self:flex-start;object-position:50% 50%}
+.pb{padding:clamp(20px,3vw,32px);display:flex;flex-direction:column;gap:14px;align-items:flex-start}
+.pb .acts{display:flex;flex-wrap:wrap;gap:10px;margin-top:auto}
+.pb .btn{min-height:44px;padding:0 20px;font-size:1.0625rem}
+/* certificates: badge cards, the three ISTQB ones inked */
+.badges{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
+.bd{display:flex;align-items:center;gap:14px;padding:18px 20px}
+.sec .bd h3{font:500 1.0625rem/1.3 var(--sans)}
+.bd .org{font-size:.9375rem}
+.bd.ink{background:var(--ink);color:var(--paper);box-shadow:none}
+.sec .bd.ink{background:var(--ink)}
+.bd.ink .org{color:rgba(239,234,224,.8)}
+.bd.ink .ico{background:var(--paper);color:var(--ink)}
+
+/* ---------- latest posts: mini LinkedIn-style previews (the cards between the markers are written by scripts/linkedin/sync_links.py) ---------- */
 .p-posts{padding:clamp(72px,10vw,136px) 0;border-top:1px solid var(--line)}
 .p-posts h2{font:700 clamp(2.25rem,4.6vw,3.75rem)/1.1 var(--display);margin:0 0 40px;max-width:20ch}
 html[lang="ar"] .p-posts h2{line-height:1.45}
-.posts{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:48px}
-.posts li{border-top:1px solid var(--line);padding:18px 0 20px}
-.posts a{display:block;font:500 1.1875rem/1.4 var(--sans);text-decoration:none;color:var(--ink);unicode-bidi:plaintext;transition:color .2s var(--e-settle)}
-.posts a:hover{color:var(--teal);text-decoration:underline;text-underline-offset:4px}
-.posts time{display:block;margin-top:6px;font:500 .9375rem/1.3 var(--sans);color:var(--mute);unicode-bidi:plaintext}
+.posts{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.pc{position:relative;display:flex;flex-direction:column;gap:12px;padding:16px;border-radius:16px;background:rgba(22,23,27,.045);box-shadow:inset 0 0 0 1px var(--line)}
+.pc-h{display:flex;align-items:center;gap:10px}
+.pc-av{width:40px;height:40px;border-radius:50%;flex:none;background:var(--teal)}
+.pc-who{display:grid;line-height:1.25}
+.pc-n{font:900 1rem/1.25 var(--sans)}
+.pc-who time{font:500 .875rem/1.3 var(--sans);color:var(--mute);unicode-bidi:plaintext}
+.pc-hook{margin:0;font:700 1.3125rem/1.35 var(--display);unicode-bidi:plaintext}
+html[lang="ar"] .pc-hook,.pc[dir="rtl"] .pc-hook{line-height:1.6}
+.pc-media{position:relative;margin:0;border-radius:12px;overflow:hidden;aspect-ratio:4/5;background:var(--line)}
+.pc-media img,.pc-vid{display:block;width:100%;height:100%;object-fit:cover}
+.pc-vid{position:absolute;inset:0;background:var(--line)}
+.pc-play{position:absolute;inset-inline-end:10px;bottom:10px;z-index:2;display:grid;place-items:center;width:44px;height:44px;border:0;border-radius:50%;background:var(--ink);color:var(--paper);cursor:pointer}
+.pc-play svg{width:18px;height:18px}
+.pc-play[aria-pressed="true"]{background:var(--teal)}
+.pc-cta{display:inline-flex;align-items:center;align-self:flex-start;min-height:44px;margin-top:auto;font:900 1rem/1 var(--sans);color:var(--ink);text-decoration:none}
+.pc-cta span{border-bottom:2px solid var(--accent);padding-bottom:3px}
+.pc-cta::after{content:"";position:absolute;inset:0;border-radius:inherit}
+.pc-cta:focus-visible{outline:none}
+.pc-cta:focus-visible span{outline:3px solid var(--ink);outline-offset:4px;border-radius:4px}
+.pc-text .pc-hook{font-size:1.625rem;padding:8px 0 20px}
 .more{display:inline-flex;margin-top:36px}
-@media (max-width:860px){.posts{grid-template-columns:1fr}}
+/* below the fold: skipped by layout and paint until near the screen (the GPU paints only what is visible) */
+.xp,#projects,#certificates,.p-posts{content-visibility:auto;contain-intrinsic-size:auto 900px}
+@media (max-width:860px){
+ .about .wrap,.xp .wrap{grid-template-columns:1fr}
+ .xp .sec-h{position:static}
+ .pj,.pj-w{grid-column:span 6}.pj-w{flex-direction:column}
+ .pj-w .shot{width:100%;aspect-ratio:4/3;object-position:50% 0}
+}
+@media (max-width:1100px){.posts{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:640px){
+ .posts{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;margin-inline:calc(var(--pad) * -1);padding:0 var(--pad) 12px;scrollbar-width:thin}
+ .pc{flex:0 0 min(84%,340px);scroll-snap-align:center}
+}
 
 /* ---------- footer ---------- */
 .foot{background:var(--ink);color:var(--paper);padding:56px 0 calc(56px + env(safe-area-inset-bottom))}
@@ -235,14 +316,13 @@ blockquote:hover{border-inline-start-color:var(--ox)}
 .chips li:hover{background:var(--paper);color:var(--ox)}
 .facts a,.cell a{text-decoration-thickness:1px}
 .facts a:is(:hover,:focus-visible),.cell a:is(:hover,:focus-visible){text-decoration-thickness:3px}
-/* posts rows */
-.posts li{position:relative;--dir:1}
-html[dir="rtl"] .posts li,.posts li[dir="rtl"]{--dir:-1}
-.posts li::before{content:"";position:absolute;inset-inline:0;top:-1px;height:2px;background:var(--accent);transform:scaleX(0);transform-origin:calc(50% - var(--dir) * 50%) 50%}
-.posts li::after{content:"";position:absolute;inset-inline-end:0;top:20px;width:20px;height:20px;background:var(--accent);-webkit-mask:var(--arrow) center/contain no-repeat;mask:var(--arrow) center/contain no-repeat;opacity:0;transform:scaleX(var(--dir))}
-.posts li:is(:hover,:focus-within) a{color:var(--teal);text-decoration:underline;text-underline-offset:4px}
-.posts li:is(:hover,:focus-within)::before{transform:scaleX(1)}
-.posts li:is(:hover,:focus-within)::after{opacity:1}
+/* post preview cards: lift, and the real GIF plays (script) */
+.pc,.xc,.bd,.pj{--ps:var(--teal)}
+.pc{--dir:1}
+html[dir="rtl"] .pc,.pc[dir="rtl"]{--dir:-1}
+.pc:is(:hover,:focus-within){box-shadow:inset 0 0 0 1px var(--line),0 18px 40px color-mix(in srgb,var(--ps) 28%,transparent)}
+.pc-cta:is(:hover,:focus-visible) span{border-bottom-width:4px;padding-bottom:1px}
+.pc-media.playing .pc-play{background:var(--teal)}
 .tag:is(:hover,:focus-visible){opacity:.85}
 
 @media (prefers-reduced-motion:no-preference){
@@ -259,7 +339,7 @@ html[dir="rtl"] .posts li,.posts li[dir="rtl"]{--dir:-1}
  /* header */
  .nav-in{animation:navIn .72s var(--e-enter) backwards}
  .links li{animation:navItem .56s var(--e-enter) backwards}
- .links li:nth-child(1){animation-delay:.18s}.links li:nth-child(2){animation-delay:.23s}.links li:nth-child(3){animation-delay:.28s}.links li:nth-child(4){animation-delay:.33s}.links li:nth-child(5){animation-delay:.38s}
+ .links li:nth-child(1){animation-delay:.18s}.links li:nth-child(2){animation-delay:.23s}.links li:nth-child(3){animation-delay:.28s}.links li:nth-child(4){animation-delay:.33s}.links li:nth-child(5){animation-delay:.38s}.links li:nth-child(6){animation-delay:.43s}.links li:nth-child(7){animation-delay:.48s}.links li:nth-child(8){animation-delay:.53s}
  .brand,.btn-lang{animation:navItem .56s var(--e-enter) .1s backwards}
  .intro-on .nav-in,.intro-on .links li,.intro-on .brand,.intro-on .btn-lang{animation:none}
  @keyframes navIn{from{opacity:0;transform:translateY(-32px) scale(.96)}}
@@ -291,12 +371,12 @@ html[dir="rtl"] .posts li,.posts li[dir="rtl"]{--dir:-1}
  .facts li::before{transform-origin:calc(50% - var(--dir) * 50%) 50%;transition:transform .4s var(--e-settle)}
  .facts li:hover{transform:translateX(calc(var(--dir) * 4px))}
  .facts li:hover::before{transform:scaleX(2.2)}
- /* posts rows slide, the arrow arrives */
- .posts li>*{transition:transform .4s var(--e-settle),color .2s var(--e-settle)}
- .posts li::before{transition:transform .56s var(--e-settle)}
- .posts li::after{transition:transform .4s var(--e-settle),opacity .2s var(--e-settle);transform:translateX(calc(var(--dir) * -10px)) scaleX(var(--dir))}
- .posts li:is(:hover,:focus-within)>*{transform:translateX(calc(var(--dir) * 8px))}
- .posts li:is(:hover,:focus-within)::after{transform:translateX(0) scaleX(var(--dir))}
+  /* post preview cards: spring lift, play button press */
+ .pc{transition:transform .4s var(--e-settle),box-shadow .3s var(--e-settle)}
+ .pc:is(:hover,:focus-within){transform:translateY(-4px)}
+ .pc-play{transition:transform .24s var(--e-settle),background-color .2s var(--e-settle)}
+ .pc-play:is(:hover,:focus-visible){transform:scale(1.1)}
+ .pc-play:active{transform:scale(.94)}
  :focus-visible{animation:ring .24s var(--e-enter)}
  @keyframes ring{from{outline-offset:9px;outline-color:transparent}}
 }
@@ -341,6 +421,16 @@ html[lang="ar"] #iunder{transform-origin:100% 50%}
 </style>
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs>
+<!-- Lucide icons (ISC): briefcase, award, graduation-cap, bot, list-checks, code-xml, database -->
+<symbol id="i-briefcase" viewBox="0 0 24 24"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><rect width="20" height="14" x="2" y="6" rx="2"/></symbol>
+<symbol id="i-award" viewBox="0 0 24 24"><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"/><circle cx="12" cy="8" r="6"/></symbol>
+<symbol id="i-cap" viewBox="0 0 24 24"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></symbol>
+<symbol id="i-bot" viewBox="0 0 24 24"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></symbol>
+<symbol id="i-checks" viewBox="0 0 24 24"><path d="M13 5h8"/><path d="M13 12h8"/><path d="M13 19h8"/><path d="m3 17 2 2 4-4"/><path d="m3 7 2 2 4-4"/></symbol>
+<symbol id="i-code" viewBox="0 0 24 24"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></symbol>
+<symbol id="i-db" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 21 19V5"/><path d="M3 12A9 3 0 0 0 21 12"/></symbol>
+</defs></svg>
 <a class="skip" href="#main"><span data-l="en">Skip to content</span><span data-l="ar">انتقل إلى المحتوى</span></a>
 
 <!-- Intro: decorative, the same words are in the page; Skip, Escape or reduced motion end it -->
@@ -370,6 +460,8 @@ html[lang="ar"] #iunder{transform-origin:100% 50%}
       <li><a href="#teacher"><span data-l="en">Teacher</span><span data-l="ar">يعلّم</span></a></li>
       <li><a href="#volunteer"><span data-l="en">Volunteer</span><span data-l="ar">يتطوع</span></a></li>
       <li><a href="#professional"><span data-l="en">Professional</span><span data-l="ar">يُنجز</span></a></li>
+      <li><a href="#experience"><span data-l="en">Experience</span><span data-l="ar">الخبرات</span></a></li>
+      <li><a href="#projects"><span data-l="en">Projects</span><span data-l="ar">المشاريع</span></a></li>
       <li><a href="#posts"><span data-l="en">Posts</span><span data-l="ar">المنشورات</span></a></li>
     </ul>
     <span class="ind" id="ind" aria-hidden="true"></span>
@@ -402,6 +494,28 @@ html[lang="ar"] #iunder{transform-origin:100% 50%}
         <a class="tag" id="tag" href="#tester"><span data-l="en">TESTER</span><span data-l="ar">يختبر</span></a>
         <p class="hint" id="hint"><span data-l="en">Tap the mark to switch role</span><span data-l="ar">اضغط على الشعار لتبديل الدور</span></p>
         <p class="sr" id="live" aria-live="polite"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- About. Facts: F17, F19, F20, F22, F05, F39, F27, F44; languages: F67. Photos: Nader alone, metadata stripped, 1000 px and under -->
+  <section class="sec about" id="about" aria-labelledby="h-about">
+    <div class="wrap">
+      <div>
+        <h2 class="sec-h" id="h-about" data-reveal><span data-l="en">Nader, in short.</span><span data-l="ar">نادر باختصار.</span></h2>
+        <p class="lead" data-reveal><span data-l="en">QA Automation Engineer at TaqneenSoft in Amman. He writes Playwright suites and turns portal evidence into bilingual documentation for 100+ government e-services.</span><span data-l="ar">مهندس أتمتة ضمان الجودة في TaqneenSoft في عمّان. يكتب اختبارات Playwright ويحوّل أدلة البوابات إلى وثائق ثنائية اللغة لأكثر من 100 خدمة حكومية إلكترونية.</span></p>
+        <p class="lead" data-reveal><span data-l="en">Outside work he teaches AI and robotics to students aged 8 to 16 and facilitates sessions with Generations For Peace.</span><span data-l="ar">وخارج العمل يعلّم الذكاء الاصطناعي والروبوتات لطلاب من 8 إلى 16 سنة، ويعمل ميسّر جلسات مع منظمة أجيال السلام.</span></p>
+        <ul class="chips" data-reveal>
+          <li><span data-l="en">Amman, Jordan</span><span data-l="ar">عمّان، الأردن</span></li>
+          <li><span data-l="en">Arabic, native</span><span data-l="ar">العربية</span></li>
+          <li><span data-l="en">English, strong</span><span data-l="ar">الإنجليزية (قوية)</span></li>
+          <li><span data-l="en">Spanish, learning</span><span data-l="ar">الإسبانية (قيد التعلم)</span></li>
+        </ul>
+      </div>
+      <div class="ph">
+        <img class="m" src="img/nader-portrait.webp" width="1000" height="1000" alt="Portrait of Nader Alzghoul" loading="lazy" decoding="async">
+        <img class="s" src="img/nader-stairs.webp" width="640" height="640" alt="Nader Alzghoul sitting on a colourful staircase" loading="lazy" decoding="async">
+        <img class="s" src="img/nader-suit.webp" width="900" height="900" alt="Nader Alzghoul in a suit" loading="lazy" decoding="async">
       </div>
     </div>
   </section>
@@ -500,6 +614,107 @@ html[lang="ar"] #iunder{transform-origin:100% 50%}
           <ul class="chips" dir="ltr" lang="en"><li>Playwright</li><li>Selenium</li><li>Cypress</li><li>Appium</li><li>Postman</li><li>REST Assured</li><li>JMeter</li><li>GitHub Actions</li><li>Azure DevOps</li><li>Java</li><li>Python</li><li>SQL</li></ul>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- Experience. Facts: F19, F20, F22, F05, F68 (Arabic Zaha title), F39, F42, F06, F41, F02, F07, F08, F43 (Correlation One 10/2024 to 10/2025), F10, F66 (Faculty of Engineering Technology), F65 (Clever Mind POB 12/2023 to 11/2024) -->
+  <section class="sec xp" id="experience" aria-labelledby="h-experience">
+    <div class="wrap">
+      <h2 class="sec-h" id="h-experience" data-reveal><span data-l="en">Experience</span><span data-l="ar">الخبرات</span></h2>
+      <ol class="tl">
+        <li class="tl-i now"><span class="dot" aria-hidden="true"></span>
+          <div class="cell xc"><div class="top"><span class="when"><span data-l="en">08/2026 to present</span><span data-l="ar"><bdi dir="ltr">08/2026</bdi> إلى الآن</span></span><span class="ico"><svg class="ic" aria-hidden="true"><use href="#i-briefcase"/></svg></span></div>
+            <h3><span data-l="en">QA Automation Engineer, AI QA</span><span data-l="ar">مهندس أتمتة اختبارات وضمان جودة بالذكاء الاصطناعي</span></h3>
+            <p class="org"><span data-l="en">TaqneenSoft, Amman</span><span data-l="ar">تقنين للبرمجيات (TaqneenSoft)، عمّان</span></p>
+            <p><span data-l="en">Tests, SRS documents and bilingual manuals for 100+ government e-services on the JFDA and Ministry of Agriculture portals.</span><span data-l="ar">اختبارات ووثائق SRS وأدلة ثنائية اللغة لأكثر من 100 خدمة حكومية إلكترونية عبر بوابتي المؤسسة العامة للغذاء والدواء ووزارة الزراعة.</span></p></div></li>
+        <li class="tl-i now"><span class="dot" aria-hidden="true"></span>
+          <div class="cell xc"><div class="top"><span class="when"><span data-l="en">02/2026 to present</span><span data-l="ar"><bdi dir="ltr">02/2026</bdi> إلى الآن</span></span><span class="ico"><svg class="ic" aria-hidden="true"><use href="#i-bot"/></svg></span></div>
+            <h3><span data-l="en">AI Tutor and Assistant Program Coordinating Manager</span><span data-l="ar">مدرّس ذكاء اصطناعي ومنسّق برنامج</span></h3>
+            <p class="org"><span data-l="en">Zaha Cultural Center, Amman</span><span data-l="ar">مركز زها الثقافي، عمّان</span></p>
+            <p><span data-l="en">Teaches AI, machine learning and robotics to students aged 8 to 16 with PictoBlox, Arduino and ESP32.</span><span data-l="ar">يعلّم الذكاء الاصطناعي وتعلّم الآلة والروبوتات لطلاب من 8 إلى 16 سنة باستخدام PictoBlox وArduino وESP32.</span></p></div></li>
+        <li class="tl-i"><span class="dot" aria-hidden="true"></span>
+          <div class="cell xc"><div class="top"><span class="when"><span data-l="en">07/2025 to 06/2026</span><span data-l="ar"><bdi dir="ltr">07/2025</bdi> إلى <bdi dir="ltr">06/2026</bdi></span></span><span class="ico"><svg class="ic" aria-hidden="true"><use href="#i-checks"/></svg></span></div>
+            <h3><span data-l="en">QA Engineer Fellow</span><span data-l="ar">زميل مهندس ضمان جودة</span></h3>
+            <p class="org"><span data-l="en">DigiSkills Jordan and Luminus Technical University College</span><span data-l="ar">DigiSkills وكلية لومينوس الجامعية التقنية</span></p>
+            <p><span data-l="en">A six-month fellowship, then a six-month industry placement: 180+ hours of hands-on QA across web and mobile, Selenium frameworks on the Page Object Model, Postman API tests.</span><span data-l="ar">زمالة مدتها ستة أشهر ثم تدريب عملي ستة أشهر: أكثر من 180 ساعة عمل عملي في ضمان الجودة للويب والجوال، وأطر Selenium بنمط Page Object Model، واختبارات Postman لواجهات API.</span></p></div></li>
+        <li class="tl-i now"><span class="dot" aria-hidden="true"></span>
+          <div class="cell xc"><div class="top"><span class="when"><span data-l="en">06/2025 to present</span><span data-l="ar"><bdi dir="ltr">06/2025</bdi> إلى الآن</span></span><span class="ico"><svg class="ic" aria-hidden="true"><use href="#i-briefcase"/></svg></span></div>
+            <h3><span data-l="en">Program Coordinator</span><span data-l="ar">منسّق برامج</span></h3>
+            <p class="org"><span data-l="en">Zaha Cultural Center, Amman</span><span data-l="ar">مركز زها الثقافي، عمّان</span></p>
+            <p><span data-l="en">Coordinates cultural programs and events from planning to evaluation. Improved IT reliability and workplace usability by 70%.</span><span data-l="ar">ينسّق البرامج والفعاليات الثقافية من التخطيط إلى التقييم بعد الفعالية. حسّن موثوقية تقنية المعلومات وسهولة الاستخدام في بيئة العمل بنسبة 70%.</span></p></div></li>
+        <li class="tl-i"><span class="dot" aria-hidden="true"></span>
+          <div class="cell xc"><div class="top"><span class="when"><span data-l="en">10/2024 to 10/2025</span><span data-l="ar"><bdi dir="ltr">10/2024</bdi> إلى <bdi dir="ltr">10/2025</bdi></span></span><span class="ico"><svg class="ic" aria-hidden="true"><use href="#i-db"/></svg></span></div>
+            <h3><span data-l="en">Data Analysis and Data Science</span><span data-l="ar">تحليل البيانات وعلم البيانات</span></h3>
+            <p class="org"><span data-l="en">Correlation One and Qafza Technology</span><span data-l="ar">Correlation One وQafza Technology</span></p>
+            <p><span data-l="en">250 hours of Advanced Data Analytics coursework and 100 hours of Power BI visualization.</span><span data-l="ar">برنامجان في تحليل البيانات: التحليلات المتقدمة (250 ساعة) وتحليل البيانات باستخدام Power BI (100 ساعة).</span></p></div></li>
+        <li class="tl-i"><span class="dot" aria-hidden="true"></span>
+          <div class="cell xc"><div class="top"><span class="when"><span data-l="en">06/2024</span><span data-l="ar"><bdi dir="ltr">06/2024</bdi></span></span><span class="ico"><svg class="ic" aria-hidden="true"><use href="#i-cap"/></svg></span></div>
+            <h3><span data-l="en">Diploma in AI and Robotics Engineering</span><span data-l="ar">دبلوم هندسة الذكاء الاصطناعي والروبوتات</span></h3>
+            <p class="org"><span data-l="en">Al-Balqa Applied University, Amman</span><span data-l="ar">جامعة البلقاء التطبيقية، عمّان</span></p>
+            <p><span data-l="en">A three-year program at the Faculty of Engineering Technology.</span><span data-l="ar">برنامج مدته ثلاث سنوات في كلية التكنولوجيا الهندسية.</span></p></div></li>
+        <li class="tl-i"><span class="dot" aria-hidden="true"></span>
+          <div class="cell xc"><div class="top"><span class="when"><span data-l="en">12/2023 to 11/2024</span><span data-l="ar"><bdi dir="ltr">12/2023</bdi> إلى <bdi dir="ltr">11/2024</bdi></span></span><span class="ico"><svg class="ic" aria-hidden="true"><use href="#i-code"/></svg></span></div>
+            <h3><span data-l="en">Fullstack and Web Developer Fellow</span><span data-l="ar">زميل مطوّر ويب شامل (Fullstack)</span></h3>
+            <p class="org"><span data-l="en">Clever Mind POB</span><span data-l="ar">Clever Mind POB</span></p>
+            <p><span data-l="en">Trained as a fullstack developer, worked on real website projects, and gained QA and project management experience in a team.</span><span data-l="ar">تدرّب مطوّرًا شاملًا (Fullstack)، وعمل على مشاريع مواقع حقيقية، واكتسب خبرة في ضمان الجودة وإدارة المشاريع ضمن فريق.</span></p></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Projects. Facts: F45, F46, F62 (Profile-Wrap), F12, F18 (Shalwa), F29 (course). Pictures: frames of his own LinkedIn post visuals, drawn, no people -->
+  <section class="sec" id="projects" aria-labelledby="h-projects">
+    <div class="wrap">
+      <h2 class="sec-h" id="h-projects" data-reveal><span data-l="en">Projects</span><span data-l="ar">المشاريع</span></h2>
+      <div class="pj-grid">
+        <article class="cell pj pj-w">
+          <img class="shot" src="img/project-profile-wrap.webp" width="800" height="1000" alt="Profile-Wrap: a drawn screen with an Allow button" loading="lazy" decoding="async">
+          <div class="pb">
+            <h3>Profile-Wrap</h3>
+            <p><span data-l="en">An open-source (MIT) tool that plans, writes and checks LinkedIn posts. It posts only through LinkedIn’s official API, after you tap Allow, and never asks for your LinkedIn password.</span><span data-l="ar">أداة مفتوحة المصدر (MIT) تخطط لمنشورات LinkedIn وتكتبها وتفحصها. لا تنشر إلا عبر واجهة LinkedIn الرسمية وبعد موافقتك، ولا تطلب كلمة مرور LinkedIn أبدًا.</span></p>
+            <div class="acts">
+              <a class="btn btn-ink" href="https://nj-burrito.github.io/profile-wrap/"><span data-l="en">See Profile-Wrap</span><span data-l="ar">تعرّف على Profile-Wrap</span></a>
+              <a class="btn btn-ink" href="https://github.com/NJ-Burrito/profile-wrap" rel="noopener">GitHub</a>
+            </div>
+          </div>
+        </article>
+        <article class="cell pj">
+          <img class="shot" src="img/project-shalwa.webp" width="800" height="1000" alt="Shalwa Automation Project: login, cart, sorting, links and checkout" loading="lazy" decoding="async">
+          <div class="pb">
+            <h3><span data-l="en">Shalwa Automation Project</span><span data-l="ar">مشروع شلوى للأتمتة</span></h3>
+            <p><span data-l="en">A Java, Selenium WebDriver, Maven and JUnit framework on the Page Object Model, with 6 page objects. It automates SauceDemo: login, cart, sorting, links and checkout.</span><span data-l="ar">إطار أتمتة مبني على Java وSelenium WebDriver وMaven وJUnit بنمط Page Object Model، فيه 6 صفحات كائنية. يؤتمت موقع SauceDemo: تسجيل الدخول والسلة والفرز والروابط والدفع.</span></p>
+            <div class="acts"><a class="btn btn-ink" href="https://github.com/NJ-Burrito/Shalwa-Automation-Project-SAP-" rel="noopener"><span data-l="en">See it on GitHub</span><span data-l="ar">شاهده على GitHub</span></a></div>
+          </div>
+        </article>
+        <article class="cell pj">
+          <img class="shot" src="img/project-course.webp" width="800" height="1000" alt="Three AI projects, one course" loading="lazy" decoding="async">
+          <div class="pb">
+            <h3><span data-l="en">AI and Arduino course</span><span data-l="ar">دورة الذكاء الاصطناعي وArduino</span></h3>
+            <p><span data-l="en">A summer 2026 course at Zaha Cultural Center, AI and interactive programming with Arduino (PictoBlox): 8 sessions for each age group, ending in a final project and a showcase.</span><span data-l="ar">دورة صيف 2026 في مركز زها الثقافي «الذكاء الاصطناعي والبرمجة التفاعلية مع Arduino (PictoBlox)»: 8 جلسات لكل فئة عمرية، تنتهي بمشروع نهائي وعرض تفاعلي.</span></p>
+            <div class="acts"><a class="btn btn-ink" href="https://www.linkedin.com/feed/update/urn:li:share:7516540827913981953/" rel="noopener"><span data-l="en">See the post</span><span data-l="ar">شاهد المنشور</span></a></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certificates. Facts: F11, F09, F07, F08, F58, F59, F60 -->
+  <section class="sec" id="certificates" aria-labelledby="h-certificates">
+    <div class="wrap">
+      <h2 class="sec-h" id="h-certificates" data-reveal><span data-l="en">Certificates</span><span data-l="ar">الشهادات</span></h2>
+      <ul class="badges">
+        <li class="cell bd ink"><span class="ico"><svg class="ic" aria-hidden="true"><use href="#i-award"/></svg></span><div><h3 dir="ltr" lang="en">ISTQB Certified Tester Foundation Level (CTFL)</h3></div></li>
+        <li class="cell bd ink"><span class="ico"><svg class="ic" aria-hidden="true"><use href="#i-award"/></svg></span><div><h3 dir="ltr" lang="en">ISTQB Advanced Test Automation Engineering</h3></div></li>
+        <li class="cell bd ink"><span class="ico"><svg class="ic" aria-hidden="true"><use href="#i-award"/></svg></span><div><h3 dir="ltr" lang="en">ISTQB Certified Tester AI Testing</h3></div></li>
+        <li class="cell bd"><span class="ico"><svg class="ic" aria-hidden="true"><use href="#i-award"/></svg></span><div><h3 dir="ltr" lang="en">AWS Certified Cloud Practitioner</h3></div></li>
+        <li class="cell bd"><span class="ico"><svg class="ic" aria-hidden="true"><use href="#i-award"/></svg></span><div><h3 dir="ltr" lang="en">Professional Scrum Master I (PSM I)</h3></div></li>
+        <li class="cell bd"><span class="ico"><svg class="ic" aria-hidden="true"><use href="#i-award"/></svg></span><div><h3 dir="ltr" lang="en">Postman API Fundamentals Student Expert</h3></div></li>
+        <li class="cell bd"><span class="ico"><svg class="ic" aria-hidden="true"><use href="#i-award"/></svg></span><div><h3 dir="ltr" lang="en">Certified AI and Robotics Instructor</h3><p class="org"><span data-l="en">Robotna, 132 hours</span><span data-l="ar">Robotna، 132 ساعة</span></p></div></li>
+        <li class="cell bd"><span class="ico"><svg class="ic" aria-hidden="true"><use href="#i-award"/></svg></span><div><h3 dir="ltr" lang="en">Advanced Data Analytics</h3><p class="org"><span data-l="en">Correlation One, 250 hours</span><span data-l="ar">Correlation One، 250 ساعة</span></p></div></li>
+        <li class="cell bd"><span class="ico"><svg class="ic" aria-hidden="true"><use href="#i-award"/></svg></span><div><h3 dir="ltr" lang="en">Power BI Data Analysis</h3><p class="org"><span data-l="en">Qafza Tech, 100 hours</span><span data-l="ar">Qafza Tech، 100 ساعة</span></p></div></li>
+        <li class="cell bd"><span class="ico"><svg class="ic" aria-hidden="true"><use href="#i-award"/></svg></span><div><h3 dir="ltr" lang="en">CompTIA A+</h3><p class="org"><span data-l="en">Gaming Lab</span><span data-l="ar">Gaming Lab</span></p></div></li>
+        <li class="cell bd"><span class="ico"><svg class="ic" aria-hidden="true"><use href="#i-award"/></svg></span><div><h3 dir="ltr" lang="en">PCB Design, Arduino UNO</h3><p class="org"><span data-l="en">IEEE</span><span data-l="ar">IEEE</span></p></div></li>
+        <li class="cell bd"><span class="ico"><svg class="ic" aria-hidden="true"><use href="#i-award"/></svg></span><div><h3 dir="ltr" lang="en">Leadership and Office Work Management</h3><p class="org"><span data-l="en">Ana Usharek Fellowship</span><span data-l="ar">Ana Usharek Fellowship</span></p></div></li>
+      </ul>
     </div>
   </section>
 
@@ -656,7 +871,7 @@ function heroIn(){if(RM.matches)return;[...document.querySelectorAll(".hero-copy
 
 /* ================= reveal on scroll ================= */
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{rootMargin:"0px 0px -12% 0px",threshold:.12});
-document.querySelectorAll(".facts,.chips,.posts,.grid4").forEach(g=>[...g.children].forEach((c,i)=>{c.setAttribute("data-st","");c.style.setProperty("--i",Math.min(i,7))}));
+document.querySelectorAll(".facts,.chips,.posts,.grid4,.tl,.pj-grid,.badges,.ph").forEach(g=>[...g.children].forEach((c,i)=>{c.setAttribute("data-st","");c.style.setProperty("--i",Math.min(i,7))}));
 document.querySelectorAll("[data-reveal], [data-st], .verb").forEach(el=>io.observe(el));
 
 /* ================= intro: animatic v1 (240 f at 25 fps), exact guideline beziers, hands off at f 216 ================= */
@@ -726,7 +941,7 @@ $("#replay").addEventListener("click",()=>{if(RM.matches)return;store("nj-intro"
 
 /* ================= motion layer: header state, scrollspy, accent, progress, card tilt ================= */
 const nav=$(".nav"),ind=$("#ind"),prog=$("#prog"),linksEl=$("#links"),navLinks=[...document.querySelectorAll(".links a")];
-const ACC={tester:"#3D7F7A",teacher:"#34473B",volunteer:"#A3573B",professional:"#5A1E26",posts:"#3D7F7A"};
+const ACC={tester:"#3D7F7A",teacher:"#34473B",volunteer:"#A3573B",professional:"#5A1E26",about:"#3D7F7A",experience:"#3D7F7A",projects:"#3D7F7A",certificates:"#3D7F7A",posts:"#3D7F7A"};
 let act="top",accNow="";
 function setAccent(){const c=act==="top"?PER[pi].c:ACC[act];if(c!==accNow){accNow=c;D.style.setProperty("--accent",c)}}
 function placeInd(){if(!linksEl.offsetParent){ind.style.opacity="0";return}
@@ -736,7 +951,7 @@ function placeInd(){if(!linksEl.offsetParent){ind.style.opacity="0";return}
 function setActive(id){act=id;setAccent();placeInd();
  navLinks.forEach(l=>{if(l.getAttribute("href")==="#"+id)l.setAttribute("aria-current","location");else l.removeAttribute("aria-current")})}
 const spy=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)setActive(e.target.id)}),{rootMargin:"-45% 0px -54% 0px"});
-["top","tester","teacher","volunteer","professional","posts"].forEach(id=>spy.observe(document.getElementById(id)));
+["top","about","tester","teacher","volunteer","professional","experience","projects","certificates","posts"].forEach(id=>spy.observe(document.getElementById(id)));
 let sc=0;
 function onScroll(){sc=0;nav.classList.toggle("is-scrolled",scrollY>24);
  const m=document.documentElement.scrollHeight-innerHeight;prog.style.transform=`scaleX(${m>0?Math.min(1,scrollY/m).toFixed(4):0})`}
@@ -762,6 +977,21 @@ applyLang(lang(),false);setTag(false);label();
 if(D.classList.contains("intro-on"))intro.start();
 else{D.dataset.intro="skipped";idleStart();heroIn()}
 })();
+/* post previews: a muted, looping 540 px video of the post plays on mouse hover, or when the play button is pressed (touch, keyboard,
+   reduced motion). One at a time; the file (about 0.5 MB) is fetched on the first play only (preload none); it is removed on stop and when
+   the card leaves the screen, so the poster is back. */
+(()=>{const RM=matchMedia("(prefers-reduced-motion: reduce)"),FINE=matchMedia("(hover: hover) and (pointer: fine)");let cur=null;
+ const btn=f=>f.querySelector(".pc-play");
+ function stop(f){if(!f)return;const v=f.querySelector("video");if(v){v.pause();v.removeAttribute("src");v.load();v.remove()}f.classList.remove("playing");if(btn(f))btn(f).setAttribute("aria-pressed","false");if(cur===f)cur=null}
+ function play(f){if(cur&&cur!==f)stop(cur);if(f.querySelector("video"))return;
+  const v=document.createElement("video");v.className="pc-vid";v.muted=true;v.loop=true;v.playsInline=true;v.preload="none";v.setAttribute("aria-hidden","true");v.tabIndex=-1;
+  v.poster=f.querySelector("img").getAttribute("src");v.src=f.dataset.video;f.insertBefore(v,btn(f));
+  f.classList.add("playing");if(btn(f))btn(f).setAttribute("aria-pressed","true");cur=f;const r=v.play();if(r&&r.catch)r.catch(()=>stop(f))}
+ const obs=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting&&e.target.classList.contains("playing"))stop(e.target)}));
+ document.querySelectorAll(".pc-media[data-video]").forEach(f=>{const card=f.closest(".pc");obs.observe(f);
+  card.addEventListener("pointerenter",e=>{if(e.pointerType==="mouse"&&FINE.matches&&!RM.matches)play(f)});
+  card.addEventListener("pointerleave",e=>{if(e.pointerType==="mouse"&&f.classList.contains("playing"))stop(f)});
+  btn(f).addEventListener("click",()=>f.classList.contains("playing")?stop(f):play(f))})})();
 /* header tint near the title: Tester, then Teacher, Volunteer, Professional, looping; each shade eases in over 960 ms */
 (()=>{const D=document.documentElement,nav=document.querySelector(".nav"),h1=document.getElementById("name"),SH=["#3D7F7A","#34473B","#A3573B","#5A1E26"];let on=false,k=0,timer=0,raf=0,touchT=0;
  const step=()=>{D.style.setProperty("--navtint",SH[k]);k=(k+1)%SH.length};
