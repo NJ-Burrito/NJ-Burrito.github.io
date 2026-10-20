@@ -328,6 +328,16 @@ html[lang="ar"] #iunder{transform-origin:100% 50%}
  background-size:300% 100%;background-repeat:no-repeat;background-position:100% 0}
 #skipIntro{position:absolute;inset-inline-end:16px;bottom:calc(16px + env(safe-area-inset-bottom));z-index:2;font:500 1rem/1 var(--sans);color:var(--ink);background:rgba(239,234,224,.9);border:0;border-radius:999px;padding:13px 18px;min-height:44px;cursor:pointer}
 #skipIntro:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+/* header tint near the title: the header takes each persona shade in turn while the pointer is near the name */
+:root{--navtint:#3D7F7A}
+.nav-in{transition:background-color .96s var(--e-move),box-shadow .4s var(--e-settle)}
+.links a,.brand span{transition:color .96s var(--e-move),background-color .4s var(--e-settle)}
+.nav.is-tinted .nav-in{background:var(--navtint);box-shadow:inset 0 1px 0 rgba(255,255,255,.18),0 14px 36px color-mix(in srgb,var(--navtint) 45%,transparent)}
+.nav.is-tinted .links a,.nav.is-tinted .brand span:not(.bm){color:#EFEAE0}
+.nav.is-tinted .links a:is(:hover,:focus-visible),.nav.is-tinted .links a[aria-current]{background:rgba(239,234,224,.16)}
+.nav.is-tinted .ind{background:#EFEAE0}
+.nav.is-tinted .bm rect{fill:color-mix(in srgb,var(--navtint) 55%,#000)}
+@media (prefers-reduced-motion:reduce){.nav-in,.links a,.brand span{transition:none}}
 </style>
 </head>
 <body>
@@ -726,6 +736,16 @@ applyLang(lang(),false);setTag(false);label();
 if(D.classList.contains("intro-on"))intro.start();
 else{D.dataset.intro="skipped";idleStart();heroIn()}
 })();
+/* header tint near the title: Tester, then Teacher, Volunteer, Professional, looping; each shade eases in over 960 ms */
+(()=>{const D=document.documentElement,nav=document.querySelector(".nav"),h1=document.getElementById("name"),SH=["#3D7F7A","#34473B","#A3573B","#5A1E26"];let on=false,k=0,timer=0,raf=0,touchT=0;
+ const step=()=>{D.style.setProperty("--navtint",SH[k]);k=(k+1)%SH.length};
+ const start=()=>{if(on)return;on=true;k=0;step();nav.classList.add("is-tinted");timer=setInterval(step,1600)};
+ const stop=()=>{if(!on)return;on=false;clearInterval(timer);nav.classList.remove("is-tinted")};
+ const near=(x,y)=>{const r=h1.getBoundingClientRect(),m=96;return x>r.left-m&&x<r.right+m&&y>r.top-m&&y<r.bottom+m};
+ addEventListener("pointermove",e=>{if(e.pointerType==="touch")return;cancelAnimationFrame(raf);raf=requestAnimationFrame(()=>near(e.clientX,e.clientY)?start():stop())},{passive:true});
+ document.documentElement.addEventListener("pointerleave",stop);
+ h1.addEventListener("pointerdown",e=>{if(e.pointerType!=="touch")return;start();clearTimeout(touchT);touchT=setTimeout(stop,6400)});
+ addEventListener("scroll",()=>{if(on&&h1.getBoundingClientRect().bottom<0)stop()},{passive:true});})();
 </script>
 </body>
 </html>
