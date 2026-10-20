@@ -170,8 +170,8 @@ blockquote footer{font:500 1rem/1.4 var(--sans);color:var(--mute);margin-top:14p
 html[lang="ar"] .sec-h{line-height:1.45}
 .ic{width:24px;height:24px;flex:none;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .sec .cell{background:rgba(22,23,27,.045);box-shadow:inset 0 0 0 1px var(--line)}
-.sec .cell h3{font:700 1.5rem/1.25 var(--display);letter-spacing:0;text-transform:none;margin:0}
-html[lang="ar"] .sec .cell h3{line-height:1.5}
+.sec .cell h3,.sec .cell h4{font:700 1.5rem/1.25 var(--display);letter-spacing:0;text-transform:none;margin:0}
+html[lang="ar"] .sec .cell h3,html[lang="ar"] .sec .cell h4{line-height:1.5}
 .sec .cell p{margin:0}
 .sec .cell a{text-underline-offset:3px}
 .when{font:900 .875rem/1.2 var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--mute)}
@@ -185,7 +185,8 @@ html[lang="ar"] .sec .cell h3{line-height:1.5}
 .about .chips{margin-top:24px}
 .about .chips li{background:rgba(22,23,27,.07)}
 .ph{display:grid;grid-template-columns:2fr 1fr;grid-template-rows:1fr 1fr;gap:12px;aspect-ratio:1}
-.ph img{display:block;width:100%;height:100%;object-fit:cover;border-radius:16px;background:var(--line)}
+.ph .pw{border-radius:16px;min-height:0}
+.ph img{display:block;width:100%;height:100%;object-fit:cover;background:var(--line)}
 .ph .m{grid-row:1/3}
 .ph .s{object-position:50% 20%}
 /* experience: a rail with a card per role */
@@ -202,15 +203,21 @@ html[lang="ar"] .sec .cell h3{line-height:1.5}
 .pj-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:16px}
 .pj{display:flex;flex-direction:column;padding:0;grid-column:span 3}
 .pj-w{grid-column:span 6;flex-direction:row}
-.pj .shot{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;object-position:50% 0;background:var(--line)}
-.pj-w .shot{width:min(40%,400px);height:auto;aspect-ratio:4/5;flex:none;align-self:flex-start;object-position:50% 50%}
+.pw{display:block;overflow:hidden;overflow:clip;background:var(--line)}
+.pw img{display:block;width:100%;height:100%;object-fit:cover}
+.pj .pw{width:100%;aspect-ratio:4/3}
+.pj .shot{object-position:50% 0}
+.pj-w .pw{width:min(40%,400px);aspect-ratio:4/5;flex:none;align-self:flex-start}
+.pj-w .shot{object-position:50% 50%}
 .pb{padding:clamp(20px,3vw,32px);display:flex;flex-direction:column;gap:14px;align-items:flex-start}
 .pb .acts{display:flex;flex-wrap:wrap;gap:10px;margin-top:auto}
 .pb .btn{min-height:44px;padding:0 20px;font-size:1.0625rem}
 /* certificates: badge cards, the three ISTQB ones inked */
 .badges{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
 .bd{display:flex;align-items:center;gap:14px;padding:18px 20px}
-.sec .bd h3{font:500 1.0625rem/1.3 var(--sans)}
+.sec .bd h3,.sec .bd h4{font:500 1.0625rem/1.3 var(--sans)}
+.sec .grp-h{font:900 .875rem/1.2 var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--mute);margin:40px 0 14px;max-width:none}
+.sec .grp-h:first-of-type{margin-top:8px}
 .bd .org{font-size:.9375rem}
 .bd.ink{background:var(--ink);color:var(--paper);box-shadow:none}
 .sec .bd.ink{background:var(--ink)}
@@ -249,7 +256,7 @@ html[lang="ar"] .pc-hook,.pc[dir="rtl"] .pc-hook{line-height:1.6}
  .about .wrap,.xp .wrap{grid-template-columns:1fr}
  .xp .sec-h{position:static}
  .pj,.pj-w{grid-column:span 6}.pj-w{flex-direction:column}
- .pj-w .shot{width:100%;aspect-ratio:4/3;object-position:50% 0}
+ .pj-w .pw{width:100%;aspect-ratio:4/3}.pj-w .shot{object-position:50% 0}
 }
 @media (max-width:1100px){.posts{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:640px){
@@ -327,15 +334,27 @@ html[dir="rtl"] .pc,.pc[dir="rtl"]{--dir:-1}
 
 @media (prefers-reduced-motion:no-preference){
  html{transition:--accent .96s var(--e-move)}
- /* section reveals: fold in from an edge (translate/opacity; `transform` stays free for hover and tilt) */
- .js [data-reveal],.js [data-st]{opacity:0;translate:0 28px;
-  transition:opacity .4s var(--e-settle) var(--dl,0s),translate .56s var(--e-settle) var(--dl,0s),transform .24s var(--e-settle),box-shadow .3s var(--e-settle),background-color .2s,color .2s,border-color .2s}
- .js .panel[data-reveal]{translate:calc(var(--dir) * -40px) 0}
- .js .stat[data-reveal]{translate:calc(var(--dir) * 40px) 0}
- .js [data-st]{--dl:calc(var(--i,0) * 70ms)}
- .js [data-reveal].in,.js [data-st].in{opacity:1;translate:none}
- .js .verb>span{transform:translateY(105%);transition:transform .64s var(--e-settle)}
- .js .verb.in>span{transform:none}
+ /* scroll-linked motion: every reveal is scrubbed by the scroll position (CSS scroll-driven animations; transform/opacity only),
+    so it runs forward while scrolling down and in reverse, from the top edge, while scrolling up. A JS fallback (.fb) maps the same progress. */
+ .js .panel[data-reveal]{--rx:calc(var(--dir) * -40px)}
+ .js .stat[data-reveal]{--rx:calc(var(--dir) * 40px)}
+ @keyframes sdIn{from{opacity:0;translate:var(--rx,0px) 28px}to{opacity:1;translate:0 0}}
+ @keyframes sdOut{from{opacity:1;translate:0 0}to{opacity:0;translate:0 -28px}}
+ @keyframes sdVerb{from{transform:translateY(105%)}to{transform:none}}
+ @keyframes sdLine{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+ @keyframes sdPar{from{translate:0 -4%}to{translate:0 4%}}
+ @supports (animation-timeline:view()){
+  .js [data-reveal],.js [data-st]{transition:transform .24s var(--e-settle),box-shadow .3s var(--e-settle),background-color .2s,color .2s,border-color .2s;
+   animation:sdIn linear both,sdOut linear forwards;animation-timeline:view(),view();
+   animation-range:entry 0% entry min(100%,260px),exit 0% exit min(100%,240px)}
+  .js .verb>span{animation:sdVerb linear both;animation-timeline:view();animation-range:entry 0% entry min(100%,240px)}
+  .tl{view-timeline:--tl block}
+  .tl::before{transform-origin:top;animation:sdLine linear both;animation-timeline:--tl;animation-range:entry 0% cover 50%}
+  .pw img{scale:1.1;animation:sdPar linear both;animation-timeline:view();animation-range:cover}
+ }
+ .fb [data-reveal],.fb [data-st]{opacity:0;translate:0 28px}
+ .fb .pw img{scale:1.1}
+ .fb .tl::before{transform-origin:top;transform:scaleY(var(--tp,0))}
  /* header */
  .nav-in{animation:navIn .72s var(--e-enter) backwards}
  .links li{animation:navItem .56s var(--e-enter) backwards}
@@ -513,9 +532,9 @@ html[lang="ar"] #iunder{transform-origin:100% 50%}
         </ul>
       </div>
       <div class="ph">
-        <img class="m" src="img/nader-selfie.webp" width="828" height="828" alt="Nader Alzghoul in gold aviators, outdoors in the sun" loading="lazy" decoding="async">
-        <img class="s" src="img/nader-portrait.webp" width="1000" height="1000" alt="Portrait of Nader Alzghoul" loading="lazy" decoding="async">
-        <img class="s" src="img/nader-stairs.webp" width="640" height="640" alt="Nader Alzghoul sitting on a colourful staircase" loading="lazy" decoding="async">
+        <span class="pw m"><img class="m" src="img/nader-selfie.webp" width="828" height="828" alt="Nader Alzghoul in gold aviators, outdoors in the sun" loading="lazy" decoding="async"></span>
+        <span class="pw s"><img class="s" src="img/nader-portrait.webp" width="1000" height="1000" alt="Portrait of Nader Alzghoul" loading="lazy" decoding="async"></span>
+        <span class="pw s"><img class="s" src="img/nader-stairs.webp" width="640" height="640" alt="Nader Alzghoul sitting on a colourful staircase" loading="lazy" decoding="async"></span>
       </div>
     </div>
   </section>
@@ -667,7 +686,7 @@ html[lang="ar"] #iunder{transform-origin:100% 50%}
       <h2 class="sec-h" id="h-projects" data-reveal><span data-l="en">Projects</span><span data-l="ar">المشاريع</span></h2>
       <div class="pj-grid">
         <article class="cell pj pj-w">
-          <img class="shot" src="img/project-profile-wrap.webp" width="800" height="1000" alt="Profile-Wrap: a drawn screen with an Allow button" loading="lazy" decoding="async">
+          <span class="pw"><img class="shot" src="img/project-profile-wrap.webp" width="800" height="1000" alt="Profile-Wrap: a drawn screen with an Allow button" loading="lazy" decoding="async"></span>
           <div class="pb">
             <h3>Profile-Wrap</h3>
             <p><span data-l="en">An open-source (MIT) tool that plans, writes and checks LinkedIn posts. It posts only through LinkedIn’s official API, after you tap Allow, and never asks for your LinkedIn password.</span><span data-l="ar">أداة مفتوحة المصدر (MIT) تخطط لمنشورات LinkedIn وتكتبها وتفحصها. لا تنشر إلا عبر واجهة LinkedIn الرسمية وبعد موافقتك، ولا تطلب كلمة مرور LinkedIn أبدًا.</span></p>
@@ -678,7 +697,7 @@ html[lang="ar"] #iunder{transform-origin:100% 50%}
           </div>
         </article>
         <article class="cell pj">
-          <img class="shot" src="img/project-shalwa.webp" width="800" height="1000" alt="Shalwa Automation Project: login, cart, sorting, links and checkout" loading="lazy" decoding="async">
+          <span class="pw"><img class="shot" src="img/project-shalwa.webp" width="800" height="1000" alt="Shalwa Automation Project: login, cart, sorting, links and checkout" loading="lazy" decoding="async"></span>
           <div class="pb">
             <h3><span data-l="en">Shalwa Automation Project</span><span data-l="ar">مشروع شلوى للأتمتة</span></h3>
             <p><span data-l="en">A Java, Selenium WebDriver, Maven and JUnit framework on the Page Object Model, with 6 page objects. It automates SauceDemo: login, cart, sorting, links and checkout.</span><span data-l="ar">إطار أتمتة مبني على Java وSelenium WebDriver وMaven وJUnit بنمط Page Object Model، فيه 6 صفحات كائنية. يؤتمت موقع SauceDemo: تسجيل الدخول والسلة والفرز والروابط والدفع.</span></p>
@@ -686,7 +705,7 @@ html[lang="ar"] #iunder{transform-origin:100% 50%}
           </div>
         </article>
         <article class="cell pj">
-          <img class="shot" src="img/project-course.webp" width="800" height="1000" alt="Three AI projects, one course" loading="lazy" decoding="async">
+          <span class="pw"><img class="shot" src="img/project-course.webp" width="800" height="1000" alt="Three AI projects, one course" loading="lazy" decoding="async"></span>
           <div class="pb">
             <h3><span data-l="en">AI and Arduino course</span><span data-l="ar">دورة الذكاء الاصطناعي وArduino</span></h3>
             <p><span data-l="en">A summer 2026 course at Zaha Cultural Center, AI and interactive programming with Arduino (PictoBlox): 8 sessions for each age group, ending in a final project and a showcase.</span><span data-l="ar">دورة صيف 2026 في مركز زها الثقافي «الذكاء الاصطناعي والبرمجة التفاعلية مع Arduino (PictoBlox)»: 8 جلسات لكل فئة عمرية، تنتهي بمشروع نهائي وعرض تفاعلي.</span></p>
@@ -697,23 +716,55 @@ html[lang="ar"] #iunder{transform-origin:100% 50%}
     </div>
   </section>
 
-  <!-- Certificates. Facts: F11, F09, F07, F08, F58, F59, F60 -->
+  <!-- Certificates. Facts: F11, F09, F07, F08, F58, F59, F60, F70-F90 (no verify links: none of the files prints a public verification URL) -->
   <section class="sec" id="certificates" aria-labelledby="h-certificates">
     <div class="wrap">
       <h2 class="sec-h" id="h-certificates" data-reveal><span data-l="en">Certificates</span><span data-l="ar">الشهادات</span></h2>
-      <ul class="badges">
-        <li class="cell bd ink"><span class="ico"><svg class="ic" aria-hidden="true"><use href="#i-award"/></svg></span><div><h3 dir="ltr" lang="en">ISTQB Certified Tester Foundation Level (CTFL)</h3></div></li>
-        <li class="cell bd ink"><span class="ico"><svg class="ic" aria-hidden="true"><use href="#i-award"/></svg></span><div><h3 dir="ltr" lang="en">ISTQB Advanced Test Automation Engineering</h3></div></li>
-        <li class="cell bd ink"><span class="ico"><svg class="ic" aria-hidden="true"><use href="#i-award"/></svg></span><div><h3 dir="ltr" lang="en">ISTQB Certified Tester AI Testing</h3></div></li>
-        <li class="cell bd"><span class="ico"><svg class="ic" aria-hidden="true"><use href="#i-award"/></svg></span><div><h3 dir="ltr" lang="en">AWS Certified Cloud Practitioner</h3></div></li>
-        <li class="cell bd"><span class="ico"><svg class="ic" aria-hidden="true"><use href="#i-award"/></svg></span><div><h3 dir="ltr" lang="en">Professional Scrum Master I (PSM I)</h3></div></li>
-        <li class="cell bd"><span class="ico"><svg class="ic" aria-hidden="true"><use href="#i-award"/></svg></span><div><h3 dir="ltr" lang="en">Postman API Fundamentals Student Expert</h3></div></li>
-        <li class="cell bd"><span class="ico"><svg class="ic" aria-hidden="true"><use href="#i-award"/></svg></span><div><h3 dir="ltr" lang="en">Certified AI and Robotics Instructor</h3><p class="org"><span data-l="en">Robotna, 132 hours</span><span data-l="ar">Robotna، 132 ساعة</span></p></div></li>
-        <li class="cell bd"><span class="ico"><svg class="ic" aria-hidden="true"><use href="#i-award"/></svg></span><div><h3 dir="ltr" lang="en">Advanced Data Analytics</h3><p class="org"><span data-l="en">Correlation One, 250 hours</span><span data-l="ar">Correlation One، 250 ساعة</span></p></div></li>
-        <li class="cell bd"><span class="ico"><svg class="ic" aria-hidden="true"><use href="#i-award"/></svg></span><div><h3 dir="ltr" lang="en">Power BI Data Analysis</h3><p class="org"><span data-l="en">Qafza Tech, 100 hours</span><span data-l="ar">Qafza Tech، 100 ساعة</span></p></div></li>
-        <li class="cell bd"><span class="ico"><svg class="ic" aria-hidden="true"><use href="#i-award"/></svg></span><div><h3 dir="ltr" lang="en">CompTIA A+</h3><p class="org"><span data-l="en">Gaming Lab</span><span data-l="ar">Gaming Lab</span></p></div></li>
-        <li class="cell bd"><span class="ico"><svg class="ic" aria-hidden="true"><use href="#i-award"/></svg></span><div><h3 dir="ltr" lang="en">PCB Design, Arduino UNO</h3><p class="org"><span data-l="en">IEEE</span><span data-l="ar">IEEE</span></p></div></li>
-        <li class="cell bd"><span class="ico"><svg class="ic" aria-hidden="true"><use href="#i-award"/></svg></span><div><h3 dir="ltr" lang="en">Leadership and Office Work Management</h3><p class="org"><span data-l="en">Ana Usharek Fellowship</span><span data-l="ar">Ana Usharek Fellowship</span></p></div></li>
+      <h3 class="grp-h" id="cg-degrees" data-reveal><span data-l="en">Degrees</span><span data-l="ar">الدرجات العلمية</span></h3>
+      <ul class="badges" aria-labelledby="cg-degrees">
+          <li class="cell bd"><span class="ico"><svg class="ic" aria-hidden="true"><use href="#i-cap"/></svg></span><div><h4><span data-l="en">Associate Degree, AI and Robotics Engineering</span><span data-l="ar">دبلوم جامعي في هندسة الذكاء الاصطناعي والروبوتات</span></h4><p class="org"><span data-l="en">Al-Balqa Applied University, 3 years, 2024, degree</span><span data-l="ar">جامعة البلقاء التطبيقية، ثلاث سنوات، 2024، درجة جامعية</span></p></div></li>
+          <li class="cell bd"><span class="ico"><svg class="ic" aria-hidden="true"><use href="#i-cap"/></svg></span><div><h4><span data-l="en">Intermediate University Certificate (Al-Shamel exam)</span><span data-l="ar">الشهادة الجامعية المتوسطة (امتحان الشامل)</span></h4><p class="org"><span data-l="en">Al-Balqa Applied University, Mar 2025, exam certificate</span><span data-l="ar">جامعة البلقاء التطبيقية، مارس 2025، شهادة امتحان</span></p></div></li>
+      </ul>
+      <h3 class="grp-h" id="cg-qa" data-reveal><span data-l="en">Testing and QA</span><span data-l="ar">الاختبار وضمان الجودة</span></h3>
+      <ul class="badges" aria-labelledby="cg-qa">
+          <li class="cell bd ink"><span class="ico"><svg class="ic" aria-hidden="true"><use href="#i-award"/></svg></span><div><h4 dir="ltr" lang="en">ISTQB Certified Tester Foundation Level (CTFL)</h4></div></li>
+          <li class="cell bd ink"><span class="ico"><svg class="ic" aria-hidden="true"><use href="#i-award"/></svg></span><div><h4 dir="ltr" lang="en">ISTQB Advanced Test Automation Engineering</h4></div></li>
+          <li class="cell bd ink"><span class="ico"><svg class="ic" aria-hidden="true"><use href="#i-award"/></svg></span><div><h4 dir="ltr" lang="en">ISTQB Certified Tester AI Testing</h4></div></li>
+          <li class="cell bd"><span class="ico"><svg class="ic" aria-hidden="true"><use href="#i-award"/></svg></span><div><h4 dir="ltr" lang="en">AWS Certified Cloud Practitioner</h4></div></li>
+          <li class="cell bd"><span class="ico"><svg class="ic" aria-hidden="true"><use href="#i-award"/></svg></span><div><h4 dir="ltr" lang="en">Professional Scrum Master I (PSM I)</h4></div></li>
+          <li class="cell bd"><span class="ico"><svg class="ic" aria-hidden="true"><use href="#i-award"/></svg></span><div><h4 dir="ltr" lang="en">Postman API Fundamentals Student Expert</h4><p class="org"><span data-l="en">Postman, Nov 2025</span><span data-l="ar">Postman، نوفمبر 2025</span></p></div></li>
+          <li class="cell bd"><span class="ico"><svg class="ic" aria-hidden="true"><use href="#i-checks"/></svg></span><div><h4><span data-l="en">Training Diploma: QA and Testing Automation</span><span data-l="ar">دبلوم تدريبي في ضمان الجودة وأتمتة الاختبارات</span></h4><p class="org"><span data-l="en">Luminus Technical University College, Jul to Nov 2025, 300 hours</span><span data-l="ar">كلية لومينوس الجامعية التقنية، يوليو إلى نوفمبر 2025، 300 ساعة</span></p></div></li>
+          <li class="cell bd"><span class="ico"><svg class="ic" aria-hidden="true"><use href="#i-checks"/></svg></span><div><h4><span data-l="en">QA and Testing Automation Upskilling Program</span><span data-l="ar">برنامج رفع المهارات في ضمان الجودة وأتمتة الاختبارات</span></h4><p class="org"><span data-l="en">DigiSkills with Luminus, 4 months, certificate of completion</span><span data-l="ar">DigiSkills مع لومينوس، 4 أشهر، شهادة إتمام</span></p></div></li>
+          <li class="cell bd"><span class="ico"><svg class="ic" aria-hidden="true"><use href="#i-code"/></svg></span><div><h4 dir="ltr" lang="en">Manual Testing Course</h4><p class="org"><span data-l="en">QAcart, certificate of completion</span><span data-l="ar">QAcart، شهادة إتمام</span></p></div></li>
+          <li class="cell bd"><span class="ico"><svg class="ic" aria-hidden="true"><use href="#i-code"/></svg></span><div><h4 dir="ltr" lang="en">ISTQB Foundation Level course</h4><p class="org"><span data-l="en">QAcart, certificate of completion</span><span data-l="ar">QAcart، شهادة إتمام</span></p></div></li>
+          <li class="cell bd"><span class="ico"><svg class="ic" aria-hidden="true"><use href="#i-code"/></svg></span><div><h4 dir="ltr" lang="en">Selenium WebDriver</h4><p class="org"><span data-l="en">QAcart, certificate of completion</span><span data-l="ar">QAcart، شهادة إتمام</span></p></div></li>
+          <li class="cell bd"><span class="ico"><svg class="ic" aria-hidden="true"><use href="#i-code"/></svg></span><div><h4 dir="ltr" lang="en">Playwright with JavaScript</h4><p class="org"><span data-l="en">QAcart, certificate of completion</span><span data-l="ar">QAcart، شهادة إتمام</span></p></div></li>
+          <li class="cell bd"><span class="ico"><svg class="ic" aria-hidden="true"><use href="#i-code"/></svg></span><div><h4 dir="ltr" lang="en">Cypress Framework Design Project</h4><p class="org"><span data-l="en">QAcart, certificate of completion</span><span data-l="ar">QAcart، شهادة إتمام</span></p></div></li>
+          <li class="cell bd"><span class="ico"><svg class="ic" aria-hidden="true"><use href="#i-code"/></svg></span><div><h4 dir="ltr" lang="en">RestAssured Framework Design Project</h4><p class="org"><span data-l="en">QAcart, certificate of completion</span><span data-l="ar">QAcart، شهادة إتمام</span></p></div></li>
+          <li class="cell bd"><span class="ico"><svg class="ic" aria-hidden="true"><use href="#i-code"/></svg></span><div><h4 dir="ltr" lang="en">Famous Testing Tools</h4><p class="org"><span data-l="en">QAcart, certificate of completion</span><span data-l="ar">QAcart، شهادة إتمام</span></p></div></li>
+          <li class="cell bd"><span class="ico"><svg class="ic" aria-hidden="true"><use href="#i-code"/></svg></span><div><h4 dir="ltr" lang="en">Complete Performance Testing with JMeter</h4><p class="org"><span data-l="en">QAcart, certificate of completion</span><span data-l="ar">QAcart، شهادة إتمام</span></p></div></li>
+          <li class="cell bd"><span class="ico"><svg class="ic" aria-hidden="true"><use href="#i-db"/></svg></span><div><h4 dir="ltr" lang="en">Complete SQL Course</h4><p class="org"><span data-l="en">QAcart, certificate of completion</span><span data-l="ar">QAcart، شهادة إتمام</span></p></div></li>
+      </ul>
+      <h3 class="grp-h" id="cg-data" data-reveal><span data-l="en">Data and AI</span><span data-l="ar">البيانات والذكاء الاصطناعي</span></h3>
+      <ul class="badges" aria-labelledby="cg-data">
+          <li class="cell bd"><span class="ico"><svg class="ic" aria-hidden="true"><use href="#i-award"/></svg></span><div><h4 dir="ltr" lang="en">Certified AI and Robotics Instructor</h4><p class="org"><span data-l="en">Robotna, 132 hours</span><span data-l="ar">Robotna، 132 ساعة</span></p></div></li>
+          <li class="cell bd"><span class="ico"><svg class="ic" aria-hidden="true"><use href="#i-bot"/></svg></span><div><h4><span data-l="en">IoT Advanced Track (ESP32)</span><span data-l="ar">مسار إنترنت الأشياء المتقدم (ESP32)</span></h4><p class="org"><span data-l="en">Robotna, GIG | Innovation Nation, 132 hours, 2026, certificate of completion</span><span data-l="ar">Robotna، GIG | Innovation Nation، 132 ساعة، 2026، شهادة إتمام</span></p></div></li>
+          <li class="cell bd"><span class="ico"><svg class="ic" aria-hidden="true"><use href="#i-award"/></svg></span><div><h4 dir="ltr" lang="en">Advanced Data Analytics</h4><p class="org"><span data-l="en">Correlation One, 250 hours, honors, 2025</span><span data-l="ar">Correlation One، 250 ساعة، بتقدير الشرف، 2025</span></p></div></li>
+          <li class="cell bd"><span class="ico"><svg class="ic" aria-hidden="true"><use href="#i-award"/></svg></span><div><h4 dir="ltr" lang="en">Power BI Data Analysis</h4><p class="org"><span data-l="en">Qafza Tech, 100 hours</span><span data-l="ar">Qafza Tech، 100 ساعة</span></p></div></li>
+          <li class="cell bd"><span class="ico"><svg class="ic" aria-hidden="true"><use href="#i-award"/></svg></span><div><h4 dir="ltr" lang="en">CompTIA A+</h4><p class="org"><span data-l="en">Gaming Lab</span><span data-l="ar">Gaming Lab</span></p></div></li>
+          <li class="cell bd"><span class="ico"><svg class="ic" aria-hidden="true"><use href="#i-award"/></svg></span><div><h4 dir="ltr" lang="en">PCB Design, Arduino UNO</h4><p class="org"><span data-l="en">IEEE</span><span data-l="ar">IEEE</span></p></div></li>
+      </ul>
+      <h3 class="grp-h" id="cg-programs" data-reveal><span data-l="en">Programs and fellowships</span><span data-l="ar">البرامج والزمالات</span></h3>
+      <ul class="badges" aria-labelledby="cg-programs">
+          <li class="cell bd"><span class="ico"><svg class="ic" aria-hidden="true"><use href="#i-award"/></svg></span><div><h4 dir="ltr" lang="en">Leadership and Office Work Management</h4><p class="org"><span data-l="en">Ana Usharek Fellowship</span><span data-l="ar">Ana Usharek Fellowship</span></p></div></li>
+          <li class="cell bd"><span class="ico"><svg class="ic" aria-hidden="true"><use href="#i-briefcase"/></svg></span><div><h4><span data-l="en">Ana Usharek Fellowship Program</span><span data-l="ar">برنامج زمالة أنا أشارك</span></h4><p class="org"><span data-l="en">Independent Election Commission, 3 months, Jun 2022, certificate of completion</span><span data-l="ar">الهيئة المستقلة للانتخاب، ثلاثة أشهر، يونيو 2022، شهادة إتمام</span></p></div></li>
+          <li class="cell bd"><span class="ico"><svg class="ic" aria-hidden="true"><use href="#i-briefcase"/></svg></span><div><h4><span data-l="en">Ana Usharek Youth Political Participation Program</span><span data-l="ar">برنامج أنا أشارك للمشاركة السياسية للشباب</span></h4><p class="org"><span data-l="en">National Democratic Institute, 2021/2022, certificate of participation</span><span data-l="ar">المعهد الديمقراطي الوطني (NDI)، 2021/2022، شهادة مشاركة</span></p></div></li>
+          <li class="cell bd"><span class="ico"><svg class="ic" aria-hidden="true"><use href="#i-briefcase"/></svg></span><div><h4><span data-l="en">First Ana Usharek Youth Forum</span><span data-l="ar">ملتقى أنا أشارك الشبابي الأول</span></h4><p class="org"><span data-l="en">Independent Election Commission, Aug to Sep 2022, 15 hours, certificate of participation</span><span data-l="ar">الهيئة المستقلة للانتخاب، أغسطس إلى سبتمبر 2022، 15 ساعة، شهادة مشاركة</span></p></div></li>
+          <li class="cell bd"><span class="ico"><svg class="ic" aria-hidden="true"><use href="#i-briefcase"/></svg></span><div><h4><span data-l="en">National Summer Program Basma</span><span data-l="ar">البرنامج الوطني الصيفي «بصمة»</span></h4><p class="org"><span data-l="en">Ministry of Education, Jul to Aug 2017, certificate of participation</span><span data-l="ar">وزارة التربية والتعليم، يوليو إلى أغسطس 2017، شهادة مشاركة</span></p></div></li>
+      </ul>
+      <h3 class="grp-h" id="cg-lang" data-reveal><span data-l="en">Languages</span><span data-l="ar">اللغات</span></h3>
+      <ul class="badges" aria-labelledby="cg-lang">
+          <li class="cell bd"><span class="ico"><svg class="ic" aria-hidden="true"><use href="#i-cap"/></svg></span><div><h4><span data-l="en">Professional Training Diploma, English Studies</span><span data-l="ar">دبلوم تدريب مهني في الدراسات الإنجليزية</span></h4><p class="org"><span data-l="en">Helen for Assistance and Human Resources Development, 2019, training diploma</span><span data-l="ar">هيلين للمساعدة وتنمية الموارد البشرية، 2019، دبلوم تدريبي</span></p></div></li>
       </ul>
     </div>
   </section>
@@ -869,10 +920,33 @@ document.addEventListener("visibilitychange",()=>{if(!document.hidden&&idleOn&&h
 function heroIn(){if(RM.matches)return;[...document.querySelectorAll(".hero-copy > *, .tag, .hint")].forEach((el,k)=>
  el.animate([{opacity:0,transform:"translateY(18px)"},{opacity:1,transform:"none"}],{duration:400,delay:80*k,easing:"cubic-bezier(.16,1,.3,1)",fill:"backwards"}))}
 
-/* ================= reveal on scroll ================= */
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{rootMargin:"0px 0px -12% 0px",threshold:.12});
+/* ================= scroll-linked motion =================
+   Where CSS scroll-driven animations exist (animation-timeline: view()) the stylesheet does all of it, on the compositor.
+   Elsewhere this maps the same progress (entry / exit of each element) to inline opacity, translate and a --tp variable, on scroll. */
 document.querySelectorAll(".facts,.chips,.posts,.grid4,.tl,.pj-grid,.badges,.ph").forEach(g=>[...g.children].forEach((c,i)=>{c.setAttribute("data-st","");c.style.setProperty("--i",Math.min(i,7))}));
-document.querySelectorAll("[data-reveal], [data-st], .verb").forEach(el=>io.observe(el));
+(()=>{
+ if(CSS.supports("animation-timeline: view()"))return;
+ const root=document.documentElement,cl=v=>v<0?0:v>1?1:v;
+ const items=[...document.querySelectorAll("[data-reveal],[data-st]")],verbs=[...document.querySelectorAll(".verb>span")],pars=[...document.querySelectorAll(".pw img")],tls=[...document.querySelectorAll(".tl")];
+ let busy=false;
+ function clear(){root.classList.remove("fb");items.forEach(e=>{e.style.opacity="";e.style.translate=""});verbs.forEach(e=>e.style.transform="");pars.forEach(e=>e.style.translate="");tls.forEach(e=>e.style.removeProperty("--tp"))}
+ function run(){
+  busy=false;
+  if(RM.matches){clear();return}
+  root.classList.add("fb");
+  const vh=innerHeight,dir=root.dir==="rtl"?-1:1,pad=parseFloat(getComputedStyle(root).scrollPaddingTop)||0;
+  const R=items.map(e=>e.getBoundingClientRect()),V=verbs.map(e=>e.getBoundingClientRect()),P=pars.map(e=>e.parentNode.getBoundingClientRect()),T=tls.map(e=>e.getBoundingClientRect());
+  items.forEach((e,k)=>{const r=R[k],h=Math.max(r.height,1);
+   const ti=cl((vh-r.top)/Math.min(h,260)),to=cl((pad-r.top)/Math.min(h,240));
+   const rx=e.classList.contains("panel")?-40*dir:e.classList.contains("stat")?40*dir:0;
+   e.style.opacity=(ti*(1-to)).toFixed(3);e.style.translate=((1-ti)*rx).toFixed(1)+"px "+(28*(1-ti)-28*to).toFixed(1)+"px"});
+  verbs.forEach((e,k)=>{const r=V[k];e.style.transform="translateY("+(105*(1-cl((vh-r.top)/Math.min(Math.max(r.height,1),240)))).toFixed(1)+"%)"});
+  pars.forEach((e,k)=>{const r=P[k];e.style.translate="0 "+(-4+8*cl((vh-r.top)/(vh-pad+r.height))).toFixed(2)+"%"});
+  tls.forEach((e,k)=>{const r=T[k];e.style.setProperty("--tp",cl((vh-r.top)/((vh-pad+r.height)/2)).toFixed(3))});
+ }
+ const go=()=>{if(!busy){busy=true;requestAnimationFrame(run)}};
+ addEventListener("scroll",go,{passive:true});addEventListener("resize",go);RM.addEventListener("change",go);go();
+})();
 
 /* ================= intro: animatic v1 (240 f at 25 fps), exact guideline beziers, hands off at f 216 ================= */
 function bez(x1,y1,x2,y2){return t=>{if(t<=0)return 0;if(t>=1)return 1;let lo=0,hi=1,u=t;for(let i=0;i<28;i++){u=(lo+hi)/2;const x=3*(1-u)**2*u*x1+3*(1-u)*u*u*x2+u**3;if(x<t)lo=u;else hi=u}return 3*(1-u)**2*u*y1+3*(1-u)*u*u*y2+u**3}}
