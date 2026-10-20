@@ -1,51 +1,395 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Nader Alzghoul, QA Automation Engineer</title>
-<meta name="description" content="Nader Alzghoul, QA Automation Engineer in Amman, Jordan. Latest LinkedIn posts and Profile-Wrap.">
+<meta name="description" content="Nader Alzghoul (نادر الزغول), QA Automation Engineer in Amman, Jordan. He tests, teaches, volunteers and delivers. Latest LinkedIn posts and Profile-Wrap.">
 <link rel="canonical" href="https://nj-burrito.github.io/">
 <meta property="og:type" content="profile">
 <meta property="og:title" content="Nader Alzghoul, QA Automation Engineer">
-<meta property="og:description" content="Nader Alzghoul, QA Automation Engineer in Amman, Jordan. Latest LinkedIn posts and Profile-Wrap.">
+<meta property="og:description" content="Nader Alzghoul (نادر الزغول), QA Automation Engineer in Amman, Jordan. He tests, teaches, volunteers and delivers. Latest LinkedIn posts and Profile-Wrap.">
 <meta property="og:url" content="https://nj-burrito.github.io/">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ar_AR">
 <meta name="twitter:card" content="summary">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Nader Alzghoul", "jobTitle": "QA Automation Engineer", "url": "https://nj-burrito.github.io/", "address": {"@type": "PostalAddress", "addressLocality": "Amman", "addressCountry": "Jordan"}, "sameAs": ["https://www.linkedin.com/in/nader-alzghoul", "https://github.com/NJ-Burrito"]}</script>
+<meta name="theme-color" content="#3D7F7A">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='20 20 260 260'%3E%3Crect x='20' y='20' width='260' height='260' rx='48' fill='%233D7F7A'/%3E%3CclipPath id='c'%3E%3Crect x='0' y='55' width='300' height='195'/%3E%3C/clipPath%3E%3Cg clip-path='url(%23c)'%3E%3Cpath fill='%23EFEAE0' d='M75 250L75 133.5L45 6.5L45 250Z'/%3E%3Cpath fill='%2328534F' d='M75 133.5L165 313.5L135 186.5L45 6.5Z'/%3E%3Cpath fill='%23EFEAE0' d='M165 313.5L165 85L135 55L135 186.5Z'/%3E%3Cpath fill='%2328534F' d='M165 85L215 85L245 55L135 55Z'/%3E%3Cpath fill='%23EFEAE0' d='M215 85L215 179.2L213.2 188.1L208.4 194.8L201.2 198.9L193 199.8L183.7 196.7L171.6 224.1L189.9 229.8L210.6 227.6L228.6 217.2L240.8 200.3L245 180.8L245 55Z'/%3E%3C/g%3E%3C/svg%3E">
+<link rel="preload" href="fonts/thmanyahsans-Black.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/thmanyahserifdisplay-Bold.woff2" as="font" type="font/woff2" crossorigin>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Nader Alzghoul", "alternateName": "نادر الزغول", "jobTitle": "QA Automation Engineer", "worksFor": {"@type": "Organization", "name": "TaqneenSoft"}, "url": "https://nj-burrito.github.io/", "address": {"@type": "PostalAddress", "addressLocality": "Amman", "addressCountry": "Jordan"}, "sameAs": ["https://www.linkedin.com/in/nader-alzghoul", "https://github.com/NJ-Burrito"]}</script>
+<script>
+/* Before first paint: language (?lang=, then the saved choice, else English) and whether the intro plays.
+   The intro plays once per visitor (localStorage "nj-intro"), never under reduced motion, never without JS. */
+(function(){var d=document.documentElement,q=null,s=null,seen=null;
+ try{q=new URLSearchParams(location.search).get("lang")}catch(e){}
+ try{s=localStorage.getItem("nj-lang");seen=localStorage.getItem("nj-intro")}catch(e){}
+ var l=(q==="ar"||q==="en")?q:(s==="ar"?"ar":"en");if(l==="ar"){d.lang="ar";d.dir="rtl"}
+ d.classList.add("js");
+ if(!seen&&!matchMedia("(prefers-reduced-motion: reduce)").matches)d.classList.add("intro-on")})();
+</script>
 <style>
 @font-face{font-family:"Thmanyah Serif Display";font-weight:700;font-style:normal;font-display:swap;src:url("fonts/thmanyahserifdisplay-Bold.woff2") format("woff2")}
 @font-face{font-family:"Thmanyah Serif Text";font-weight:400;font-style:normal;font-display:swap;src:url("fonts/thmanyahseriftext-Regular.woff2") format("woff2")}
 @font-face{font-family:"Thmanyah Sans";font-weight:500;font-style:normal;font-display:swap;src:url("fonts/thmanyahsans-Medium.woff2") format("woff2")}
 @font-face{font-family:"Thmanyah Sans";font-weight:900;font-style:normal;font-display:swap;src:url("fonts/thmanyahsans-Black.woff2") format("woff2")}
-:root{--ink:#1d2433;--mute:#5b6477;--bg:#fbf8f3;--card:#fff;--line:#e6dfd2;--acc:#0f5c4d}
+/* Tokens. Persona shades and paper: work/identity/DECISIONS.md items 8 and 10. Eases and durations: the NJ motion guideline v1.
+   Shape rule: panels 16px, buttons and the nav are full pills. */
+:root{--teal:#3D7F7A;--slate:#34473B;--clay:#A3573B;--ox:#5A1E26;--paper:#EFEAE0;--ink:#16171B;--mute:#4A4C50;--line:rgba(22,23,27,.16);
+ --shade:var(--teal);
+ --display:"Thmanyah Serif Display",serif;--text:"Thmanyah Serif Text",serif;--sans:"Thmanyah Sans",sans-serif;
+ --e-enter:cubic-bezier(.05,.7,.1,1);--e-exit:cubic-bezier(.3,0,.8,.15);--e-settle:cubic-bezier(.16,1,.3,1);--e-move:cubic-bezier(.76,0,.24,1);
+ --pad:clamp(20px,5vw,72px);--max:1240px}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font:400 18px/1.6 "Thmanyah Serif Text",serif}
-main{max-width:640px;margin:0 auto;padding:28px 18px 56px}
-h1{font:700 32px/1.2 "Thmanyah Serif Display",serif;margin:0 0 6px}
-h2{font:700 22px/1.3 "Thmanyah Serif Display",serif;margin:36px 0 12px}
-.role{font:500 16px/1.4 "Thmanyah Sans",sans-serif;color:var(--acc);margin:0 0 14px}
-.links{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 0;padding:0;list-style:none}
-.links a{display:block;padding:10px 14px;border:1px solid var(--line);border-radius:12px;background:var(--card);font:500 16px/1.2 "Thmanyah Sans",sans-serif;color:var(--ink);text-decoration:none}
-.posts{list-style:none;margin:0;padding:0}
-.posts li{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:0 0 10px}
-.posts a{color:var(--ink);font:500 18px/1.4 "Thmanyah Sans",sans-serif;text-decoration:none;display:block}
-.posts a:hover,.links a:hover{color:var(--acc)}
-.posts time{display:block;margin-top:4px;font:500 14px/1.3 "Thmanyah Sans",sans-serif;color:var(--mute)}
-a:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:88px}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 1.125rem/1.6 var(--text);text-rendering:optimizeLegibility}
+:lang(ar){letter-spacing:0!important;text-transform:none!important}
+html[lang="ar"] body{line-height:1.8}
+html[lang="en"] [data-l="ar"],html[lang="ar"] [data-l="en"]{display:none!important}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--ink);outline-offset:3px;border-radius:6px}
+.on-shade :focus-visible{outline-color:var(--paper)}
+.sr{position:absolute!important;width:1px;height:1px;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.skip{position:fixed;inset-inline-start:12px;top:-60px;z-index:50;background:var(--ink);color:var(--paper);padding:10px 16px;border-radius:999px;font:500 1rem/1 var(--sans);text-decoration:none}
+.skip:focus{top:12px}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
+
+/* ---------- nav: one floating paper pill over the content (material over the shade) ---------- */
+.nav{position:fixed;top:12px;left:0;right:0;z-index:20;pointer-events:none;padding:0 12px}
+.nav-in{pointer-events:auto;max-width:var(--max);margin:0 auto;height:56px;display:flex;align-items:center;gap:12px;padding:0 8px 0 16px;border-radius:999px;
+ background:rgba(239,234,224,.86);-webkit-backdrop-filter:blur(18px) saturate(160%);backdrop-filter:blur(18px) saturate(160%);
+ box-shadow:inset 0 1px 0 rgba(255,255,255,.5),0 10px 30px rgba(22,23,27,.12)}
+html[dir="rtl"] .nav-in{padding:0 16px 0 8px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font:500 1rem/1 var(--sans);white-space:nowrap}
+.brand svg{width:28px;height:28px;flex:none}
+.links{display:flex;gap:2px;margin:0 auto;padding:0;list-style:none}
+.links a{display:block;padding:10px 12px;border-radius:999px;font:500 .95rem/1 var(--sans);text-decoration:none;color:var(--ink)}
+.links a:hover{background:rgba(22,23,27,.07)}
+.btn-lang{font:500 1rem/1 var(--sans);color:var(--paper);background:var(--ink);border:0;border-radius:999px;padding:12px 18px;cursor:pointer;min-height:44px}
+.btn-lang:active{transform:scale(.97)}
+@media (max-width:860px){.links{display:none}.btn-lang{margin-inline-start:auto}}
+@media (prefers-reduced-transparency:reduce){.nav-in{background:var(--paper);-webkit-backdrop-filter:none;backdrop-filter:none}}
+
+/* ---------- hero: the persona shade, copy on one side, the interactive 3D mark on the other ---------- */
+.hero{position:relative;min-height:100vh;min-height:100dvh;background:var(--shade);color:var(--paper);transition:background-color .96s var(--e-move);overflow:hidden}
+.hero .wrap{min-height:inherit;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);align-items:center;gap:clamp(24px,4vw,64px);padding-top:96px;padding-bottom:56px}
+.hero h1{font:700 clamp(2.75rem,6.4vw,5.75rem)/1.02 var(--display);letter-spacing:-.02em;margin:0}
+html[lang="ar"] .hero h1{line-height:1.25}
+.alt-name{font:700 clamp(1.6rem,2.6vw,2.25rem)/1.3 var(--display);margin:.35em 0 0;opacity:.94}
+.role{font:900 1.25rem/1.3 var(--sans);letter-spacing:.12em;text-transform:uppercase;margin:28px 0 0}
+.promise{font:700 clamp(1.75rem,3.4vw,2.9rem)/1.15 var(--display);margin:14px 0 0;max-width:18ch}
+.nw{white-space:nowrap}
+html[lang="ar"] .promise{line-height:1.5;max-width:none}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin:34px 0 0}
+.btn{display:inline-flex;align-items:center;min-height:48px;padding:0 24px;border-radius:999px;font:900 1.1875rem/1 var(--sans);text-decoration:none;white-space:nowrap;
+ transition:transform .2s var(--e-settle),box-shadow .2s var(--e-settle)}
+.btn:active{transform:scale(.97)}
+.btn-paper{background:var(--paper);color:var(--ink)}
+.btn-ink{background:var(--ink);color:var(--paper)}
+.btn:hover{box-shadow:0 8px 22px rgba(22,23,27,.22)}
+.hero-mark{display:grid;justify-items:center;gap:18px}
+.stage{width:100%;display:grid;place-items:center;perspective:1100px;cursor:pointer;border-radius:16px;-webkit-tap-highlight-color:transparent}
+.mark-box{width:min(40vw,500px);aspect-ratio:1}
+.mark{position:relative;width:100%;height:100%;transform-style:preserve-3d;will-change:transform}
+.mark .layer{position:absolute;inset:0;width:100%;height:100%;overflow:visible;transform-style:preserve-3d}
+.mark .shadow{filter:blur(14px);opacity:.38}
+.mark .face{transition:fill .96s var(--e-move)}
+.stage:focus-visible{outline:3px solid var(--paper);outline-offset:6px}
+.tag{display:flex;justify-content:center;min-height:1.3em;font:900 1.25rem/1 var(--sans);letter-spacing:.42em;color:var(--paper);text-decoration:none;padding:6px 0}
+html[lang="ar"] .tag{font:700 1.75rem/1.3 var(--display)}
+.tag span{display:inline-block;overflow:hidden;padding-bottom:.08em}
+.tag span i{display:block;font-style:normal}
+.hint{margin:0;font:500 .9375rem/1.3 var(--sans);color:var(--ink);background:rgba(239,234,224,.88);border-radius:999px;padding:8px 14px}
+@media (max-width:860px){
+ .hero .wrap{grid-template-columns:1fr;gap:12px;padding-top:84px;align-content:start}
+ .hero-mark{order:-1}
+ .mark-box{width:min(68vw,340px)}
+ .role{margin-top:20px}.cta{margin-top:24px}
+}
+
+/* ---------- persona sections: four layouts, one shade each ---------- */
+.persona{padding:clamp(72px,10vw,136px) 0}
+.verb{font:700 clamp(3.5rem,9vw,7.5rem)/1 var(--display);letter-spacing:-.025em;margin:0;overflow:hidden;padding-bottom:.08em}
+html[lang="ar"] .verb{line-height:1.3}
+.verb>span{display:block}
+.num{font:900 clamp(3.25rem,7vw,5.5rem)/1 var(--sans);letter-spacing:-.02em;margin:0;font-variant-numeric:lining-nums}
+.cap{font:700 1.5rem/1.3 var(--display);margin:10px 0 0;max-width:22ch}
+html[lang="ar"] .cap{line-height:1.6}
+.lead{font:400 clamp(1.25rem,1.8vw,1.5rem)/1.5 var(--text);margin:0 0 24px;max-width:36ch}
+.facts{list-style:none;margin:0;padding:0;display:grid;gap:18px}
+.facts li{padding-inline-start:22px;position:relative;max-width:60ch}
+.facts li::before{content:"";position:absolute;inset-inline-start:0;top:.62em;width:10px;height:3px;background:currentColor;opacity:.55}
+.facts a{text-underline-offset:3px}
+/* tester: split, the shade panel carries the verb and the number */
+.p-tester .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:clamp(28px,5vw,80px);align-items:stretch}
+.panel{border-radius:16px;padding:clamp(28px,4vw,52px);color:var(--paper);display:flex;flex-direction:column;justify-content:space-between;gap:48px;min-height:420px}
+.p-tester .panel{background:var(--teal)}
+.p-tester .body{align-self:center}
+/* teacher: a full slate band, verb and number on one row, facts in two columns */
+.p-teacher{background:var(--slate);color:var(--paper)}
+.p-teacher .top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px 48px;margin-bottom:56px}
+.p-teacher .stat{text-align:end}
+.p-teacher .stat .cap{margin-inline-start:auto}
+.p-teacher .lead{max-width:40ch}
+.p-teacher .facts{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 48px}
+/* volunteer: quote-led, clay is the accent on paper */
+.p-volunteer .wrap{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(28px,5vw,80px)}
+.p-volunteer .verb{color:var(--clay)}
+.p-volunteer .since{margin-top:40px;border-top:3px solid var(--clay);padding-top:16px;max-width:280px}
+.p-volunteer .since .cap{font:500 1.0625rem/1.4 var(--sans);margin:0 0 6px;color:var(--mute)}
+.p-volunteer .num{color:var(--ink)}
+blockquote{margin:0 0 40px;padding-inline-start:28px;border-inline-start:6px solid var(--clay)}
+blockquote p{font:700 clamp(1.6rem,2.8vw,2.4rem)/1.3 var(--display);margin:0}
+html[lang="ar"] blockquote p{line-height:1.6}
+blockquote footer{font:500 1rem/1.4 var(--sans);color:var(--mute);margin-top:14px}
+/* professional: an oxblood band with a four-cell grid */
+.p-professional{background:var(--ox);color:var(--paper)}
+.p-professional .top{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:end;gap:24px 48px;margin-bottom:48px}
+.p-professional .stat{max-width:360px}
+.grid4{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:16px}
+.cell{border-radius:16px;padding:28px;background:rgba(239,234,224,.07);box-shadow:inset 0 1px 0 rgba(239,234,224,.12)}
+.cell h3{font:900 1.1875rem/1.2 var(--sans);letter-spacing:.06em;text-transform:uppercase;margin:0 0 12px}
+.cell p{margin:0}
+.cell a{text-underline-offset:3px}
+.c-docs{grid-column:span 3}.c-pw{grid-column:span 3;background:var(--paper);color:var(--ink)}
+.c-learn{grid-column:span 4}.c-tools{grid-column:span 2}
+.chips{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:0;padding:0}
+.chips li{font:500 .9375rem/1 var(--sans);padding:9px 12px;border-radius:999px;background:rgba(239,234,224,.12)}
+@media (max-width:860px){
+ .p-tester .wrap,.p-volunteer .wrap{grid-template-columns:1fr}
+ .panel{min-height:0}
+ .p-teacher .facts{grid-template-columns:1fr}
+ .p-teacher .stat{text-align:start}.p-teacher .stat .cap{margin-inline-start:0}
+ .p-professional .top{grid-template-columns:1fr}
+ .grid4{grid-template-columns:1fr}.c-docs,.c-pw,.c-learn,.c-tools{grid-column:auto}
+}
+
+/* ---------- latest posts (the list between the markers is written by scripts/linkedin/sync_links.py) ---------- */
+.p-posts{padding:clamp(72px,10vw,136px) 0;border-top:1px solid var(--line)}
+.p-posts h2{font:700 clamp(2.25rem,4.6vw,3.75rem)/1.1 var(--display);margin:0 0 40px;max-width:20ch}
+html[lang="ar"] .p-posts h2{line-height:1.45}
+.posts{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:48px}
+.posts li{border-top:1px solid var(--line);padding:18px 0 20px}
+.posts a{display:block;font:500 1.1875rem/1.4 var(--sans);text-decoration:none;color:var(--ink);unicode-bidi:plaintext;transition:color .2s var(--e-settle)}
+.posts a:hover{color:var(--teal);text-decoration:underline;text-underline-offset:4px}
+.posts time{display:block;margin-top:6px;font:500 .9375rem/1.3 var(--sans);color:var(--mute);unicode-bidi:plaintext}
+.more{display:inline-flex;margin-top:36px}
+@media (max-width:860px){.posts{grid-template-columns:1fr}}
+
+/* ---------- footer ---------- */
+.foot{background:var(--ink);color:var(--paper);padding:56px 0 calc(56px + env(safe-area-inset-bottom))}
+.foot .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px}
+.foot .names{font:700 1.5rem/1.4 var(--display);margin:0}
+.foot ul{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:0;padding:0}
+.foot a,.btn-ghost{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border-radius:999px;font:500 1rem/1 var(--sans);color:var(--paper);text-decoration:none;border:1px solid rgba(239,234,224,.3);background:transparent;cursor:pointer}
+.foot a:hover,.btn-ghost:hover{background:rgba(239,234,224,.1)}
+html:not(.js) .btn-ghost{display:none}
+@media (prefers-reduced-motion:reduce){.btn-ghost{display:none}}
+
+@media (prefers-reduced-motion:reduce){.hero,.mark .face{transition-duration:.2s}}
+
+/* ---------- reveal on scroll (motion only; content is visible without JS and under reduced motion) ---------- */
+@media (prefers-reduced-motion:no-preference){
+ .js [data-reveal]{opacity:0;transform:translateY(24px);transition:opacity .4s var(--e-settle),transform .56s var(--e-settle)}
+ .js [data-reveal].in{opacity:1;transform:none}
+ .js .verb>span{transform:translateY(105%);transition:transform .64s var(--e-settle)}
+ .js .verb.in>span{transform:none}
+}
+
+/* ---------- intro: the approved animatic (240 f at 25 fps), played once, full viewport ---------- */
+#intro{display:none}
+.intro-on #intro{display:block;position:fixed;inset:0;z-index:40;background:var(--teal);overflow:hidden;color:var(--paper)}
+.intro-on body{overflow:hidden}
+#intro .iw{position:absolute;inset:0;display:grid;place-items:center;visibility:hidden}
+#intro .iw>span{display:inline-block;font:900 min(15vw,24vh,200px)/1 var(--sans);letter-spacing:-.02em;white-space:nowrap}
+#intro .iw.small>span{font-size:min(11.5vw,18vh,156px)}
+#intro .iw .p{display:inline-block}
+html[lang="ar"] #intro .iw>span{font:700 min(17vw,26vh,230px)/1.25 var(--display);letter-spacing:0}
+#intro .itag{position:absolute;bottom:12vh;left:0;right:0;text-align:center;font:500 clamp(14px,1.6vw,22px)/1 var(--sans);letter-spacing:.34em;opacity:.7}
+#ipromise{position:absolute;inset:0;display:grid;align-content:center;gap:4px;padding:0 max(24px,8vw);visibility:hidden;color:var(--ink)}
+#ipromise .m{overflow:hidden}
+#ipromise .m div{font:900 min(9.4vw,14vh,108px)/1.06 var(--sans);letter-spacing:-.02em;white-space:nowrap}
+html[lang="ar"] #ipromise .m div{font:700 min(10vw,15vh,120px)/1.35 var(--display);letter-spacing:0}
+#iunder{height:min(10px,1.2vw);width:min(420px,50vw);background:var(--ox);transform-origin:0 50%;margin-top:18px}
+html[lang="ar"] #iunder{transform-origin:100% 50%}
+#ilock{position:absolute;inset:0;visibility:hidden}
+#imark{position:absolute;overflow:visible}
+#ilatin,#ilatinSheen{position:absolute;white-space:nowrap;font-family:var(--sans);font-weight:900;letter-spacing:.32em;transform:translateX(-50%);line-height:1}
+#ilatin span,#ilatinSheen span{display:inline-block}
+#iarname,#iarSheen{position:absolute;white-space:nowrap;font-family:var(--display);font-weight:700;line-height:1.2;transform:translateX(-50%)}
+.sheen{color:transparent;-webkit-background-clip:text;background-clip:text;pointer-events:none;
+ background-image:linear-gradient(105deg,rgba(217,169,63,0) 0%,rgba(217,169,63,0) 36%,rgba(217,169,63,.85) 46%,rgba(255,240,200,1) 50%,rgba(217,169,63,.85) 54%,rgba(217,169,63,0) 64%,rgba(217,169,63,0) 100%);
+ background-size:300% 100%;background-repeat:no-repeat;background-position:100% 0}
+#skipIntro{position:absolute;inset-inline-end:16px;bottom:calc(16px + env(safe-area-inset-bottom));z-index:2;font:500 1rem/1 var(--sans);color:var(--ink);background:rgba(239,234,224,.9);border:0;border-radius:999px;padding:13px 18px;min-height:44px;cursor:pointer}
+#skipIntro:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
 </style>
 </head>
 <body>
-<main>
-  <h1>Nader Alzghoul</h1>
-  <p class="role">QA Automation Engineer</p>
-  <p>QA Automation Engineer in Amman, Jordan.</p>
-  <ul class="links">
-    <li><a href="https://www.linkedin.com/in/nader-alzghoul" rel="me noopener">LinkedIn</a></li>
-    <li><a href="https://github.com/NJ-Burrito" rel="me noopener">GitHub</a></li>
-    <li><a href="https://nj-burrito.github.io/profile-wrap/">Profile-Wrap</a></li>
-  </ul>
-  <h2>Latest LinkedIn posts</h2>
-  <ul class="posts">
+<a class="skip" href="#main"><span data-l="en">Skip to content</span><span data-l="ar">انتقل إلى المحتوى</span></a>
+
+<!-- Intro: decorative, the same words are in the page; Skip, Escape or reduced motion end it -->
+<div id="intro" aria-hidden="true">
+  <div class="iw" id="w0"><span></span><div class="itag" lang="en">TESTER</div></div>
+  <div class="iw" id="w1"><span></span><div class="itag" lang="en">TEACHER</div></div>
+  <div class="iw small" id="w2"><span></span><div class="itag" lang="en">VOLUNTEER</div></div>
+  <div class="iw" id="w3"><span></span><div class="itag" lang="en">PROFESSIONAL</div></div>
+  <div id="ipromise"><div class="m"><div id="l1"></div></div><div class="m"><div id="l2"></div></div><div id="iunder"></div></div>
+  <div id="ilock">
+    <svg id="imark" viewBox="20 20 260 260"></svg>
+    <div id="ilatin" lang="en" dir="ltr"></div><div id="ilatinSheen" class="sheen" lang="en" dir="ltr"></div>
+    <div id="iarname" dir="rtl" lang="ar">نادر الزغول</div><div id="iarSheen" class="sheen" dir="rtl" lang="ar">نادر الزغول</div>
+  </div>
+  <button type="button" id="skipIntro" tabindex="-1"><span data-l="en">Skip intro</span><span data-l="ar">تخطي المقدمة</span></button>
+</div>
+
+<header class="nav">
+  <div class="nav-in">
+    <a class="brand" href="#top">
+      <svg viewBox="20 20 260 260" aria-hidden="true"><rect x="20" y="20" width="260" height="260" rx="56" fill="#3D7F7A"/><clipPath id="cutN"><rect x="0" y="55" width="300" height="195"/></clipPath><g clip-path="url(#cutN)"><path fill="#EFEAE0" d="M75.0 250.0L75.0 133.5L45.0 6.5L45.0 250.0Z"/><path fill="#28534F" d="M75.0 133.5L165.0 313.5L135.0 186.5L45.0 6.5Z"/><path fill="#EFEAE0" d="M165.0 313.5L165.0 85.0L135.0 55.0L135.0 186.5Z"/><path fill="#28534F" d="M165.0 85.0L215.0 85.0L245.0 55.0L135.0 55.0Z"/><path fill="#EFEAE0" d="M215.0 85.0L215.0 179.2L214.5 184.1L213.2 188.1L211.1 191.7L208.4 194.8L205.0 197.2L201.2 198.9L197.1 199.8L193.0 199.8L188.9 199.0L183.7 196.7L171.6 224.1L179.7 227.7L189.9 229.8L200.4 229.8L210.6 227.6L220.1 223.3L228.6 217.2L235.6 209.4L240.8 200.3L244.0 190.4L245.0 180.8L245.0 55.0Z"/></g></svg>
+      <span data-l="en">Nader Alzghoul</span><span data-l="ar">نادر الزغول</span>
+    </a>
+    <ul class="links">
+      <li><a href="#tester"><span data-l="en">Tester</span><span data-l="ar">يختبر</span></a></li>
+      <li><a href="#teacher"><span data-l="en">Teacher</span><span data-l="ar">يعلّم</span></a></li>
+      <li><a href="#volunteer"><span data-l="en">Volunteer</span><span data-l="ar">يتطوع</span></a></li>
+      <li><a href="#professional"><span data-l="en">Professional</span><span data-l="ar">يُنجز</span></a></li>
+      <li><a href="#posts"><span data-l="en">Posts</span><span data-l="ar">المنشورات</span></a></li>
+    </ul>
+    <button type="button" class="btn-lang" id="langBtn"><span data-l="en" lang="ar">العربية</span><span data-l="ar" lang="en">English</span></button>
+  </div>
+</header>
+
+<main id="main">
+  <!-- Hero. Facts: F17 (name, Amman, title), F19 (TaqneenSoft), DECISIONS 13 and 16 (Arabic name, promise line) -->
+  <section class="hero on-shade" id="top" aria-labelledby="name">
+    <div class="wrap">
+      <div class="hero-copy">
+        <h1 id="name"><span data-l="en">Nader Alzghoul</span><span data-l="ar">نادر الزغول</span></h1>
+        <p class="alt-name"><span data-l="en" lang="ar" dir="rtl">نادر الزغول</span><span data-l="ar" lang="en" dir="ltr">Nader Alzghoul</span></p>
+        <p class="role"><span data-l="en">QA Automation Engineer, Amman</span><span data-l="ar">مهندس أتمتة ضمان الجودة، عمّان</span></p>
+        <p class="promise"><span data-l="en">Nothing ships <span class="nw">half-done.</span></span><span data-l="ar">لا شيء يُسلَّم ناقصًا.</span></p>
+        <div class="cta">
+          <a class="btn btn-paper" href="https://www.linkedin.com/in/nader-alzghoul" rel="me noopener">LinkedIn</a>
+          <a class="btn btn-ink" href="https://github.com/NJ-Burrito" rel="me noopener">GitHub</a>
+        </div>
+      </div>
+      <div class="hero-mark">
+        <div class="stage" id="stage" tabindex="0" role="button" aria-describedby="hint">
+          <div class="mark-box" id="markBox">
+            <div class="mark" id="mark">
+              <svg class="layer" viewBox="20 20 260 260" aria-hidden="true"><clipPath id="cutH"><rect x="0" y="55" width="300" height="195"/></clipPath><g clip-path="url(#cutH)"><path class="face" fill="#EFEAE0" d="M75.0 250.0L75.0 133.5L45.0 6.5L45.0 250.0Z"/><path class="face" fill="#28534F" d="M75.0 133.5L165.0 313.5L135.0 186.5L45.0 6.5Z"/><path class="face" fill="#EFEAE0" d="M165.0 313.5L165.0 85.0L135.0 55.0L135.0 186.5Z"/><path class="face" fill="#28534F" d="M165.0 85.0L215.0 85.0L245.0 55.0L135.0 55.0Z"/><path class="face" fill="#EFEAE0" d="M215.0 85.0L215.0 179.2L214.5 184.1L213.2 188.1L211.1 191.7L208.4 194.8L205.0 197.2L201.2 198.9L197.1 199.8L193.0 199.8L188.9 199.0L183.7 196.7L171.6 224.1L179.7 227.7L189.9 229.8L200.4 229.8L210.6 227.6L220.1 223.3L228.6 217.2L235.6 209.4L240.8 200.3L244.0 190.4L245.0 180.8L245.0 55.0Z"/></g></svg>
+            </div>
+          </div>
+        </div>
+        <a class="tag" id="tag" href="#tester"><span data-l="en">TESTER</span><span data-l="ar">يختبر</span></a>
+        <p class="hint" id="hint"><span data-l="en">Tap the mark to switch role</span><span data-l="ar">اضغط على الشعار لتبديل الدور</span></p>
+        <p class="sr" id="live" aria-live="polite"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tester. Facts: F19, F20, F21, F22, F12, F11 -->
+  <section class="persona p-tester" id="tester" aria-labelledby="h-tester">
+    <div class="wrap">
+      <div class="panel" data-reveal>
+        <h2 class="verb" id="h-tester"><span><span data-l="en">Tests.</span><span data-l="ar">يختبر.</span></span></h2>
+        <div>
+          <p class="num" dir="ltr"><span data-l="en">100+</span><span data-l="ar">+100</span></p>
+          <p class="cap"><span data-l="en">government e-services, across the JFDA and MOA portals</span><span data-l="ar">خدمة حكومية إلكترونية في بوابتَي المؤسسة العامة للغذاء والدواء ووزارة الزراعة</span></p>
+        </div>
+      </div>
+      <div class="body" data-reveal>
+        <p class="lead"><span data-l="en">QA Automation Engineer at TaqneenSoft in Amman since August 2026.</span><span data-l="ar">مهندس أتمتة ضمان الجودة في TaqneenSoft في عمّان منذ أغسطس 2026.</span></p>
+        <ul class="facts">
+          <li><span data-l="en">JFDA portal: Playwright end-to-end tests and a staged automation suite shared with the developers.</span><span data-l="ar">بوابة المؤسسة العامة للغذاء والدواء: اختبارات Playwright من البداية إلى النهاية، وحزمة اختبارات آلية على مراحل يتشاركها مع المطورين.</span></li>
+          <li><span data-l="en">MOA portal: manual testing, defect reports and Playwright automation.</span><span data-l="ar">بوابة وزارة الزراعة: اختبار يدوي وتقارير أخطاء وأتمتة باستخدام Playwright.</span></li>
+          <li><span data-l="en">The <a href="https://github.com/NJ-Burrito/Shalwa-Automation-Project-SAP-" rel="noopener">Shalwa Automation Project</a>: a Java, Selenium, Maven and JUnit framework with 6 page objects.</span><span data-l="ar"><a href="https://github.com/NJ-Burrito/Shalwa-Automation-Project-SAP-" rel="noopener">مشروع Shalwa للأتمتة</a>: إطار عمل مبني على Java وSelenium وMaven وJUnit يضم 6 كائنات صفحات.</span></li>
+          <li><span data-l="en">ISTQB CTFL, ISTQB Advanced Test Automation Engineering and ISTQB AI Testing.</span><span data-l="ar">شهادات ISTQB CTFL وISTQB Advanced Test Automation Engineering وISTQB AI Testing.</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Teacher. Facts: F05, F39 (ages 8 to 16), F29, F31 (course goals), F32, F09 -->
+  <section class="persona p-teacher on-shade" id="teacher" aria-labelledby="h-teacher">
+    <div class="wrap">
+      <div class="top">
+        <h2 class="verb" id="h-teacher"><span><span data-l="en">Teaches.</span><span data-l="ar">يعلّم.</span></span></h2>
+        <div class="stat" data-reveal>
+          <p class="num" dir="ltr">8-16</p>
+          <p class="cap"><span data-l="en">the ages of the students he teaches AI and robotics</span><span data-l="ar">أعمار الطلاب الذين يعلّمهم الذكاء الاصطناعي والروبوتات</span></p>
+        </div>
+      </div>
+      <p class="lead" data-reveal><span data-l="en">AI tutor at Zaha Cultural Center: AI, machine learning and robotics with PictoBlox, Arduino and ESP32.</span><span data-l="ar">مدرّس ذكاء اصطناعي في مركز زها الثقافي: الذكاء الاصطناعي وتعلّم الآلة والروبوتات باستخدام PictoBlox وArduino وESP32.</span></p>
+      <ul class="facts" data-reveal>
+        <li><span data-l="en">Summer 2026 course, AI and interactive programming with Arduino (PictoBlox): 8 sessions for each age group, ending in a final project and a showcase.</span><span data-l="ar">دورة صيف 2026 «الذكاء الاصطناعي والبرمجة التفاعلية مع Arduino (PictoBlox)»: 8 جلسات لكل فئة عمرية، تنتهي بمشروع نهائي وعرض تفاعلي.</span></li>
+        <li><span data-l="en">Ten PictoBlox and Arduino project plans, from a door that opens when a visitor comes closer than 30 cm to an AI fitness coach.</span><span data-l="ar">عشر خطط مشاريع باستخدام PictoBlox وArduino، من باب يُفتح حين يقترب الزائر لأقل من 30 سم إلى مدرّب لياقة بالذكاء الاصطناعي.</span></li>
+        <li><span data-l="en">Course goals: students find and fix errors in both the code and the wiring, and explain how code and hardware work together.</span><span data-l="ar">من أهداف الدورة: أن يجد الطلاب الأخطاء ويصلحوها في الكود والتوصيلات الكهربائية، وأن يشرحوا كيف يعمل الكود والعتاد معًا.</span></li>
+        <li><span data-l="en">Certified AI and Robotics Instructor, Robotna, 132 hours.</span><span data-l="ar">مدرّب معتمد في الذكاء الاصطناعي والروبوتات من Robotna، 132 ساعة.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Volunteer. Facts: F26 and F44 (3am3dna since 2019, F39: only that wording), F27, F28 (his own words), F39 (GFP and the youth center may be named) -->
+  <section class="persona p-volunteer" id="volunteer" aria-labelledby="h-volunteer">
+    <div class="wrap">
+      <div>
+        <h2 class="verb" id="h-volunteer"><span><span data-l="en">Gives back.</span><span data-l="ar">يتطوع.</span></span></h2>
+        <div class="since" data-reveal>
+          <p class="cap"><span data-l="en">Volunteering since</span><span data-l="ar">يتطوع منذ</span></p>
+          <p class="num" dir="ltr">2019</p>
+        </div>
+      </div>
+      <div data-reveal>
+        <blockquote>
+          <p><span data-l="en">“Sport teaches skills, but it’s the shared play that builds trust and peace.”</span><span data-l="ar">«الرياضة تعلّم المهارات، لكن اللعب المشترك هو ما يبني الثقة والسلام.»</span></p>
+          <footer><span data-l="en">Nader, on Sport for Peace</span><span data-l="ar">نادر، عن برنامج الرياضة من أجل السلام</span></footer>
+        </blockquote>
+        <ul class="facts">
+          <li><span data-l="en">Session facilitator with Generations For Peace since September 2025. After the Hodoor 3 Sport for Peace training at the Al-Quwaismeh Youth Center, he led 8 practical sessions of volleyball, basketball and art for peace.</span><span data-l="ar">ميسّر جلسات مع منظمة أجيال السلام منذ سبتمبر 2025. بعد تدريب Hodoor 3 Sport for Peace في مركز شباب القويسمة، قاد 8 جلسات عملية في كرة الطائرة وكرة السلة والفن من أجل السلام.</span></li>
+          <li><span data-l="en">3am3dna, since January 2019: management and field assistance for poverty alleviation.</span><span data-l="ar">3am3dna منذ يناير 2019: الإدارة والمساعدة الميدانية في التخفيف من الفقر.</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Professional. Facts: F22 (SRS, bilingual manuals, 22-stage figure), F45, F46, F62, F63 (Profile-Wrap), F10, F07, F41, F15, F40 -->
+  <section class="persona p-professional on-shade" id="professional" aria-labelledby="h-professional">
+    <div class="wrap">
+      <div class="top">
+        <h2 class="verb" id="h-professional"><span><span data-l="en">Delivers.</span><span data-l="ar">يُنجز.</span></span></h2>
+        <div class="stat" data-reveal>
+          <p class="num" dir="ltr">22</p>
+          <p class="cap"><span data-l="en">stages in the largest workflow figure of his SRS figure standard</span><span data-l="ar">مرحلة في أكبر مخطط سير عمل ضمن معيار المخططات الذي وضعه لوثائق SRS</span></p>
+        </div>
+      </div>
+      <div class="grid4" data-reveal>
+        <div class="cell c-docs">
+          <h3><span data-l="en">Documentation</span><span data-l="ar">التوثيق</span></h3>
+          <p><span data-l="en">SRS documents built from portal evidence, and bilingual Arabic and English user, staff and training manuals for the JFDA portal.</span><span data-l="ar">وثائق SRS مبنية على أدلة من البوابة، وأدلة للمستخدمين والموظفين وللتدريب بالعربية والإنجليزية لبوابة المؤسسة العامة للغذاء والدواء.</span></p>
+        </div>
+        <div class="cell c-pw">
+          <h3>Profile-Wrap</h3>
+          <p><span data-l="en">An open-source (MIT) tool that plans, writes and checks LinkedIn posts, and posts only through LinkedIn’s official API after you tap Allow.</span><span data-l="ar">أداة مفتوحة المصدر (MIT) تخطط لمنشورات LinkedIn وتكتبها وتفحصها، ولا تنشر إلا عبر واجهة LinkedIn الرسمية وبعد موافقتك.</span>
+          <a href="https://nj-burrito.github.io/profile-wrap/"><span data-l="en">See Profile-Wrap</span><span data-l="ar">تعرّف على Profile-Wrap</span></a></p>
+        </div>
+        <div class="cell c-learn">
+          <h3><span data-l="en">Learning</span><span data-l="ar">التعلّم</span></h3>
+          <p><span data-l="en">Diploma in AI and Robotics Engineering, Al-Balqa Applied University. Advanced Data Analytics, Correlation One, 250 hours. QA fellowship with DigiSkills Jordan and Luminus Technical University College.</span><span data-l="ar">دبلوم هندسة الذكاء الاصطناعي والروبوتات، جامعة البلقاء التطبيقية. تحليل البيانات المتقدم، Correlation One، 250 ساعة. زمالة ضمان الجودة مع DigiSkills Jordan وكلية لومينوس الجامعية التقنية.</span></p>
+        </div>
+        <div class="cell c-tools">
+          <h3><span data-l="en">Toolbox</span><span data-l="ar">الأدوات</span></h3>
+          <ul class="chips" dir="ltr" lang="en"><li>Playwright</li><li>Selenium</li><li>Cypress</li><li>Appium</li><li>Postman</li><li>REST Assured</li><li>JMeter</li><li>GitHub Actions</li><li>Azure DevOps</li><li>Java</li><li>Python</li><li>SQL</li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="p-posts" id="posts" aria-labelledby="h-posts">
+    <div class="wrap">
+      <h2 id="h-posts"><span data-l="en">Latest on LinkedIn</span><span data-l="ar">أحدث منشوراتي على LinkedIn</span></h2>
+      <ul class="posts">
 <!-- posts:start -->
     <li><a href="https://www.linkedin.com/feed/update/urn:li:share:7518000411304460290/" rel="noopener">Two age groups, one eight-session course</a><time datetime="2026-10-19">19 Oct 2026</time></li>
     <li><a href="https://www.linkedin.com/feed/update/urn:li:share:7517594189719752704/" rel="noopener">Idea in. Post out.</a><time datetime="2026-10-18">18 Oct 2026</time></li>
@@ -58,7 +402,189 @@ a:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
     <li lang="ar" dir="rtl"><a href="https://www.linkedin.com/feed/update/urn:li:share:7515021289586331648/" rel="noopener">5 أسئلة قبل أتمتة أي اختبار</a><time datetime="2026-10-11">11 أكتوبر 2026</time></li>
     <li><a href="https://www.linkedin.com/feed/update/urn:li:ugcPost:7514590328318902272/" rel="noopener">Three levels of AI in your test suite</a><time datetime="2026-10-10">10 Oct 2026</time></li>
 <!-- posts:end -->
-  </ul>
+      </ul>
+      <a class="btn btn-ink more" href="https://www.linkedin.com/in/nader-alzghoul/recent-activity/all/" rel="noopener"><span data-l="en">All posts on LinkedIn</span><span data-l="ar">كل المنشورات على LinkedIn</span></a>
+    </div>
+  </section>
 </main>
+
+<footer class="foot">
+  <div class="wrap">
+    <p class="names"><span lang="en">Nader Alzghoul</span> <span lang="ar" dir="rtl">نادر الزغول</span></p>
+    <ul>
+      <li><a href="https://www.linkedin.com/in/nader-alzghoul" rel="me noopener">LinkedIn</a></li>
+      <li><a href="https://github.com/NJ-Burrito" rel="me noopener">GitHub</a></li>
+      <li><a href="https://nj-burrito.github.io/profile-wrap/">Profile-Wrap</a></li>
+      <li><button type="button" class="btn-ghost" id="replay"><span data-l="en">Replay intro</span><span data-l="ar">إعادة المقدمة</span></button></li>
+    </ul>
+  </div>
+</footer>
+
+<script>
+(function(){
+"use strict";
+const D=document.documentElement,$=s=>document.querySelector(s);
+const RM=matchMedia("(prefers-reduced-motion: reduce)");
+const PAPER="#EFEAE0";
+const PER=[{id:"tester",c:"#3D7F7A",en:"TESTER",ar:"يختبر"},{id:"teacher",c:"#34473B",en:"TEACHER",ar:"يعلّم"},
+           {id:"volunteer",c:"#A3573B",en:"VOLUNTEER",ar:"يتطوع"},{id:"professional",c:"#5A1E26",en:"PROFESSIONAL",ar:"يُنجز"}];
+const dk=(c,t=.35)=>{const h=[1,3,5].map(i=>parseInt(c.slice(i,i+2),16));return"#"+h.map(v=>Math.round(v*(1-t)).toString(16).padStart(2,"0")).join("")};
+const lang=()=>D.lang==="ar"?"ar":"en";
+const store=(k,v)=>{try{v===null?localStorage.removeItem(k):localStorage.setItem(k,v)}catch(e){}};
+
+/* ---- accepted mark geometry (DECISIONS 9), precomputed from work/identity/idle-interactive.html ---- */
+const SEG=["M75.0 250.0L75.0 133.5L45.0 6.5L45.0 250.0Z","M75.0 133.5L165.0 313.5L135.0 186.5L45.0 6.5Z","M165.0 313.5L165.0 85.0L135.0 55.0L135.0 186.5Z","M165.0 85.0L215.0 85.0L245.0 55.0L135.0 55.0Z","M215.0 85.0L215.0 179.2L214.5 184.1L213.2 188.1L211.1 191.7L208.4 194.8L205.0 197.2L201.2 198.9L197.1 199.8L193.0 199.8L188.9 199.0L183.7 196.7L171.6 224.1L179.7 227.7L189.9 229.8L200.4 229.8L210.6 227.6L220.1 223.3L228.6 217.2L235.6 209.4L240.8 200.3L244.0 190.4L245.0 180.8L245.0 55.0Z"];
+const BACK=[0,1,0,1,0],CEN=[[60,160],[105,160],[150,160],[190,70],[203.8,140.2]];
+const CENTRE="M60.0 250.0L60.0 70.0L150.0 250.0L150.0 70.0L230.0 70.0L230.0 180.0L229.2 187.3L227.0 194.2L223.3 200.5L218.5 206.0L212.6 210.3L205.9 213.3L198.8 214.8L191.5 214.8L184.3 213.3L177.6 210.4";
+
+/* ================= language ================= */
+const T={en:{title:"Nader Alzghoul, QA Automation Engineer",stage:"NJ mark. Current role: {r}. Press Enter for the next role.",live:"Role: {r}"},
+         ar:{title:"نادر الزغول، مهندس أتمتة ضمان الجودة",stage:"شعار NJ. الدور الحالي: {r}. اضغط Enter للدور التالي.",live:"الدور: {r}"}};
+function applyLang(l,save){D.lang=l;D.dir=l==="ar"?"rtl":"ltr";if(save)store("nj-lang",l);document.title=T[l].title;
+ setTag(false);label();if(intro.running)intro.text()}
+$("#langBtn").addEventListener("click",()=>applyLang(lang()==="ar"?"en":"ar",true));
+
+/* ================= hero: the interactive 3D idle (from work/identity/idle-interactive.html) ================= */
+const hero=$("#top"),stage=$("#stage"),markBox=$("#markBox"),mark=$("#mark"),tag=$("#tag"),live=$("#live");
+let pi=0;
+mark.innerHTML="";
+const shadow=document.createElement("div");shadow.className="layer shadow";
+shadow.innerHTML=`<svg viewBox="20 20 260 260" class="layer" aria-hidden="true"><defs><clipPath id="hCs"><rect x="0" y="55" width="300" height="195"/></clipPath></defs><g clip-path="url(#hCs)" fill="#000">${SEG.map(d=>`<path d="${d}"/>`).join("")}</g></svg>`;
+mark.appendChild(shadow);
+const segs=SEG.map((d,i)=>{const el=document.createElementNS("http://www.w3.org/2000/svg","svg");el.setAttribute("viewBox","20 20 260 260");el.setAttribute("class","layer");el.setAttribute("aria-hidden","true");
+ const b=BACK[i];
+ el.innerHTML=`<defs><clipPath id="hc${i}"><rect x="0" y="55" width="300" height="195"/></clipPath><clipPath id="hs${i}"><path d="${d}"/></clipPath>
+ <radialGradient id="hl${i}" gradientUnits="userSpaceOnUse" cx="150" cy="150" r="120"><stop offset="0" stop-color="#fff" stop-opacity="${b?.22:.55}"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+ <linearGradient id="hg${i}" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="300" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".47" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity="${b?.18:.5}"/><stop offset=".53" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient></defs>
+ <g clip-path="url(#hc${i})"><path class="face" d="${d}" fill="${b?dk(PER[0].c):PAPER}"/>
+ <g clip-path="url(#hs${i})"><rect class="hl" x="0" y="0" width="300" height="300" fill="url(#hl${i})" opacity=".35"/><rect class="gl" x="-300" y="0" width="600" height="300" fill="url(#hg${i})"/>
+ <rect class="tone" x="0" y="0" width="300" height="300" fill="#000" opacity="0"/></g></g>`;
+ mark.appendChild(el);return{el,i,back:b,face:el.querySelector(".face"),hlG:el.querySelector("radialGradient"),hl:el.querySelector(".hl"),gl:el.querySelector(".gl"),tone:el.querySelector(".tone"),lift:0,liftV:0}});
+
+function label(){const r=lang()==="ar"?PER[pi].ar:PER[pi].en.charAt(0)+PER[pi].en.slice(1).toLowerCase();
+ stage.setAttribute("aria-label",T[lang()].stage.replace("{r}",r));return r}
+/* kinetic persona tag: Latin letters snap up from a mask, staggered; Arabic moves as one word (letters must stay joined) */
+function setTag(animate){const p=PER[pi],l=lang();tag.href="#"+p.id;
+ const word=l==="ar"?[p.ar]:[...p.en];
+ tag.innerHTML=word.map(ch=>`<span><i>${ch}</i></span>`).join("");tag.lang=l;
+ if(!animate||RM.matches)return;
+ [...tag.querySelectorAll("i")].forEach((el,k)=>el.animate([{transform:"translateY(110%)"},{transform:"translateY(-8%)",offset:.7},{transform:"translateY(0)"}],
+  {duration:560,delay:k*40,easing:"cubic-bezier(.2,.8,.2,1)",fill:"backwards"}))}
+function nextPersona(){pi=(pi+1)%PER.length;const c=PER[pi].c;hero.style.setProperty("--shade",c);
+ const tc=document.querySelector('meta[name="theme-color"]');if(tc)tc.content=c;
+ segs.filter(s=>s.back).forEach(s=>{s.face.style.fill=dk(c);s.liftV+=RM.matches?0:-2.2});
+ S.vy+=RM.matches?0:5;setTag(true);live.textContent=T[lang()].live.replace("{r}",label())}
+stage.addEventListener("click",nextPersona);
+stage.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();nextPersona()}});
+
+/* springs: interruptible, start from the live value, carry velocity */
+function spring(v,target,vel,k,c,dt){const a=k*(target-v)-c*vel;vel+=a*dt;v+=vel*dt;return[v,vel]}
+const S={rx:0,ry:0,vx:0,vy:0,px:150,py:150,hover:0,hv:0};
+let pointer=null,last=0,t0=performance.now(),raf=0,heroVisible=true,idleOn=false;
+hero.addEventListener("pointermove",e=>{if(e.pointerType==="touch")return;const r=markBox.getBoundingClientRect();pointer={x:(e.clientX-r.left)/r.width,y:(e.clientY-r.top)/r.height}});
+hero.addEventListener("pointerleave",()=>pointer=null);
+function frame(now){raf=0;const dt=Math.min(.033,(now-(last||now))/1000);last=now;const t=(now-t0)/1000,rm=RM.matches;
+ let tx,ty,lx,ly;const p=pointer&&!rm?{x:Math.max(-.6,Math.min(1.6,pointer.x)),y:Math.max(-.6,Math.min(1.6,pointer.y))}:null;
+ if(p){tx=(p.y-.5)*-18;ty=(p.x-.5)*22;lx=20+p.x*260;ly=20+p.y*260}
+ else{tx=rm?0:Math.sin(t*.55)*4;ty=rm?0:Math.sin(t*.37+1)*6;lx=150+Math.sin(t*.37+1)*70;ly=110+Math.sin(t*.55)*40}
+ [S.rx,S.vx]=spring(S.rx,tx,S.vx,90,16,dt);[S.ry,S.vy]=spring(S.ry,ty,S.vy,90,16,dt);
+ [S.hover,S.hv]=spring(S.hover,p?1:0,S.hv,140,22,dt);
+ S.px+=(lx-S.px)*Math.min(1,dt*10);S.py+=(ly-S.py)*Math.min(1,dt*10);
+ const floatY=rm?0:Math.sin(t*.9)*6*(1-S.hover);
+ mark.style.transform=`translateY(${floatY.toFixed(2)}px) rotateX(${S.rx.toFixed(3)}deg) rotateY(${S.ry.toFixed(3)}deg)`;
+ shadow.style.transform=`translate3d(${(-S.ry*1.6).toFixed(2)}px,${(18+S.rx*1.2-floatY*.6).toFixed(2)}px,-40px) scale(${(.96-S.hover*.02).toFixed(3)})`;
+ const g=((t%7.2)/7.2)*1.6-.3,gx=rm?-300:-300+g*600*(1-S.hover);
+ segs.forEach(s=>{let target=0;if(p){const d=Math.hypot(CEN[s.i][0]-S.px,CEN[s.i][1]-S.py);target=Math.max(0,1-d/90)*26}
+  [s.lift,s.liftV]=spring(s.lift,target,s.liftV,160,20,dt);
+  s.el.style.transform=`translateZ(${((s.back?0:22)+s.lift).toFixed(2)}px)`;
+  s.hlG.setAttribute("cx",S.px.toFixed(1));s.hlG.setAttribute("cy",S.py.toFixed(1));s.hlG.setAttribute("r",(90+60*S.hover).toFixed(1));
+  s.hl.setAttribute("opacity",(.35+.65*S.hover).toFixed(2));
+  s.gl.setAttribute("x",gx.toFixed(1));s.gl.setAttribute("opacity",(1-S.hover).toFixed(2));
+  const facing=s.back?(.18-S.ry*.012):(-S.ry*.008+S.rx*.006);s.tone.setAttribute("opacity",Math.max(0,Math.min(.35,facing)).toFixed(3))});
+ if(!D.dataset.idle)D.dataset.idle="on";
+ if(idleOn&&heroVisible&&!document.hidden)raf=requestAnimationFrame(frame)}
+function idleStart(){idleOn=true;if(!raf){last=0;raf=requestAnimationFrame(frame)}}
+new IntersectionObserver(es=>{heroVisible=es[0].isIntersecting;if(heroVisible&&idleOn&&!raf){last=0;raf=requestAnimationFrame(frame)}}).observe(hero);
+document.addEventListener("visibilitychange",()=>{if(!document.hidden&&idleOn&&heroVisible&&!raf){last=0;raf=requestAnimationFrame(frame)}});
+
+/* hero copy settles in after the intro, or on load for a returning visitor */
+function heroIn(){if(RM.matches)return;[...document.querySelectorAll(".hero-copy > *, .tag, .hint")].forEach((el,k)=>
+ el.animate([{opacity:0,transform:"translateY(18px)"},{opacity:1,transform:"none"}],{duration:400,delay:80*k,easing:"cubic-bezier(.16,1,.3,1)",fill:"backwards"}))}
+
+/* ================= reveal on scroll ================= */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{rootMargin:"0px 0px -12% 0px",threshold:.12});
+document.querySelectorAll("[data-reveal], .verb").forEach(el=>io.observe(el));
+
+/* ================= intro: animatic v1 (240 f at 25 fps), exact guideline beziers, hands off at f 216 ================= */
+function bez(x1,y1,x2,y2){return t=>{if(t<=0)return 0;if(t>=1)return 1;let lo=0,hi=1,u=t;for(let i=0;i<28;i++){u=(lo+hi)/2;const x=3*(1-u)**2*u*x1+3*(1-u)*u*u*x2+u**3;if(x<t)lo=u;else hi=u}return 3*(1-u)**2*u*y1+3*(1-u)*u*u*y2+u**3}}
+const E={enter:bez(.05,.7,.1,1),settle:bez(.16,1,.3,1),move:bez(.76,0,.24,1),snap:bez(.34,1.56,.64,1)};
+const cl=v=>Math.max(0,Math.min(1,v)),lerp=(a,b,p)=>a+(b-a)*p;
+const TXT={en:{w:["TESTS.","TEACHES.",["GIVES","BACK."],"DELIVERS."],l1:"NOTHING SHIPS",l2:"HALF-DONE."},
+           ar:{w:["يختبر.","يعلّم.",["يتطوع."],"يُنجز."],l1:"لا شيء",l2:"يُسلَّم ناقصًا."}};
+const SH=["#3D7F7A","#34473B","#A3573B","#5A1E26"],END_F=216;
+const intro={running:false,el:$("#intro"),
+ text(){const t=TXT[lang()];[0,1,3].forEach(i=>{const s=$(`#w${i} > span`);s.textContent=t.w[i]});
+  $("#w2 > span").innerHTML=t.w[2].map(w=>`<span class="p">${w}</span>`).join(" ");$("#l1").textContent=t.l1;$("#l2").textContent=t.l2},
+ build(){const m=$("#imark");
+  m.innerHTML=`<defs><clipPath id="iCut"><rect x="0" y="55" width="300" height="195"/></clipPath>
+  <mask id="iDraw" maskUnits="userSpaceOnUse" x="0" y="0" width="300" height="300"><path id="iDrawP" d="${CENTRE}" fill="none" stroke="#fff" stroke-width="40" stroke-linejoin="miter" stroke-miterlimit="12"/></mask>
+  <clipPath id="iShape">${SEG.map(d=>`<path d="${d}"/>`).join("")}</clipPath>
+  <linearGradient id="iGlS" x1="0" x2="1"><stop offset="0" stop-color="#D9A93F" stop-opacity="0"/><stop offset=".5" stop-color="#D9A93F" stop-opacity=".55"/><stop offset="1" stop-color="#D9A93F" stop-opacity="0"/></linearGradient><linearGradient id="iGlC" x1="0" x2="1"><stop offset="0" stop-color="#FFF1C4" stop-opacity="0"/><stop offset=".5" stop-color="#FFF6DC" stop-opacity="1"/><stop offset="1" stop-color="#FFF1C4" stop-opacity="0"/></linearGradient>
+  <filter id="iDs" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="1.5" dy="2.5" stdDeviation="2" flood-color="#000" flood-opacity=".3"/></filter></defs>
+  <g id="iG"><g id="iDrawn" clip-path="url(#iCut)" mask="url(#iDraw)">${SEG.map((d,i)=>`<path d="${d}" fill="${BACK[i]?dk(SH[0]):PAPER}"${BACK[i]?"":' filter="url(#iDs)"'}/>`).join("")}</g>
+  <g clip-path="url(#iShape)"><g clip-path="url(#iCut)"><g id="iGlint"><g transform="skewX(-18)"><rect x="-170" y="0" width="200" height="320" fill="url(#iGlS)"/><rect x="-79" y="0" width="18" height="320" fill="url(#iGlC)"/></g></g></g></g></g>`;
+  const L=[..."NADER ALZGHOUL"].map(c=>`<span>${c===" "?"&nbsp;":c}</span>`).join("");$("#ilatin").innerHTML=L;$("#ilatinSheen").innerHTML=L;
+  this.drawP=$("#iDrawP");this.DL=this.drawP.getTotalLength();this.drawP.style.strokeDasharray=this.DL;this.text()},
+ /* the lockup lands exactly where the hero mark sits, so the hand-off is a cross-fade with nothing moving */
+ place(){const r=markBox.getBoundingClientRect(),m=$("#imark"),cx=r.left+r.width/2;
+  Object.assign(m.style,{left:r.left+"px",top:r.top+"px",width:r.width+"px",height:r.height+"px"});
+  const ls=Math.max(14,r.width*.1),as=Math.max(18,r.width*.119),vh=innerHeight,top=Math.min(r.bottom+r.width*.06,vh-ls-as*1.4-24);
+  ["#ilatin","#ilatinSheen"].forEach(s=>Object.assign($(s).style,{left:cx+"px",top:top+"px",fontSize:ls+"px"}));
+  ["#iarname","#iarSheen"].forEach(s=>Object.assign($(s).style,{left:cx+"px",top:(top+ls*1.7)+"px",fontSize:as+"px"}))},
+ render(f){const el=this.el;
+  el.style.backgroundColor=f<20?SH[0]:f<40?SH[1]:f<60?SH[2]:f<80?SH[3]:f<110?PAPER:SH[0];
+  for(let i=0;i<4;i++){const w=$("#w"+i),on=f>=i*20&&f<i*20+20;w.style.visibility=on?"visible":"hidden";if(!on)continue;
+   if(i===2)[...w.querySelectorAll(".p")].forEach((p,k)=>p.style.transform=`scale(${lerp(1.3,1,E.enter(cl((f-40-2*k)/10)))})`);
+   else w.firstElementChild.style.transform=`scale(${lerp(i===3?1.4:1.3,1,E.enter(cl((f-i*20)/10)))})`}
+  const pr=$("#ipromise");pr.style.visibility=f>=80&&f<110?"visible":"hidden";
+  $("#l1").style.transform=`translateY(${110*(1-E.settle(cl((f-80)/10)))}%)`;$("#l2").style.transform=`translateY(${110*(1-E.settle(cl((f-86)/10)))}%)`;
+  $("#iunder").style.transform=`scaleX(${E.settle(cl((f-92)/10))})`;
+  const lk=$("#ilock");lk.style.visibility=f>=110?"visible":"hidden";if(f<110)return;
+  const sc=f<113?lerp(.9,.873,E.move(cl((f-110)/3))):f<131?.873:lerp(.873,1,E.snap(cl((f-131)/10)));
+  $("#iG").setAttribute("transform",`translate(150 150) scale(${sc}) translate(-150 -150)`);
+  this.drawP.style.strokeDashoffset=this.DL*(1-E.enter(cl((f-113)/18)));
+  $("#iDrawn").setAttribute("mask",f>=131?"none":"url(#iDraw)");
+  const tr=lerp(.44,.32,E.settle(cl((f-141)/23)))+"em";$("#ilatin").style.letterSpacing=tr;$("#ilatinSheen").style.letterSpacing=tr;
+  [...$("#ilatin").children].forEach((s,k)=>{const p=E.settle(cl((f-141-k)/10));s.style.transform=`translateY(${100*(1-p)}%)`;s.style.opacity=p});
+  $("#iarname").style.clipPath=`inset(0 0 0 ${100*(1-E.settle(cl((f-145)/10)))}%)`;
+  $("#iGlint").setAttribute("transform",`translate(${lerp(-60,460,E.move(cl((f-168)/40)))} 0)`);
+  const bp=100*(1-E.move(cl((f-174)/40)))+"% 0";$("#ilatinSheen").style.backgroundPosition=bp;$("#iarSheen").style.backgroundPosition=bp},
+ start(){if(this.running)return;this.running=true;D.classList.add("intro-on");scrollTo(0,0);
+  if(!this.built){this.build();this.built=true}this.text();this.place();
+  [".skip","header","main","footer"].forEach(s=>$(s).inert=true);
+  const skip=$("#skipIntro");skip.tabIndex=0;this.el.removeAttribute("aria-hidden");this.el.setAttribute("role","dialog");this.el.setAttribute("aria-label",lang()==="ar"?"المقدمة":"Intro");
+  this.onKey=e=>{if(e.key==="Escape")this.finish(true)};addEventListener("keydown",this.onKey);
+  this.onResize=()=>this.place();addEventListener("resize",this.onResize);
+  skip.onclick=()=>this.finish(true);
+  const fontsReady=Promise.race([Promise.all([document.fonts.load('900 100px "Thmanyah Sans"'),document.fonts.load('700 100px "Thmanyah Serif Display"')]),new Promise(r=>setTimeout(r,1200))]);
+  fontsReady.then(()=>{if(!this.running)return;this.place();skip.focus({preventScroll:true});const t0=performance.now();
+   const tick=now=>{if(!this.running)return;const f=(now-t0)/40;this.render(Math.min(f,240));if(f>=END_F){this.finish(false);return}this.raf=requestAnimationFrame(tick)};
+   this.raf=requestAnimationFrame(tick)})},
+ finish(skipped){if(!this.running)return;this.running=false;cancelAnimationFrame(this.raf);store("nj-intro","1");
+  removeEventListener("keydown",this.onKey);removeEventListener("resize",this.onResize);
+  [".skip","header","main","footer"].forEach(s=>$(s).inert=false);
+  const el=this.el,done=()=>{D.classList.remove("intro-on");el.style.opacity="";el.setAttribute("aria-hidden","true");el.removeAttribute("role");$("#skipIntro").tabIndex=-1};
+  D.dataset.intro="done";idleStart();heroIn();
+  const a=el.animate([{opacity:1},{opacity:0}],{duration:skipped?200:480,easing:skipped?"cubic-bezier(.3,0,.8,.15)":"cubic-bezier(.65,0,.35,1)",fill:"forwards"});
+  a.onfinish=done;
+  if(skipped)stage.focus({preventScroll:true});else if(document.activeElement===$("#skipIntro"))document.activeElement.blur()}};
+$("#replay").addEventListener("click",()=>{if(RM.matches)return;store("nj-intro",null);intro.start()});
+
+/* ================= boot ================= */
+applyLang(lang(),false);setTag(false);label();
+if(D.classList.contains("intro-on"))intro.start();
+else{D.dataset.intro="skipped";idleStart();heroIn()}
+})();
+</script>
 </body>
 </html>
