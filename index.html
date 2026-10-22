@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Nader Alzghoul, QA Automation Engineer</title>
-<meta name="description" content="Nader Alzghoul (نادر الزغول), QA Automation Engineer in Amman, Jordan. He tests, teaches, volunteers and delivers. Latest LinkedIn posts and Profile-Wrap.">
+<meta name="description" content="Nader Alzghoul (نادر الزغول), QA Automation Engineer in Amman, Jordan. He tests, teaches, volunteers and delivers. Latest LinkedIn posts, Profile-Wrap and NJ-Kit.">
 <link rel="canonical" href="https://nj-burrito.github.io/">
 <meta property="og:type" content="profile">
 <meta property="og:title" content="Nader Alzghoul, QA Automation Engineer">
-<meta property="og:description" content="Nader Alzghoul (نادر الزغول), QA Automation Engineer in Amman, Jordan. He tests, teaches, volunteers and delivers. Latest LinkedIn posts and Profile-Wrap.">
+<meta property="og:description" content="Nader Alzghoul (نادر الزغول), QA Automation Engineer in Amman, Jordan. He tests, teaches, volunteers and delivers. Latest LinkedIn posts, Profile-Wrap and NJ-Kit.">
 <meta property="og:url" content="https://nj-burrito.github.io/">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ar_AR">
@@ -209,6 +209,9 @@ html[lang="ar"] .sec .cell h3,html[lang="ar"] .sec .cell h4{line-height:1.5}
 .pj .shot{object-position:50% 0}
 .pj-w .pw{width:min(40%,400px);aspect-ratio:4/5;flex:none;align-self:flex-start}
 .pj-w .shot{object-position:50% 50%}
+.pj-k{grid-column:span 6;flex-direction:row}
+.pj-k .pw{display:grid;place-items:center;width:min(32%,300px);flex:none;background:var(--ink);color:var(--paper)}
+.pj-k .pw .ic{width:96px;height:96px;stroke-width:1.5}
 .pb{padding:clamp(20px,3vw,32px);display:flex;flex-direction:column;gap:14px;align-items:flex-start}
 .pb .acts{display:flex;flex-wrap:wrap;gap:10px;margin-top:auto}
 .pb .btn{min-height:44px;padding:0 20px;font-size:1.0625rem}
@@ -257,6 +260,7 @@ html[lang="ar"] .pc-hook,.pc[dir="rtl"] .pc-hook{line-height:1.6}
  .xp .sec-h{position:static}
  .pj,.pj-w{grid-column:span 6}.pj-w{flex-direction:column}
  .pj-w .pw{width:100%;aspect-ratio:4/3}.pj-w .shot{object-position:50% 0}
+ .pj-k{flex-direction:column}.pj-k .pw{width:100%;min-height:160px}
 }
 @media (max-width:1100px){.posts{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:640px){
@@ -442,6 +446,7 @@ html[lang="ar"] #iunder{transform-origin:100% 50%}
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs>
 <!-- Lucide icons (ISC): briefcase, award, graduation-cap, bot, list-checks, code-xml, database -->
+<symbol id="i-package" viewBox="0 0 24 24"><path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"/><path d="M12 22V12"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="m7.5 4.27 9 5.15"/></symbol>
 <symbol id="i-briefcase" viewBox="0 0 24 24"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><rect width="20" height="14" x="2" y="6" rx="2"/></symbol>
 <symbol id="i-award" viewBox="0 0 24 24"><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"/><circle cx="12" cy="8" r="6"/></symbol>
 <symbol id="i-cap" viewBox="0 0 24 24"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></symbol>
@@ -696,6 +701,17 @@ html[lang="ar"] #iunder{transform-origin:100% 50%}
             </div>
           </div>
         </article>
+        <article class="cell pj pj-k">
+          <span class="pw"><svg class="ic" aria-hidden="true"><use href="#i-package"/></svg></span>
+          <div class="pb">
+            <h3>NJ-Kit</h3>
+            <p><span data-l="en">A free working method for Claude Code: 43 skills, and each one ends with a script that says PASS or FAIL. Open source (MIT), in Arabic and English.</span><span data-l="ar">منهج عمل مجاني لـ Claude Code: 43 مهارة، وتنتهي كل مهارة بسكربت يقول نجح أو فشل. مفتوح المصدر (MIT)، بالعربية والإنجليزية.</span></p>
+            <div class="acts">
+              <a class="btn btn-ink" href="https://nj-burrito.github.io/NJ-Kit/"><span data-l="en">See NJ-Kit</span><span data-l="ar">تعرّف على NJ-Kit</span></a>
+              <a class="btn btn-ink" href="https://github.com/NJ-Burrito/NJ-Kit" rel="noopener">GitHub</a>
+            </div>
+          </div>
+        </article>
         <article class="cell pj">
           <span class="pw"><img class="shot" src="img/project-shalwa.webp" width="800" height="1000" alt="Shalwa Automation Project: login, cart, sorting, links and checkout" loading="lazy" decoding="async"></span>
           <div class="pb">
@@ -824,6 +840,7 @@ html[lang="ar"] #iunder{transform-origin:100% 50%}
       <li><a href="https://www.linkedin.com/in/nader-alzghoul" rel="me noopener">LinkedIn</a></li>
       <li><a href="https://github.com/NJ-Burrito" rel="me noopener">GitHub</a></li>
       <li><a href="https://nj-burrito.github.io/profile-wrap/">Profile-Wrap</a></li>
+      <li><a href="https://nj-burrito.github.io/NJ-Kit/">NJ-Kit</a></li>
       <li><button type="button" class="btn-ghost" id="replay"><span data-l="en">Replay intro</span><span data-l="ar">إعادة المقدمة</span></button></li>
     </ul>
   </div>
