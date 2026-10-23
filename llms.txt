@@ -12,3 +12,11 @@
 - [NJ-Kit](https://nj-burrito.github.io/NJ-Kit/): Claude Code plugin with one working method and 40 skills, each ending in a PASS or FAIL gate. Source: https://github.com/NJ-Burrito/NJ-Kit
 - [QA Wrap](https://nj-burrito.github.io/QA-Wrap/): browser extension that turns a manual test session into a bug report, Arabic and English. Source: https://github.com/NJ-Burrito/QA-Wrap
 - [Shalwa Automation Project](https://github.com/NJ-Burrito/Shalwa-Automation-Project-SAP-): Java, Selenium, Maven and JUnit test automation
+
+## Facts
+
+- Role: QA Automation Engineer at TaqneenSoft, Amman, Jordan.
+- Delivered QA work for 100+ government e-services on government portals: Playwright tests, SRS documents, bilingual manuals.
+- Teaches: learners aged 8 to 32, including AI and robotics for students aged 8 to 16.
+- Languages: Arabic (native), English (strong), Spanish (learning).
+- Contact: https://www.linkedin.com/in/nader-alzghoul
