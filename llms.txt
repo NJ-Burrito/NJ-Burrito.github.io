@@ -1,0 +1,14 @@
+# Nader Alzghoul (نادر الزغول)
+
+> Nader Alzghoul is a QA Automation Engineer in Amman, Jordan. He tests, teaches, volunteers and delivers, and builds free open-source tools. This site is his portfolio, in English and Arabic.
+
+- [Portfolio](https://nj-burrito.github.io/): about, work, projects, latest LinkedIn posts
+- [LinkedIn](https://www.linkedin.com/in/nader-alzghoul)
+- [GitHub](https://github.com/NJ-Burrito)
+
+## Projects
+
+- [Profile-Wrap](https://nj-burrito.github.io/Profile-Wrap/): free, open-source LinkedIn post manager and scheduler. Nothing goes out until you tap Allow. Source: https://github.com/NJ-Burrito/Profile-Wrap
+- [NJ-Kit](https://nj-burrito.github.io/NJ-Kit/): Claude Code plugin with one working method and 40 skills, each ending in a PASS or FAIL gate. Source: https://github.com/NJ-Burrito/NJ-Kit
+- [QA Wrap](https://nj-burrito.github.io/QA-Wrap/): browser extension that turns a manual test session into a bug report, Arabic and English. Source: https://github.com/NJ-Burrito/QA-Wrap
+- [Shalwa Automation Project](https://github.com/NJ-Burrito/Shalwa-Automation-Project-SAP-): Java, Selenium, Maven and JUnit test automation
