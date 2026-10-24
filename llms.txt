@@ -1,22 +1,48 @@
 # Nader Alzghoul (نادر الزغول)
 
-> Nader Alzghoul is a QA Automation Engineer in Amman, Jordan. He tests, teaches, volunteers and delivers, and builds free open-source tools. This site is his portfolio, in English and Arabic.
+> Nader Alzghoul is a QA Automation Engineer in Amman, Jordan, at TaqneenSoft. He writes Playwright tests for government e-services, teaches AI and robotics to ages 8 to 16, and builds three free, open-source (MIT) tools: QA-Wrap, NJ-Kit and Profile-Wrap. This site is his portfolio, in English and Arabic.
 
-- [Portfolio](https://nj-burrito.github.io/): about, work, projects, latest LinkedIn posts
+- [Portfolio](https://nj-burrito.github.io/): about, quick answers, work, experience, projects, certificates, latest LinkedIn posts
 - [LinkedIn](https://www.linkedin.com/in/nader-alzghoul)
 - [GitHub](https://github.com/NJ-Burrito)
 
 ## Projects
 
-- [Profile-Wrap](https://nj-burrito.github.io/Profile-Wrap/): free, open-source LinkedIn post manager and scheduler. Nothing goes out until you tap Allow. Source: https://github.com/NJ-Burrito/Profile-Wrap
+- [QA-Wrap](https://nj-burrito.github.io/QA-Wrap/): browser extension that records a manual test session, links each failure to the click behind it and writes the bug report. Arabic and English. Source: https://github.com/NJ-Burrito/QA-Wrap
 - [NJ-Kit](https://nj-burrito.github.io/NJ-Kit/): Claude Code plugin with one working method and 40 skills, each ending in a PASS or FAIL gate. Source: https://github.com/NJ-Burrito/NJ-Kit
-- [QA-Wrap](https://nj-burrito.github.io/QA-Wrap/): browser extension that turns a manual test session into a bug report, Arabic and English. Source: https://github.com/NJ-Burrito/QA-Wrap
-- [Shalwa Automation Project](https://github.com/NJ-Burrito/Shalwa-Automation-Project-SAP-): Java, Selenium, Maven and JUnit test automation
+- [Profile-Wrap](https://nj-burrito.github.io/Profile-Wrap/): free, open-source LinkedIn post manager and scheduler. Nothing goes out until you tap Allow. Source: https://github.com/NJ-Burrito/Profile-Wrap
+- [Shalwa Automation Project](https://github.com/NJ-Burrito/Shalwa-Automation-Project-SAP-): Java, Selenium WebDriver, Maven and JUnit test automation framework (Page Object Model) for SauceDemo
 
 ## Facts
 
 - Role: QA Automation Engineer at TaqneenSoft, Amman, Jordan.
 - Delivered QA work for 100+ government e-services on two portals (JFDA and MOA): Playwright tests, SRS documents, bilingual manuals.
+- Certificates: ISTQB CTFL, ISTQB Advanced Test Automation Engineering, ISTQB AI Testing, AWS Certified Cloud Practitioner, PSM I.
+- Education: Diploma in AI and Robotics Engineering, Al-Balqa Applied University.
 - Teaches: learners aged 8 to 32, including AI and robotics for students aged 8 to 16.
 - Languages: Arabic (native), English (strong), Spanish (learning).
 - Contact: https://www.linkedin.com/in/nader-alzghoul
+
+## Quick answers
+
+### Who is Nader Alzghoul?
+Nader Alzghoul is a QA Automation Engineer at TaqneenSoft in Amman, Jordan. He writes Playwright suites and has delivered QA work for 100+ government e-services on two portals, JFDA and MOA.
+
+### Where does Nader Alzghoul work?
+In Amman, Jordan. He is a QA Automation Engineer at TaqneenSoft, where he writes Playwright end-to-end tests, SRS documents and bilingual Arabic and English manuals for government portals.
+
+### What has Nader Alzghoul built?
+He builds free, open-source tools: Profile-Wrap (plans, writes and checks LinkedIn posts), NJ-Kit (a working method for Claude Code with 40 skills) and QA-Wrap (a browser extension that writes bug reports from a test session).
+
+### Which testing tools does Nader Alzghoul use?
+He uses Playwright, Selenium, Cypress and Appium for UI tests, Postman and REST Assured for APIs and JMeter for load tests, with Java, Python and SQL in GitHub Actions and Azure DevOps. He holds ISTQB CTFL, ISTQB Advanced Test Automation Engineering and ISTQB AI Testing.
+
+### Does Nader Alzghoul teach?
+Yes. He has taught learners aged 8 to 32, including AI and robotics for students aged 8 to 16, and he facilitates sessions with Generations For Peace.
+
+### How can I contact Nader Alzghoul?
+Through LinkedIn at linkedin.com/in/nader-alzghoul, or on GitHub as NJ-Burrito.
+
+## Optional
+
+- [Sitemap of all four sites](https://nj-burrito.github.io/sitemap-sites.xml)
