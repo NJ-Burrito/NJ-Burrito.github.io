@@ -245,6 +245,7 @@ html[lang="ar"] .qa dt{line-height:1.6}
 .pj-t{grid-column:span 2}
 .pw{display:block;overflow:hidden;overflow:clip;background:var(--line);width:100%;aspect-ratio:2/1;border-bottom:1px solid var(--line)}
 .pw img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 50%}
+.pw:has(.shot-fit){background:var(--ink)}.pw img.shot-fit{object-fit:contain}
 .pj .pb{flex:1}
 .pj-t .acts{flex-direction:column;align-items:flex-start}
 .pb{padding:clamp(20px,3vw,32px);display:flex;flex-direction:column;gap:14px;align-items:flex-start}
@@ -748,7 +749,7 @@ html[lang="ar"] #iunder{transform-origin:100% 50%}
       <h2 class="sec-h" id="h-projects" data-reveal><span data-l="en">Projects</span><span data-l="ar">المشاريع</span></h2>
       <div class="pj-grid">
         <article class="cell pj pj-t">
-          <span class="pw"><img class="shot" src="img/profile-wrap-banner.gif" width="960" height="480" alt="Profile-Wrap banner: an idea becomes facts, a GIF post, a review board, the official API and a posted entry" loading="lazy" decoding="async"></span>
+          <span class="pw"><img class="shot shot-fit" src="img/project-profile-wrap.webp" width="800" height="1000" alt="Profile-Wrap: a drawn screen with an Allow button" loading="lazy" decoding="async"></span>
           <div class="pb">
             <h3>Profile-Wrap</h3>
             <p><span data-l="en">An open-source (MIT) tool that plans, writes and checks LinkedIn posts. It posts only through LinkedIn’s official API, after you tap Allow, and never asks for your LinkedIn password.</span><span data-l="ar">أداة مفتوحة المصدر (MIT) تخطط لمنشورات LinkedIn وتكتبها وتفحصها. لا تنشر إلا عبر واجهة LinkedIn الرسمية وبعد موافقتك، ولا تطلب كلمة مرور LinkedIn أبدًا.</span></p>
@@ -781,7 +782,7 @@ html[lang="ar"] #iunder{transform-origin:100% 50%}
           </div>
         </article>
         <article class="cell pj">
-          <span class="pw"><img class="shot" src="img/project-shalwa-cover.webp" width="1280" height="640" alt="Shalwa Automation Project: login, cart, sorting, links and checkout" loading="lazy" decoding="async"></span>
+          <span class="pw"><img class="shot shot-fit" src="img/project-shalwa.webp" width="800" height="1000" alt="Shalwa Automation Project: login, cart, sorting, links and checkout" loading="lazy" decoding="async"></span>
           <div class="pb">
             <h3><span data-l="en">Shalwa Automation Project</span><span data-l="ar">مشروع شلوى للأتمتة</span></h3>
             <p><span data-l="en">A Java, Selenium WebDriver, Maven and JUnit framework on the Page Object Model, with 6 page objects. It automates SauceDemo: login, cart, sorting, links and checkout.</span><span data-l="ar">إطار أتمتة مبني على Java وSelenium WebDriver وMaven وJUnit بنمط Page Object Model، فيه 6 صفحات كائنية. يؤتمت موقع SauceDemo: تسجيل الدخول والسلة والفرز والروابط والدفع.</span></p>
@@ -791,7 +792,7 @@ html[lang="ar"] #iunder{transform-origin:100% 50%}
           </div>
         </article>
         <article class="cell pj">
-          <span class="pw"><img class="shot" src="img/project-course-cover.webp" width="1280" height="640" alt="AI and Arduino course: train a model, a camera app, a branching story" loading="lazy" decoding="async"></span>
+          <span class="pw"><img class="shot shot-fit" src="img/project-course.webp" width="800" height="1000" alt="Three AI projects, one course" loading="lazy" decoding="async"></span>
           <div class="pb">
             <h3><span data-l="en">AI and Arduino course</span><span data-l="ar">دورة الذكاء الاصطناعي وArduino</span></h3>
             <p><span data-l="en">A summer 2026 course at Zaha Cultural Center, AI and interactive programming with Arduino (PictoBlox): 8 sessions for each age group, ending in a final project and a showcase.</span><span data-l="ar">دورة صيف 2026 في مركز زها الثقافي «الذكاء الاصطناعي والبرمجة التفاعلية مع Arduino (PictoBlox)»: 8 جلسات لكل فئة عمرية، تنتهي بمشروع نهائي وعرض تفاعلي.</span></p>
