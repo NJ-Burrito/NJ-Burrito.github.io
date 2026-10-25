@@ -304,11 +304,11 @@ html[lang="ar"] .oc-n{line-height:1.5}
 /* the moving strip: notes appear on hover or focus (fine pointers); touch screens always show them */
 .mq.on{-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);max-width:none;padding-inline:0;overflow:clip}
 .mq.on .mq-track{flex-wrap:nowrap;padding-inline-end:14px}
-.mq.on .mq-rail{animation:mq var(--mq-dur,60s) linear infinite;will-change:transform}
-html[dir="rtl"] .mq.on .mq-rail{animation-name:mq-rtl}
-@keyframes mq{to{transform:translate3d(-50%,0,0)}}
-@keyframes mq-rtl{to{transform:translate3d(50%,0,0)}}
-.mq.on:hover .mq-rail,.mq.on:focus-within .mq-rail,.mq.on.paused .mq-rail{animation-play-state:paused}
+.mq.on .mq-rail{will-change:transform}
+/* grab and slide: the strip follows the pointer (JS); vertical page scroll still works on touch */
+.mq.on{cursor:grab;touch-action:pan-y;-webkit-user-select:none;user-select:none}
+.mq.on.dragging{cursor:grabbing}
+.mq.on img{-webkit-user-drag:none;pointer-events:none}
 @media (hover:hover) and (pointer:fine){
  .mq.on .oc-note{opacity:0;transform:translate3d(0,4px,0);transition:opacity .18s var(--e-settle),transform .18s var(--e-settle)}
  .mq.on .oc:hover .oc-note,.mq.on .oc:focus-visible .oc-note{opacity:1;transform:none}
@@ -316,12 +316,13 @@ html[dir="rtl"] .mq.on .mq-rail{animation-name:mq-rtl}
 }
 /* keyboard: once a card has focus, the strip becomes the static grid so every card can be reached in place */
 .mq.on:has(.oc:focus-visible){-webkit-mask-image:none;mask-image:none;max-width:calc(var(--max) + 2*var(--pad));padding-inline:var(--pad)}
-.mq.on:has(.oc:focus-visible) .mq-rail{animation:none;width:auto}
+.mq.on:has(.oc:focus-visible) .mq-rail{transform:none!important;width:auto}
 .mq.on:has(.oc:focus-visible) .mq-track{flex-wrap:wrap;padding-inline-end:0}
 .mq.on:has(.oc:focus-visible) .mq-track[aria-hidden]{display:none}
 .mq.on:has(.oc:focus-visible) .oc-note{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){
- .mq.on .mq-rail{animation:none!important;width:auto}
+ .mq.on .mq-rail{transform:none!important;width:auto}
+ .mq.on{cursor:auto}
  .mq.on{-webkit-mask-image:none;mask-image:none;max-width:calc(var(--max) + 2*var(--pad));padding-inline:var(--pad)}
  .mq.on .mq-track{flex-wrap:wrap;padding-inline-end:0}
  .mq.on .mq-track[aria-hidden]{display:none}
@@ -851,19 +852,19 @@ html[lang="ar"] #iunder{transform-origin:100% 50%}
   </section>
 
   <!-- Organisations. Facts: F05, F42, F99 (Zaha), F27, F44 (GFP), F91 (Robotna, public wording), F41 (DigiSkills, Luminus), F10 (Al-Balqa), F26, F44 (3am3dna, My Area), F90 (Correlation One), F08 (Qafza), F65 (Clever Mind). Employer and its clients not named (F95).
-       Logos from each organisation's own site, in img/orgs/; 3am3dna logo is its app icon (Uptodown listing, sent by Nader 2026-10-25); Zaha, My Area and Clever Mind use monogram tiles (no official logo file found). -->
+       Logos from each organisation's own site, in img/orgs/; 3am3dna logo is its app icon (Uptodown listing, sent by Nader 2026-10-25); Zaha logo from zaha.gov.jo, Clever Mind POB logo from its Facebook page (both pointed to by Nader 2026-10-25); My Area uses a monogram tile (no official logo file found). -->
   <section class="sec orgs" id="organisations" aria-labelledby="h-orgs">
     <div class="wrap orgs-top">
       <div>
         <h2 class="sec-h" id="h-orgs" data-reveal><span data-l="en">Organisations</span><span data-l="ar">المؤسسات</span></h2>
-        <p class="orgs-sub" data-reveal><span data-l="en">Where he has worked, taught, volunteered and trained. Hover or focus a card to see his part.</span><span data-l="ar">حيث عمل وعلّم وتطوّع وتدرّب. مرّر المؤشر فوق البطاقة أو انتقل إليها لترى دوره.</span></p>
+        <p class="orgs-sub" data-reveal><span data-l="en">Where he has worked, taught, volunteered and trained. Hover or focus a card to see his part, or grab the strip and slide it.</span><span data-l="ar">حيث عمل وعلّم وتطوّع وتدرّب. مرّر المؤشر فوق البطاقة أو انتقل إليها لترى دوره، أو اسحب الشريط يمينًا ويسارًا.</span></p>
       </div>
       <button type="button" class="mq-btn" id="mqBtn" hidden><svg class="ic i-pa" aria-hidden="true"><use href="#i-pause"/></svg><svg class="ic i-pl" aria-hidden="true"><use href="#i-play"/></svg><span class="t-pa"><span data-l="en">Pause</span><span data-l="ar">إيقاف</span></span><span class="t-pl"><span data-l="en">Play</span><span data-l="ar">تشغيل</span></span></button>
     </div>
     <div class="mq" id="mq">
       <div class="mq-rail">
         <ul class="mq-track">
-          <li class="oc" tabindex="0"><span class="oc-logo oc-mono" aria-hidden="true" dir="ltr">ZC</span><span class="oc-n"><span data-l="en">Zaha Cultural Center</span><span data-l="ar">مركز زها الثقافي</span></span><span class="oc-note"><span data-l="en">AI and robotics tutor; program coordinator until Oct 2026</span><span data-l="ar">مدرّس ذكاء اصطناعي وروبوتات، ومنسّق برامج حتى أكتوبر 2026</span></span></li>
+          <li class="oc" tabindex="0"><span class="oc-logo"><img src="img/orgs/zaha.webp" width="100" height="93" alt="" loading="lazy" decoding="async"></span><span class="oc-n"><span data-l="en">Zaha Cultural Center</span><span data-l="ar">مركز زها الثقافي</span></span><span class="oc-note"><span data-l="en">AI and robotics tutor; program coordinator until Oct 2026</span><span data-l="ar">مدرّس ذكاء اصطناعي وروبوتات، ومنسّق برامج حتى أكتوبر 2026</span></span></li>
           <li class="oc" tabindex="0"><span class="oc-logo"><img src="img/orgs/generations-for-peace.webp" width="91" height="96" alt="" loading="lazy" decoding="async"></span><span class="oc-n"><span data-l="en">Generations For Peace</span><span data-l="ar">منظمة أجيال السلام</span></span><span class="oc-note"><span data-l="en">Session facilitator, sport for peace</span><span data-l="ar">ميسّر جلسات، الرياضة من أجل السلام</span></span></li>
           <li class="oc" tabindex="0"><span class="oc-logo"><img src="img/orgs/robotna.webp" width="90" height="96" alt="" loading="lazy" decoding="async"></span><span class="oc-n"><span data-l="en">Robotna</span><span data-l="ar">Robotna</span></span><span class="oc-note"><span data-l="en">AI Advanced Track, 132 hours</span><span data-l="ar">مسار الذكاء الاصطناعي المتقدم، 132 ساعة</span></span></li>
           <li class="oc" tabindex="0"><span class="oc-logo"><img src="img/orgs/digiskills.webp" width="160" height="54" alt="" loading="lazy" decoding="async"></span><span class="oc-n"><span data-l="en">DigiSkills Jordan</span><span data-l="ar">DigiSkills الأردن</span></span><span class="oc-note"><span data-l="en">QA engineering fellowship</span><span data-l="ar">زمالة في هندسة ضمان الجودة</span></span></li>
@@ -873,7 +874,7 @@ html[lang="ar"] #iunder{transform-origin:100% 50%}
           <li class="oc" tabindex="0"><span class="oc-logo oc-mono" aria-hidden="true" dir="ltr">MA</span><span class="oc-n"><span data-l="en">My Area &amp; Charities</span><span data-l="ar">My Area &amp; Charities</span></span><span class="oc-note"><span data-l="en">Volunteer, poverty alleviation</span><span data-l="ar">متطوّع في التخفيف من الفقر</span></span></li>
           <li class="oc" tabindex="0"><span class="oc-logo"><img src="img/orgs/correlation-one.webp" width="240" height="22" alt="" loading="lazy" decoding="async"></span><span class="oc-n"><span data-l="en">Correlation One</span><span data-l="ar">Correlation One</span></span><span class="oc-note"><span data-l="en">Training program, graduated with honors</span><span data-l="ar">برنامج تدريبي، تخرّج فيه بتقدير الشرف</span></span></li>
           <li class="oc" tabindex="0"><span class="oc-logo"><img src="img/orgs/qafza.webp" width="123" height="96" alt="" loading="lazy" decoding="async"></span><span class="oc-n"><span data-l="en">Qafza</span><span data-l="ar">قفزة (Qafza)</span></span><span class="oc-note"><span data-l="en">Training program, 100 hours</span><span data-l="ar">برنامج تدريبي، 100 ساعة</span></span></li>
-          <li class="oc" tabindex="0"><span class="oc-logo oc-mono" aria-hidden="true" dir="ltr">CM</span><span class="oc-n"><span data-l="en">Clever Mind</span><span data-l="ar">Clever Mind</span></span><span class="oc-note"><span data-l="en">Fullstack and web development fellowship</span><span data-l="ar">زمالة في تطوير الويب الشامل (Fullstack)</span></span></li>
+          <li class="oc" tabindex="0"><span class="oc-logo"><img src="img/orgs/clever-mind.webp" width="90" height="96" alt="" loading="lazy" decoding="async"></span><span class="oc-n"><span data-l="en">Clever Mind</span><span data-l="ar">Clever Mind</span></span><span class="oc-note"><span data-l="en">Fullstack and web development fellowship</span><span data-l="ar">زمالة في تطوير الويب الشامل (Fullstack)</span></span></li>
         </ul>
       </div>
     </div>
@@ -1305,15 +1306,32 @@ else{D.dataset.intro="skipped";idleStart();heroIn()}
  addEventListener("scroll",()=>{if(on&&h1.getBoundingClientRect().bottom<0)stop()},{passive:true});})();
 </script>
 <script>
-/* Organisations strip: clone the list once (hidden from assistive tech, not focusable) so the loop is seamless, set the speed
-   from the measured width (about 40 px a second), and give the Pause button its state. Reduced motion: nothing moves (CSS). */
+/* Organisations strip: clone the list once (hidden from assistive tech, not focusable) so the loop is seamless. JS moves it
+   about 40 px a second, pauses on hover, focus or the Pause button, and lets a mouse or finger grab it and slide it either
+   way, with a short glide on release. Reduced motion: nothing moves (CSS shows the static grid). */
 (()=>{const mq=document.getElementById("mq"),btn=document.getElementById("mqBtn");if(!mq||!btn)return;
  const rail=mq.querySelector(".mq-rail"),track=rail.querySelector(".mq-track"),clone=track.cloneNode(true);
  clone.setAttribute("aria-hidden","true");clone.inert=true;clone.querySelectorAll("[tabindex]").forEach(e=>e.setAttribute("tabindex","-1"));
  rail.appendChild(clone);mq.classList.add("on");btn.hidden=false;
- const speed=()=>{mq.style.setProperty("--mq-dur",Math.max(30,Math.round(track.getBoundingClientRect().width/40))+"s")};
- speed();addEventListener("resize",speed,{passive:true});document.fonts&&document.fonts.ready.then(speed);
+ const still=matchMedia("(prefers-reduced-motion: reduce)"),sign=()=>document.documentElement.dir==="rtl"?1:-1;
+ let L=1,t=0,hover=false,drag=null,glide=0,last=performance.now();
+ const measure=()=>{L=track.getBoundingClientRect().width||1};
+ const wrap=v=>sign()<0?((v%L)-L)%L:((v%L)+L)%L,put=()=>{t=wrap(t);rail.style.transform=`translate3d(${t}px,0,0)`};
+ measure();window.ResizeObserver?new ResizeObserver(measure).observe(track):addEventListener("resize",measure,{passive:true});
  btn.addEventListener("click",()=>{const p=mq.classList.toggle("paused");btn.classList.toggle("is-paused",p)});
+ mq.addEventListener("pointerenter",e=>{if(e.pointerType==="mouse")hover=true});
+ mq.addEventListener("pointerleave",e=>{if(e.pointerType==="mouse")hover=false});
+ mq.addEventListener("pointerdown",e=>{if(still.matches||e.button>0)return;drag={id:e.pointerId,x:e.clientX,t0:t,lx:e.clientX,lt:e.timeStamp,v:0};glide=0;mq.setPointerCapture(e.pointerId);mq.classList.add("dragging")});
+ mq.addEventListener("pointermove",e=>{if(!drag||e.pointerId!==drag.id)return;const dt=Math.max(1,e.timeStamp-drag.lt);
+  drag.v=.8*((e.clientX-drag.lx)/dt)+.2*drag.v;drag.lx=e.clientX;drag.lt=e.timeStamp;t=drag.t0+(e.clientX-drag.x);put()});
+ const end=e=>{if(!drag||e.pointerId!==drag.id)return;glide=Math.max(-3,Math.min(3,drag.v));drag=null;mq.classList.remove("dragging")};
+ mq.addEventListener("pointerup",end);mq.addEventListener("pointercancel",end);
+ const tick=now=>{const dt=Math.min(64,now-last);last=now;
+  if(!still.matches&&!drag&&!mq.querySelector(".oc:focus-visible")){
+   if(Math.abs(glide)>.02){t+=glide*dt;glide*=Math.pow(.994,dt);put()}
+   else if(!hover&&!mq.classList.contains("paused")){t+=sign()*(L/Math.max(30,L/40))*dt/1000;put()}}
+  requestAnimationFrame(tick)};
+ requestAnimationFrame(tick);
 })();
 </script>
 </body>
