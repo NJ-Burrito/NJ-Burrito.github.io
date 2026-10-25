@@ -1306,12 +1306,12 @@ else{D.dataset.intro="skipped";idleStart();heroIn()}
  addEventListener("scroll",()=>{if(on&&h1.getBoundingClientRect().bottom<0)stop()},{passive:true});})();
 </script>
 <script>
-/* Organisations strip: clone the list once (hidden from assistive tech, not focusable) so the loop is seamless. JS moves it
+/* Organisations strip: clone the list once (hidden from assistive tech, not focusable; not inert, so its cards still react to hover) so the loop is seamless. JS moves it
    about 40 px a second, pauses on hover, focus or the Pause button, and lets a mouse or finger grab it and slide it either
    way, with a short glide on release. Reduced motion: nothing moves (CSS shows the static grid). */
 (()=>{const mq=document.getElementById("mq"),btn=document.getElementById("mqBtn");if(!mq||!btn)return;
  const rail=mq.querySelector(".mq-rail"),track=rail.querySelector(".mq-track"),clone=track.cloneNode(true);
- clone.setAttribute("aria-hidden","true");clone.inert=true;clone.querySelectorAll("[tabindex]").forEach(e=>e.setAttribute("tabindex","-1"));
+ clone.setAttribute("aria-hidden","true");clone.querySelectorAll("[tabindex]").forEach(e=>e.setAttribute("tabindex","-1"));
  rail.appendChild(clone);mq.classList.add("on");btn.hidden=false;
  const still=matchMedia("(prefers-reduced-motion: reduce)"),sign=()=>document.documentElement.dir==="rtl"?1:-1;
  let L=1,t=0,hover=false,drag=null,glide=0,last=performance.now();
