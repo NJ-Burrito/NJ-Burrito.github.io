@@ -1,8 +1,8 @@
 # Nader Alzghoul (نادر الزغول)
 
-> Nader Alzghoul is a QA Automation Engineer in Amman, Jordan, at TaqneenSoft. He writes Playwright tests for government e-services, teaches AI and robotics to ages 8 to 16, and builds three free, open-source (MIT) tools: QA-Wrap, NJ-Kit and Profile-Wrap. This site is his portfolio, in English and Arabic.
+> Nader Alzghoul is a QA Automation Engineer in Amman, Jordan. He tests government e-services with Playwright, Selenium, Cypress, Postman, REST Assured, JMeter and Appium. Outside work he teaches AI and robotics to youth, volunteers, and builds three free, open-source (MIT) tools: NJ-Kit, QA-Wrap and Profile-Wrap. This site is his portfolio, in English and Arabic.
 
-- [Portfolio](https://nj-burrito.github.io/): about, quick answers, work, experience, projects, certificates, latest LinkedIn posts
+- [Portfolio](https://nj-burrito.github.io/): about, quick answers, work, teaching, volunteering, experience, organisations, projects, certificates, latest LinkedIn posts
 - [LinkedIn](https://www.linkedin.com/in/nader-alzghoul)
 - [GitHub](https://github.com/NJ-Burrito)
 
@@ -15,21 +15,25 @@
 
 ## Facts
 
-- Role: QA Automation Engineer at TaqneenSoft, Amman, Jordan.
-- Delivered QA work for 100+ government e-services on government portals: Playwright tests, SRS documents, bilingual manuals.
+- Role: QA Automation Engineer, Amman, Jordan.
+- Delivered QA work for 100+ government e-services: end-to-end tests, SRS documents, Arabic and English manuals.
+- Tools: Playwright, Selenium, Cypress, Appium, Postman, REST Assured, JMeter, Java, Python, SQL, GitHub Actions, Azure DevOps.
 - Certificates: ISTQB CTFL, ISTQB Advanced Test Automation Engineering, ISTQB AI Testing, AWS Certified Cloud Practitioner, PSM I.
 - Education: Diploma in AI and Robotics Engineering, Al-Balqa Applied University.
-- Teaches: learners aged 8 to 32, including AI and robotics for students aged 8 to 16.
-- Languages: Arabic (native), English (strong), Spanish (learning).
+- Teaches: AI and robotics to youth, at schools, cultural centers and businesses.
+- Volunteers: session facilitator with Generations For Peace (sport for peace); poverty alleviation with 3am3dna since 2019.
+- Organisations: Zaha Cultural Center, Generations For Peace, Robotna, DigiSkills Jordan, Luminus Technical University College, Al-Balqa Applied University, 3am3dna, My Area & Charities, Correlation One, Qafza, Clever Mind.
+- Languages: trilingual. Arabic (native), English (C2), Spanish (learning).
+- Beyond work: plays volleyball, likes teamwork and leading a team, values communication; parrots are his spirit animal.
 - Contact: https://www.linkedin.com/in/nader-alzghoul
 
 ## Quick answers
 
 ### Who is Nader Alzghoul?
-Nader Alzghoul is a QA Automation Engineer at TaqneenSoft in Amman, Jordan. He writes Playwright suites and has delivered QA work for 100+ government e-services on government portals.
+Nader Alzghoul is a QA Automation Engineer in Amman, Jordan. He has delivered QA work for 100+ government e-services. Outside work he teaches AI and robotics to youth, volunteers, and builds his own free tools.
 
 ### Where does Nader Alzghoul work?
-In Amman, Jordan. He is a QA Automation Engineer at TaqneenSoft, where he writes Playwright end-to-end tests, SRS documents and bilingual Arabic and English manuals for government portals.
+In Amman, Jordan, as a QA Automation Engineer. He writes end-to-end tests, SRS documents and Arabic and English manuals for government portals.
 
 ### What has Nader Alzghoul built?
 He builds free, open-source tools: Profile-Wrap (plans, writes and checks LinkedIn posts), NJ-Kit (a working method for Claude Code with 40 skills) and QA-Wrap (a browser extension that writes bug reports from a test session).
@@ -38,7 +42,10 @@ He builds free, open-source tools: Profile-Wrap (plans, writes and checks Linked
 He uses Playwright, Selenium, Cypress and Appium for UI tests, Postman and REST Assured for APIs and JMeter for load tests, with Java, Python and SQL in GitHub Actions and Azure DevOps. He holds ISTQB CTFL, ISTQB Advanced Test Automation Engineering and ISTQB AI Testing.
 
 ### Does Nader Alzghoul teach?
-Yes. He has taught learners aged 8 to 32, including AI and robotics for students aged 8 to 16, and he facilitates sessions with Generations For Peace.
+Yes. He teaches AI and robotics to youth at schools, cultural centers and businesses, and he facilitates sport-for-peace sessions with Generations For Peace.
+
+### Which languages does Nader Alzghoul speak?
+He is trilingual: Arabic is his native language, his English is at C2 level, and he is learning Spanish.
 
 ### How can I contact Nader Alzghoul?
 Through LinkedIn at linkedin.com/in/nader-alzghoul, or on GitHub as NJ-Burrito.
