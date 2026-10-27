@@ -2,6 +2,8 @@
 <html lang="en" dir="ltr">
 <head>
 <meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-N3r3XdchppAu0uaOZ6LJNukV4+P89LX7R39Qm8Xc0JE=' 'sha256-LVMd3GxD1e8LMfJ3yRa0JKrf+p64kPU6f/WY60uV5Nk=' 'sha256-1485xrBzlVeuTCUXif/B5YpiJhgu0asQ4/2x/uZWttY='; style-src 'self' 'unsafe-inline'; img-src 'self' data:; media-src 'self'; font-src 'self'; connect-src 'none'; base-uri 'none'; form-action 'none'; object-src 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Nader Alzghoul: QA Automation Engineer in Amman, Jordan</title>
 <meta name="description" content="Nader Alzghoul (نادر الزغول), QA Automation Engineer in Amman, Jordan. Tests with Playwright, Selenium, Cypress and Postman. Builds free tools: NJ-Kit, QA-Wrap, Profile-Wrap.">
@@ -60,8 +62,6 @@
 @font-face{font-family:"Thmanyah Serif Text";font-weight:400;font-style:normal;font-display:swap;src:url("fonts/thmanyahseriftext-Regular.woff2") format("woff2")}
 @font-face{font-family:"Thmanyah Sans";font-weight:500;font-style:normal;font-display:swap;src:url("fonts/thmanyahsans-Medium.woff2") format("woff2")}
 @font-face{font-family:"Thmanyah Sans";font-weight:900;font-style:normal;font-display:swap;src:url("fonts/thmanyahsans-Black.woff2") format("woff2")}
-/* Tokens. Persona shades and paper: work/identity/DECISIONS.md items 8 and 10. Eases and durations: the NJ motion guideline v1.
-   Shape rule: panels 16px, buttons and the nav are full pills. */
 :root{--teal:#3D7F7A;--slate:#34473B;--clay:#A3573B;--ox:#5A1E26;--paper:#EFEAE0;--ink:#16171B;--mute:#4A4C50;--line:rgba(22,23,27,.16);
  --shade:var(--teal);
  --display:"Thmanyah Serif Display",serif;--text:"Thmanyah Serif Text",serif;--sans:"Thmanyah Sans",sans-serif;
@@ -85,7 +85,6 @@ html{scrollbar-color:var(--teal) var(--paper);caret-color:var(--teal);accent-col
 .wrap{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
 main{overflow-x:clip}
 
-/* ---------- nav: one floating paper pill over the content (material over the shade) ---------- */
 .nav{position:fixed;top:12px;left:0;right:0;z-index:20;pointer-events:none;padding:0 12px}
 .nav-in{pointer-events:auto;max-width:var(--max);margin:0 auto;height:56px;display:flex;align-items:center;gap:12px;padding:0 8px 0 16px;border-radius:999px;
  background:rgba(239,234,224,.86);-webkit-backdrop-filter:blur(18px) saturate(160%);backdrop-filter:blur(18px) saturate(160%);
@@ -100,12 +99,10 @@ html[dir="rtl"] .nav-in{padding:0 16px 0 8px}
 @media (max-width:1100px){.links{display:none}.btn-lang{margin-inline-start:auto}}
 @media (prefers-reduced-transparency:reduce){.nav-in{background:var(--paper);-webkit-backdrop-filter:none;backdrop-filter:none}}
 
-/* ---------- hero: the persona shade, copy on one side, the interactive 3D mark on the other ---------- */
 .hero{position:relative;min-height:100vh;min-height:100dvh;background:var(--shade);color:var(--paper);transition:background-color .96s var(--e-move);overflow:hidden}
 .hero .wrap{min-height:inherit;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);align-items:center;gap:clamp(24px,4vw,64px);padding-top:96px;padding-bottom:56px}
 .hero h1{font:700 clamp(2.75rem,6.4vw,5.75rem)/1.02 var(--display);letter-spacing:-.02em;margin:0}
 html[lang="ar"] .hero h1{line-height:1.25}
-/* one text block on two lines ("Nader" / "Alzghoul"): the name stays one element, and on a phone it is the largest text in the first screen */
 html[lang="en"] .hero h1{width:min-content}
 .alt-name{font:700 clamp(1.6rem,2.6vw,2.25rem)/1.3 var(--display);margin:.35em 0 0;opacity:.94}
 .role{font:900 1.25rem/1.3 var(--sans);letter-spacing:.12em;text-transform:uppercase;margin:28px 0 0}
@@ -148,7 +145,6 @@ html[lang="ar"] .tag{font:700 1.75rem/1.3 var(--display)}
  .promise{font-size:clamp(1.5rem,6.4vw,1.9rem)}
 }
 
-/* ---------- persona sections: four layouts, one shade each ---------- */
 .persona{padding:clamp(72px,10vw,136px) 0}
 .verb{font:700 clamp(3.5rem,9vw,7.5rem)/1 var(--display);letter-spacing:-.025em;margin:0;overflow:hidden;padding-bottom:.08em}
 html[lang="ar"] .verb{line-height:1.3}
@@ -161,19 +157,16 @@ html[lang="ar"] .cap{line-height:1.6}
 .facts li{padding-inline-start:22px;position:relative;max-width:60ch}
 .facts li::before{content:"";position:absolute;inset-inline-start:0;top:.62em;width:10px;height:3px;background:currentColor;opacity:.55}
 .facts a{text-underline-offset:3px}
-/* tester: split, the shade panel carries the verb and the number */
 .p-tester .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:clamp(28px,5vw,80px);align-items:stretch}
 .panel{border-radius:16px;padding:clamp(28px,4vw,52px);color:var(--paper);display:flex;flex-direction:column;justify-content:space-between;gap:48px;min-height:420px}
 .p-tester .panel{background:var(--teal)}
 .p-tester .body{align-self:center}
-/* teacher: a full slate band, verb and number on one row, facts in two columns */
 .p-teacher{background:var(--slate);color:var(--paper)}
 .p-teacher .top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px 48px;margin-bottom:56px}
 .p-teacher .stat{text-align:end}
 .p-teacher .stat .cap{margin-inline-start:auto}
 .p-teacher .lead{max-width:40ch}
 .p-teacher .facts{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 48px}
-/* volunteer: quote-led, clay is the accent on paper */
 .p-volunteer .wrap{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(28px,5vw,80px)}
 .p-volunteer .verb{color:var(--clay)}
 .p-volunteer .since{margin-top:40px;border-top:3px solid var(--clay);padding-top:16px;max-width:280px}
@@ -183,7 +176,6 @@ blockquote{margin:0 0 40px;padding-inline-start:28px;border-inline-start:6px sol
 blockquote p{font:700 clamp(1.6rem,2.8vw,2.4rem)/1.3 var(--display);margin:0}
 html[lang="ar"] blockquote p{line-height:1.6}
 blockquote footer{font:500 1rem/1.4 var(--sans);color:var(--mute);margin-top:14px}
-/* professional: an oxblood band with a four-cell grid */
 .p-professional{background:var(--ox);color:var(--paper)}
 .p-professional .top{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:end;gap:24px 48px;margin-bottom:48px}
 .p-professional .stat{max-width:360px}
@@ -205,7 +197,6 @@ blockquote footer{font:500 1rem/1.4 var(--sans);color:var(--mute);margin-top:14p
  .grid4{grid-template-columns:1fr}.c-tool,.c-tools{grid-column:auto}
 }
 
-/* ---------- paper sections: about, experience, projects, certificates (cards on paper; photos of Nader only) ---------- */
 .sec{padding:clamp(64px,9vw,120px) 0;border-top:1px solid var(--line)}
 .sec-h{font:700 clamp(2.25rem,4.6vw,3.75rem)/1.1 var(--display);margin:0 0 32px;max-width:20ch}
 html[lang="ar"] .sec-h{line-height:1.45}
@@ -219,7 +210,6 @@ html[lang="ar"] .sec .cell h3,html[lang="ar"] .sec .cell h4{line-height:1.5}
 .org{font:500 1.0625rem/1.4 var(--sans);color:var(--mute);margin:0}
 .ico{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--teal);color:var(--paper);flex:none}
 .ico .ic{width:22px;height:22px}
-/* about: copy on one side, three photos of Nader on the other */
 .about{padding:clamp(72px,10vw,136px) 0 clamp(56px,8vw,96px)}
 .about .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.85fr);gap:clamp(28px,5vw,80px);align-items:center}
 .about .lead{max-width:44ch;margin-bottom:16px}
@@ -230,7 +220,6 @@ html[lang="ar"] .sec .cell h3,html[lang="ar"] .sec .cell h4{line-height:1.5}
 .ph img{display:block;width:100%;height:100%;object-fit:cover;background:var(--line)}
 .ph .m{grid-row:1/3}
 .ph .s{object-position:50% 20%}
-/* experience: a rail with a card per role */
 .xp .wrap{display:grid;grid-template-columns:minmax(0,.55fr) minmax(0,1.45fr);gap:clamp(28px,5vw,80px);align-items:start}
 .xp .sec-h{position:sticky;top:96px}
 .tl{list-style:none;margin:0;padding:0;display:grid;gap:16px;position:relative}
@@ -240,8 +229,6 @@ html[lang="ar"] .sec .cell h3,html[lang="ar"] .sec .cell h4{line-height:1.5}
 .tl-i.now .dot{background:var(--teal);border-color:var(--teal)}
 .xc{padding:24px 26px;display:grid;gap:8px}
 .xc .top{display:flex;justify-content:space-between;align-items:center;gap:12px}
-/* projects: one card family, picture on top at 2:1, text block, buttons pinned to the bottom. Tools span 2 of 6 columns, the two others span 3 */
-/* quick answers: question column and answer column, hairline rows (the answers are the FAQPage text, so they stay visible) */
 .qa{display:grid;margin:0}
 .qa-i{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.4fr);gap:6px clamp(24px,4vw,64px);padding:22px 0;border-top:1px solid var(--line)}
 .qa-i:last-child{border-bottom:1px solid var(--line)}
@@ -264,7 +251,6 @@ html[lang="ar"] .qa dt{line-height:1.6}
 .pb{padding:clamp(20px,3vw,32px);display:flex;flex-direction:column;gap:14px;align-items:flex-start}
 .pb .acts{display:flex;flex-wrap:wrap;gap:10px;margin-top:auto}
 .pb .btn{min-height:44px;padding:0 20px;font-size:1.0625rem}
-/* certificates: badge cards, the three ISTQB ones inked */
 .badges{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
 .bd{display:flex;align-items:center;gap:14px;padding:18px 20px}
 .sec .bd h3,.sec .bd h4{font:500 1.0625rem/1.3 var(--sans)}
@@ -276,7 +262,6 @@ html[lang="ar"] .qa dt{line-height:1.6}
 .bd.ink .org{color:rgba(239,234,224,.8)}
 .bd.ink .ico{background:var(--paper);color:var(--ink)}
 
-/* ---------- about: beyond the CV; volunteer list ---------- */
 .about .me-h{font:900 .875rem/1.2 var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--mute);margin:28px 0 12px}
 html[lang="ar"] .about .me-h{letter-spacing:0}
 .me{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 20px;max-width:620px}
@@ -288,8 +273,6 @@ html[lang="ar"] .p-volunteer .vol-h{letter-spacing:0}
 .facts.vol{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px 40px}
 @media (max-width:860px){.facts.vol{grid-template-columns:1fr}.me{grid-template-columns:1fr}}
 
-/* ---------- organisations: a moving strip of cards (transform only, compositor). JS adds .on and a clone of the list;
-   no JS or reduced motion = a static wrapped grid. Hover, keyboard focus or the Pause button stop it. ---------- */
 .orgs{overflow:hidden}
 .orgs-top{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap}
 .orgs .sec-h{margin-bottom:12px}
@@ -313,11 +296,9 @@ html[lang="ar"] .p-volunteer .vol-h{letter-spacing:0}
 .oc-n{font:700 1.125rem/1.25 var(--display);text-wrap:balance}
 html[lang="ar"] .oc-n{line-height:1.5}
 .oc-note{font:500 .9375rem/1.4 var(--sans);color:var(--mute)}
-/* the moving strip: notes appear on hover or focus (fine pointers); touch screens always show them */
 .mq.on{-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);max-width:none;padding-inline:0;overflow:clip}
 .mq.on .mq-track{flex-wrap:nowrap;padding-inline-end:14px}
 .mq.on .mq-rail{will-change:transform}
-/* grab and slide: the strip follows the pointer (JS); vertical page scroll still works on touch */
 .mq.on{cursor:grab;touch-action:pan-y;-webkit-user-select:none;user-select:none}
 .mq.on.dragging{cursor:grabbing}
 .mq.on img{-webkit-user-drag:none;pointer-events:none}
@@ -326,7 +307,6 @@ html[lang="ar"] .oc-n{line-height:1.5}
  .mq.on .oc:hover .oc-note,.mq.on .oc:focus-visible .oc-note{opacity:1;transform:none}
  .oc:hover{transform:translate3d(0,-3px,0);background:rgba(22,23,27,.06);box-shadow:inset 0 0 0 1px var(--line),0 10px 24px -14px rgba(22,23,27,.45)}
 }
-/* keyboard: once a card has focus, the strip becomes the static grid so every card can be reached in place */
 .mq.on:has(.oc:focus-visible){-webkit-mask-image:none;mask-image:none;max-width:calc(var(--max) + 2*var(--pad));padding-inline:var(--pad)}
 .mq.on:has(.oc:focus-visible) .mq-rail{transform:none!important;width:auto}
 .mq.on:has(.oc:focus-visible) .mq-track{flex-wrap:wrap;padding-inline-end:0}
@@ -344,7 +324,6 @@ html[lang="ar"] .oc-n{line-height:1.5}
 }
 @media (max-width:860px){.oc{width:208px}}
 
-/* ---------- latest posts: mini LinkedIn-style previews (the cards between the markers are written by scripts/linkedin/sync_links.py) ---------- */
 .p-posts{padding:clamp(72px,10vw,136px) 0;border-top:1px solid var(--line)}
 .p-posts h2{font:700 clamp(2.25rem,4.6vw,3.75rem)/1.1 var(--display);margin:0 0 40px;max-width:20ch}
 html[lang="ar"] .p-posts h2{line-height:1.45}
@@ -370,7 +349,6 @@ html[lang="ar"] .pc-hook,.pc[dir="rtl"] .pc-hook{line-height:1.6}
 .pc-cta:focus-visible span{outline:3px solid var(--ink);outline-offset:4px;border-radius:4px}
 .pc-text .pc-hook{font-size:1.625rem;padding:8px 0 20px}
 .more{display:inline-flex;margin-top:36px}
-/* below the fold: skipped by layout and paint until near the screen (the GPU paints only what is visible) */
 .xp,#projects,#certificates,.p-posts{content-visibility:auto;contain-intrinsic-size:auto 900px}
 .orgs{content-visibility:auto;contain-intrinsic-size:auto 520px}
 @media (max-width:860px){
@@ -384,7 +362,6 @@ html[lang="ar"] .pc-hook,.pc[dir="rtl"] .pc-hook{line-height:1.6}
  .pc{flex:0 0 min(84%,340px);scroll-snap-align:center}
 }
 
-/* ---------- footer ---------- */
 .foot{background:var(--ink);color:var(--paper);padding:56px 0 calc(56px + env(safe-area-inset-bottom))}
 .foot .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px}
 .foot .names{font:700 1.5rem/1.4 var(--display);margin:0}
@@ -397,11 +374,7 @@ html:not(.js) .btn-ghost{display:none}
 
 @media (prefers-reduced-motion:reduce){.hero,.mark .face{transition-duration:.2s}}
 
-/* ---------- motion layer (NJ motion guideline v1, calm mode) ----------
-   Static first: colour changes on hover and focus live outside the media query and are instant.
-   Everything that moves sits in no-preference, uses transform, translate, scale and opacity only, and is visible at rest and without JS. */
 @property --accent{syntax:"<color>";inherits:true;initial-value:#3D7F7A}
-/* transitions.dev motion tokens (transitions-dev / transitions-polish): hover-in fast, colour quick, reveal very-slow, stagger 40 ms */
 :root{--duration-stagger:40ms;--duration-quick:150ms;--duration-fast:250ms;--duration-very-slow:500ms;--ease-smooth-out:cubic-bezier(.22,1,.36,1);--distance-medium:12px;--blur-medium:3px}
 :root{--accent:#3D7F7A;--dir:1;--gold:#D9A93F;--goldhi:#FFF6DC;--e-snap:cubic-bezier(.34,1.56,.64,1);
  --arrow:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14M13 6l6 6-6 6'/%3E%3C/svg%3E")}
@@ -429,7 +402,6 @@ html[dir="rtl"] .prog{transform-origin:100% 50%}
 .btn::after{content:"";flex:none;width:1.05em;height:1.05em;margin-inline-start:10px;background:currentColor;-webkit-mask:var(--arrow) center/contain no-repeat;mask:var(--arrow) center/contain no-repeat;transform:scaleX(var(--dir))}
 .foot a:is(:hover,:focus-visible),.btn-ghost:is(:hover,:focus-visible){border-color:var(--gold);background:rgba(239,234,224,.12)}
 .hint:hover{background:var(--paper)}
-/* cards: persona-shade edge, light that follows the pointer, gold sheen */
 .panel,.cell{position:relative;overflow:hidden;--ps:var(--gold)}
 .p-tester .panel{--ps:var(--teal)}
 .panel::before,.cell::before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;z-index:1;
@@ -446,7 +418,6 @@ blockquote:hover{border-inline-start-color:var(--ox)}
 .chips li:hover{background:var(--paper);color:var(--ox)}
 .facts a,.cell a{text-decoration-thickness:1px}
 .facts a:is(:hover,:focus-visible),.cell a:is(:hover,:focus-visible){text-decoration-thickness:3px}
-/* post preview cards: lift, and the real GIF plays (script) */
 .pc,.xc,.bd,.pj{--ps:var(--teal)}
 .pc{--dir:1}
 html[dir="rtl"] .pc,.pc[dir="rtl"]{--dir:-1}
@@ -457,8 +428,6 @@ html[dir="rtl"] .pc,.pc[dir="rtl"]{--dir:-1}
 
 @media (prefers-reduced-motion:no-preference){
  html{transition:--accent .96s var(--e-move)}
- /* scroll-linked motion: every reveal is scrubbed by the scroll position (CSS scroll-driven animations; transform/opacity only),
-    so it runs forward while scrolling down and in reverse, from the top edge, while scrolling up. A JS fallback (.fb) maps the same progress. */
  .js .panel[data-reveal]{--rx:calc(var(--dir) * -40px)}
  .js .stat[data-reveal]{--rx:calc(var(--dir) * 40px)}
  @keyframes sdIn{from{opacity:0;translate:var(--rx,0px) 28px}to{opacity:1;translate:0 0}}
@@ -478,7 +447,6 @@ html[dir="rtl"] .pc,.pc[dir="rtl"]{--dir:-1}
  .fb [data-reveal],.fb [data-st]{opacity:0;translate:0 28px}
  .fb .pw img{scale:1.1}
  .fb .tl::before{transform-origin:top;transform:scaleY(var(--tp,0))}
- /* header */
  .nav-in{animation:navIn .72s var(--e-enter) backwards}
  .links li{animation:navItem .56s var(--e-enter) backwards}
  .links li:nth-child(1){animation-delay:.18s}.links li:nth-child(2){animation-delay:.23s}.links li:nth-child(3){animation-delay:.28s}.links li:nth-child(4){animation-delay:.33s}.links li:nth-child(5){animation-delay:.38s}.links li:nth-child(6){animation-delay:.43s}.links li:nth-child(7){animation-delay:.48s}.links li:nth-child(8){animation-delay:.53s}
@@ -494,7 +462,6 @@ html[dir="rtl"] .pc,.pc[dir="rtl"]{--dir:-1}
  .bm{transition:transform .4s var(--e-snap)}
  .brand:is(:hover,:focus-visible) .bm{transform:perspective(160px) rotateY(calc(var(--dir) * -26deg)) rotate(-4deg) scale(1.1)}
  .brand:is(:hover,:focus-visible) .bm::after{transform:translateX(130%);transition:transform .72s var(--e-move)}
- /* buttons: lift and sheen on hover, press on pointer-down, arrow nudge */
  .btn:is(:hover,:focus-visible),.btn-lang:is(:hover,:focus-visible),.btn-ghost:is(:hover,:focus-visible),.foot a:is(:hover,:focus-visible){transform:translateY(-2px)}
  .btn:is(:hover,:focus-visible)::before,.btn-lang:is(:hover,:focus-visible)::before,.btn-ghost:is(:hover,:focus-visible)::before,.foot a:is(:hover,:focus-visible)::before{transform:translateX(calc(var(--dir) * 330%));transition:transform .72s var(--e-move)}
  .btn::after{transition:transform .24s var(--e-settle)}
@@ -502,7 +469,6 @@ html[dir="rtl"] .pc,.pc[dir="rtl"]{--dir:-1}
  .links a:active,.btn:active,.btn-lang:active,.btn-ghost:active,.foot a:active,.hint:active,.tag:active{transform:scale(.96);transition-duration:.12s}
  .hint:hover{transform:translateY(-2px) scale(1.04)}
  .tag:is(:hover,:focus-visible){transform:translateY(-2px)}
- /* cards: spring lift and pointer tilt (vars written by script) with a light that follows the pointer */
  .js [data-tilt]{transform:perspective(900px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translateY(var(--ly,0px))}
  .panel:is(:hover,:focus-within),.cell:is(:hover,:focus-within){--ly:-6px}
  .panel:hover::before,.cell:hover::before{transform:translateX(calc(var(--dir) * 110%));transition:transform .96s var(--e-move)}
@@ -514,7 +480,6 @@ html[dir="rtl"] .pc,.pc[dir="rtl"]{--dir:-1}
  .facts li::before{transform-origin:calc(50% - var(--dir) * 50%) 50%;transition:transform .4s var(--e-settle)}
  .facts li:hover{transform:translateX(calc(var(--dir) * 4px))}
  .facts li:hover::before{transform:scaleX(2.2)}
-  /* post preview cards: spring lift, play button press */
  .pc{transition:transform var(--duration-fast) var(--ease-smooth-out),box-shadow var(--duration-fast) var(--ease-smooth-out)}
  .pc:is(:hover,:focus-within){transform:translateY(-4px)}
  .pc-play{transition:transform .24s var(--e-settle),background-color .2s var(--e-settle)}
@@ -525,7 +490,6 @@ html[dir="rtl"] .pc,.pc[dir="rtl"]{--dir:-1}
 }
 @media (prefers-reduced-motion:reduce){.nav-in,.links li,.brand,.btn-lang,:focus-visible{animation:none}}
 
-/* ---------- intro: the approved animatic (240 f at 25 fps), played once, full viewport ---------- */
 #intro{display:none}
 .intro-on #intro{display:block;position:fixed;inset:0;z-index:40;background:var(--teal);overflow:hidden;color:var(--paper)}
 .intro-on body{overflow:hidden}
@@ -551,7 +515,6 @@ html[lang="ar"] #iunder{transform-origin:100% 50%}
  background-size:300% 100%;background-repeat:no-repeat;background-position:100% 0}
 #skipIntro{position:absolute;inset-inline-end:16px;bottom:calc(16px + env(safe-area-inset-bottom));z-index:2;font:500 1rem/1 var(--sans);color:var(--ink);background:rgba(239,234,224,.9);border:0;border-radius:999px;padding:13px 18px;min-height:44px;cursor:pointer}
 #skipIntro:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
-/* header tint near the title: the header takes each persona shade in turn while the pointer is near the name */
 :root{--navtint:#3D7F7A}
 .nav-in{transition:background-color .96s var(--e-move),box-shadow .4s var(--e-settle)}
 .links a,.brand span{transition:color .96s var(--e-move),background-color .4s var(--e-settle)}
@@ -565,7 +528,6 @@ html[lang="ar"] #iunder{transform-origin:100% 50%}
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs>
-<!-- Lucide icons (ISC): briefcase, award, graduation-cap, bot, list-checks, code-xml, database -->
 <symbol id="i-package" viewBox="0 0 24 24"><path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"/><path d="M12 22V12"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="m7.5 4.27 9 5.15"/></symbol>
 <symbol id="i-briefcase" viewBox="0 0 24 24"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><rect width="20" height="14" x="2" y="6" rx="2"/></symbol>
 <symbol id="i-award" viewBox="0 0 24 24"><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"/><circle cx="12" cy="8" r="6"/></symbol>
@@ -586,7 +548,6 @@ html[lang="ar"] #iunder{transform-origin:100% 50%}
 </defs></svg>
 <a class="skip" href="#main"><span data-l="en">Skip to content</span><span data-l="ar">انتقل إلى المحتوى</span></a>
 
-<!-- Intro: decorative, the same words are in the page; Skip, Escape or reduced motion end it -->
 <div id="intro" aria-hidden="true">
   <div class="iw" id="w0"><span></span><div class="itag" lang="en">TESTER</div></div>
   <div class="iw" id="w1"><span></span><div class="itag" lang="en">TEACHER</div></div>
@@ -623,14 +584,12 @@ html[lang="ar"] #iunder{transform-origin:100% 50%}
 </header>
 
 <main id="main">
-  <!-- Hero. Facts: F17 (name, Amman, title), F95 (no employer named), DECISIONS 13 and 16 (Arabic name, promise line) -->
   <section class="hero on-shade" id="top" aria-labelledby="name">
     <div class="wrap">
       <div class="hero-copy">
         <h1 id="name"><span data-l="en"><span class="nm">Nader</span> <span class="nm">Alzghoul</span></span> <span data-l="ar" lang="ar">نادر الزغول</span></h1>
         <p class="alt-name"><span data-l="en" lang="ar" dir="rtl">نادر الزغول</span><span data-l="ar" lang="en" dir="ltr">Nader Alzghoul</span></p>
         <p class="role"><span data-l="en"><span class="nw">QA Automation Engineer,</span> <span class="nw">Amman, Jordan</span></span><span data-l="ar"><span class="nw">مهندس أتمتة ضمان الجودة،</span> <span class="nw">عمان، الأردن</span></span></p>
-        <!-- Answer first. Facts: F20 (100+ e-services), F96 (full QA toolset), F45/F92/F93 (free MIT tools), F94 (youth, no age range) -->
         <ul class="does">
           <li><svg class="ic flip" aria-hidden="true"><use href="#i-checks"/></svg><span data-l="en">QA for 100+ government <span class="nw">e-services</span>, with Playwright, Selenium, Cypress and Postman</span><span data-l="ar">ضمان جودة لأكثر من 100 خدمة حكومية إلكترونية، باستخدام Playwright وSelenium وCypress وPostman</span></li>
           <li><svg class="ic" aria-hidden="true"><use href="#i-package"/></svg><span data-l="en">Builds his own free tools: <a class="nw" href="https://nj-burrito.github.io/NJ-Kit/">NJ-Kit</a>, <a class="nw" href="https://nj-burrito.github.io/QA-Wrap/">QA-Wrap</a>, <a class="nw" href="https://nj-burrito.github.io/Profile-Wrap/">Profile-Wrap</a></span><span data-l="ar">يبني أدواته المجانية: <a class="nw" href="https://nj-burrito.github.io/NJ-Kit/">NJ-Kit</a> و<a class="nw" href="https://nj-burrito.github.io/QA-Wrap/">QA-Wrap</a> و<a class="nw" href="https://nj-burrito.github.io/Profile-Wrap/">Profile-Wrap</a></span></li>
@@ -658,7 +617,6 @@ html[lang="ar"] #iunder{transform-origin:100% 50%}
     </div>
   </section>
 
-  <!-- About. Facts: F17, F20, F94 (youth; schools, cultural centers, businesses), F95 (no employer), F96 (tools), F97 (languages), F98 (who he is), F27, F92, F93, F45. Photos: Nader alone, metadata stripped, 1000 px and under -->
   <section class="sec about" id="about" aria-labelledby="h-about">
     <div class="wrap">
       <div>
@@ -692,7 +650,6 @@ html[lang="ar"] #iunder{transform-origin:100% 50%}
   </section>
 
   <section class="sec faq" id="faq" aria-labelledby="h-faq">
-    <!-- Quick answers. Facts: F11, F15, F17, F20, F22, F27, F40, F45, F92, F93, F94-F98. The FAQPage JSON-LD in the head is generated from this same text. -->
     <div class="wrap">
       <h2 class="sec-h" id="h-faq" data-reveal><span data-l="en">Quick answers</span><span data-l="ar">إجابات سريعة</span></h2>
       <dl class="qa">
@@ -707,7 +664,6 @@ html[lang="ar"] #iunder{transform-origin:100% 50%}
     </div>
   </section>
 
-  <!-- Tester. Facts: F17, F20, F21, F22 (no client named, F95), F96, F15, F40, F12, F11 -->
   <section class="persona p-tester" id="tester" aria-labelledby="h-tester">
     <div class="wrap">
       <div class="panel" data-reveal>
@@ -729,7 +685,6 @@ html[lang="ar"] #iunder{transform-origin:100% 50%}
     </div>
   </section>
 
-  <!-- Teacher. Facts: F94 (youth, no age range; schools, cultural centers, businesses), F05, F29, F31 (course goals), F32, F91 -->
   <section class="persona p-teacher on-shade" id="teacher" aria-labelledby="h-teacher">
     <div class="wrap">
       <div class="top">
@@ -749,7 +704,6 @@ html[lang="ar"] #iunder{transform-origin:100% 50%}
     </div>
   </section>
 
-  <!-- Volunteer. Facts: F26 and F44 (3am3dna since 2019, F39: only that wording), F27, F28 (his own words), F39 (GFP and the youth center may be named) -->
   <section class="persona p-volunteer" id="volunteer" aria-labelledby="h-volunteer">
     <div class="wrap">
       <div>
@@ -769,7 +723,6 @@ html[lang="ar"] #iunder{transform-origin:100% 50%}
           <li><span data-l="en">3am3dna, since January 2019: management and field assistance for poverty alleviation.</span><span data-l="ar">3am3dna منذ يناير 2019: الإدارة والمساعدة الميدانية في التخفيف من الفقر.</span></li>
         </ul>
       </div>
-      <!-- PLACEHOLDERS (F100, Nader 2026-10-25): generic volunteering points; Nader edits each by hand. They are NOT facts: never reuse them in posts. -->
       <div class="vol-more">
         <h3 class="vol-h" data-reveal><span data-l="en">What he does as a volunteer</span><span data-l="ar">ماذا يفعل متطوعا</span></h3>
         <ul class="facts vol">
@@ -792,7 +745,6 @@ html[lang="ar"] #iunder{transform-origin:100% 50%}
     </div>
   </section>
 
-  <!-- Professional (what he builds). Facts: F98 (his own projects), F92 (NJ-Kit), F93 (QA-Wrap), F45, F46 (Profile-Wrap), F15, F40, F96 (toolbox) -->
   <section class="persona p-professional on-shade" id="professional" aria-labelledby="h-professional">
     <div class="wrap">
       <div class="top">
@@ -826,7 +778,6 @@ html[lang="ar"] #iunder{transform-origin:100% 50%}
     </div>
   </section>
 
-  <!-- Experience. Facts: F19 (date only, employer not named: F95), F20, F22, F05, F94, F42 + F99 (coordinator ended 10/2026), F06, F41, F10, F66, F65. Data training entry removed (F95). -->
   <section class="sec xp" id="experience" aria-labelledby="h-experience">
     <div class="wrap">
       <h2 class="sec-h" id="h-experience" data-reveal><span data-l="en">Experience</span><span data-l="ar">الخبرات</span></h2>
@@ -865,8 +816,6 @@ html[lang="ar"] #iunder{transform-origin:100% 50%}
     </div>
   </section>
 
-  <!-- Organisations. Facts: F05, F42, F99 (Zaha), F27, F44 (GFP), F91 (Robotna, public wording), F41 (DigiSkills, Luminus), F10 (Al-Balqa), F26, F44 (3am3dna, My Area), F90 (Correlation One), F08 (Qafza), F65 (Clever Mind). TaqneenSoft and ENSERA named here by Nader's request 2026-10-25 (F101); employer clients still not named.
-       Logos from each organisation's own site, in img/orgs/; 3am3dna logo is its app icon (Uptodown listing, sent by Nader 2026-10-25); Zaha logo from volunteer.zaha.gov.jo (1001px Arabic mark), DigiSkills from khawarizmi.edu.jo (1368px, via Google Images), Clever Mind POB logo from its Facebook page (both pointed to by Nader 2026-10-25); My Area uses a monogram tile (no official logo file found). -->
   <section class="sec orgs" id="organisations" aria-labelledby="h-orgs">
     <div class="wrap orgs-top">
       <div>
@@ -896,7 +845,6 @@ html[lang="ar"] #iunder{transform-origin:100% 50%}
     </div>
   </section>
 
-  <!-- Projects. Facts: F45, F46, F62 (Profile-Wrap), F12, F18 (Shalwa), F29 (course). Pictures: frames of his own LinkedIn post visuals, drawn, no people -->
   <section class="sec" id="projects" aria-labelledby="h-projects">
     <div class="wrap">
       <h2 class="sec-h" id="h-projects" data-reveal><span data-l="en">Projects</span><span data-l="ar">المشاريع</span></h2>
@@ -958,7 +906,6 @@ html[lang="ar"] #iunder{transform-origin:100% 50%}
     </div>
   </section>
 
-  <!-- Certificates. Facts: F11, F09, F07, F08, F58, F59, F60, F70-F90 (no verify links: none of the files prints a public verification URL) -->
   <section class="sec" id="certificates" aria-labelledby="h-certificates">
     <div class="wrap">
       <h2 class="sec-h" id="h-certificates" data-reveal><span data-l="en">Certificates</span><span data-l="ar">الشهادات</span></h2>
@@ -1087,19 +1034,16 @@ const dk=(c,t=.35)=>{const h=[1,3,5].map(i=>parseInt(c.slice(i,i+2),16));return"
 const lang=()=>D.lang==="ar"?"ar":"en";
 const store=(k,v)=>{try{v===null?localStorage.removeItem(k):localStorage.setItem(k,v)}catch(e){}};
 
-/* ---- accepted mark geometry (DECISIONS 9), precomputed from work/identity/idle-interactive.html ---- */
 const SEG=["M75.0 250.0L75.0 133.5L45.0 6.5L45.0 250.0Z","M75.0 133.5L165.0 313.5L135.0 186.5L45.0 6.5Z","M165.0 313.5L165.0 85.0L135.0 55.0L135.0 186.5Z","M165.0 85.0L215.0 85.0L245.0 55.0L135.0 55.0Z","M215.0 85.0L215.0 179.2L214.5 184.1L213.2 188.1L211.1 191.7L208.4 194.8L205.0 197.2L201.2 198.9L197.1 199.8L193.0 199.8L188.9 199.0L183.7 196.7L171.6 224.1L179.7 227.7L189.9 229.8L200.4 229.8L210.6 227.6L220.1 223.3L228.6 217.2L235.6 209.4L240.8 200.3L244.0 190.4L245.0 180.8L245.0 55.0Z"];
 const BACK=[0,1,0,1,0],CEN=[[60,160],[105,160],[150,160],[190,70],[203.8,140.2]];
 const CENTRE="M60.0 250.0L60.0 70.0L150.0 250.0L150.0 70.0L230.0 70.0L230.0 180.0L229.2 187.3L227.0 194.2L223.3 200.5L218.5 206.0L212.6 210.3L205.9 213.3L198.8 214.8L191.5 214.8L184.3 213.3L177.6 210.4";
 
-/* ================= language ================= */
 const T={en:{title:"Nader Alzghoul: QA Automation Engineer in Amman, Jordan",stage:"NJ mark. Current role: {r}. Press Enter for the next role.",live:"Role: {r}"},
          ar:{title:"نادر الزغول، مهندس أتمتة ضمان الجودة في عمان، الأردن",stage:"شعار NJ. الدور الحالي: {r}. اضغط Enter للدور التالي.",live:"الدور: {r}"}};
 function applyLang(l,save){D.lang=l;D.dir=l==="ar"?"rtl":"ltr";if(save)store("nj-lang",l);document.title=T[l].title;
  setTag(false);label();if(intro.running)intro.text()}
 $("#langBtn").addEventListener("click",()=>applyLang(lang()==="ar"?"en":"ar",true));
 
-/* ================= hero: the interactive 3D idle (from work/identity/idle-interactive.html) ================= */
 const hero=$("#top"),stage=$("#stage"),markBox=$("#markBox"),mark=$("#mark"),tag=$("#tag"),live=$("#live");
 let pi=0;
 mark.innerHTML="";
@@ -1118,7 +1062,6 @@ const segs=SEG.map((d,i)=>{const el=document.createElementNS("http://www.w3.org/
 
 function label(){const r=lang()==="ar"?PER[pi].ar:PER[pi].en.charAt(0)+PER[pi].en.slice(1).toLowerCase();
  stage.setAttribute("aria-label",T[lang()].stage.replace("{r}",r));return r}
-/* kinetic persona tag: Latin letters snap up from a mask, staggered; Arabic moves as one word (letters must stay joined) */
 function setTag(animate){const p=PER[pi],l=lang();tag.href="#"+p.id;
  const word=l==="ar"?[p.ar]:[...p.en];
  tag.innerHTML=word.map(ch=>`<span><i>${ch}</i></span>`).join("");tag.lang=l;
@@ -1132,7 +1075,6 @@ function nextPersona(){pi=(pi+1)%PER.length;const c=PER[pi].c;hero.style.setProp
 stage.addEventListener("click",nextPersona);
 stage.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();nextPersona()}});
 
-/* springs: interruptible, start from the live value, carry velocity */
 function spring(v,target,vel,k,c,dt){const a=k*(target-v)-c*vel;vel+=a*dt;v+=vel*dt;return[v,vel]}
 const S={rx:0,ry:0,vx:0,vy:0,px:150,py:150,hover:0,hv:0};
 let pointer=null,last=0,t0=performance.now(),raf=0,heroVisible=true,idleOn=false;
@@ -1162,7 +1104,6 @@ function idleStart(){idleOn=true;if(!raf){last=0;raf=requestAnimationFrame(frame
 new IntersectionObserver(es=>{heroVisible=es[0].isIntersecting;if(heroVisible&&idleOn&&!raf){last=0;raf=requestAnimationFrame(frame)}}).observe(hero);
 document.addEventListener("visibilitychange",()=>{if(!document.hidden&&idleOn&&heroVisible&&!raf){last=0;raf=requestAnimationFrame(frame)}});
 
-/* hero copy settles in after the intro, or on load for a returning visitor */
 function heroIn(){if(RM.matches)return;[...document.querySelectorAll(".hero-copy > *, .tag, .hint")].forEach((el,k)=>
  el.animate([{opacity:0,transform:"translateY(12px)",filter:"blur(3px)"},{opacity:1,transform:"none",filter:"blur(0)"}],{duration:500,delay:40*Math.min(k,7),easing:"cubic-bezier(.22,1,.36,1)",fill:"backwards"}))}
 
@@ -1194,7 +1135,6 @@ document.querySelectorAll(".facts,.chips,.posts,.grid4,.tl,.pj-grid,.badges,.ph"
  addEventListener("scroll",go,{passive:true});addEventListener("resize",go);RM.addEventListener("change",go);go();
 })();
 
-/* ================= intro: animatic v1 (240 f at 25 fps), exact guideline beziers, hands off at f 216 ================= */
 function bez(x1,y1,x2,y2){return t=>{if(t<=0)return 0;if(t>=1)return 1;let lo=0,hi=1,u=t;for(let i=0;i<28;i++){u=(lo+hi)/2;const x=3*(1-u)**2*u*x1+3*(1-u)*u*u*x2+u**3;if(x<t)lo=u;else hi=u}return 3*(1-u)**2*u*y1+3*(1-u)*u*u*y2+u**3}}
 const E={enter:bez(.05,.7,.1,1),settle:bez(.16,1,.3,1),move:bez(.76,0,.24,1),snap:bez(.34,1.56,.64,1)};
 const cl=v=>Math.max(0,Math.min(1,v)),lerp=(a,b,p)=>a+(b-a)*p;
@@ -1214,7 +1154,6 @@ const intro={running:false,el:$("#intro"),
   <g clip-path="url(#iShape)"><g clip-path="url(#iCut)"><g id="iGlint"><g transform="skewX(-18)"><rect x="-170" y="0" width="200" height="320" fill="url(#iGlS)"/><rect x="-79" y="0" width="18" height="320" fill="url(#iGlC)"/></g></g></g></g></g>`;
   const L=[..."NADER ALZGHOUL"].map(c=>`<span>${c===" "?"&nbsp;":c}</span>`).join("");$("#ilatin").innerHTML=L;$("#ilatinSheen").innerHTML=L;
   this.drawP=$("#iDrawP");this.DL=this.drawP.getTotalLength();this.drawP.style.strokeDasharray=this.DL;this.text()},
- /* the lockup lands exactly where the hero mark sits, so the hand-off is a cross-fade with nothing moving */
  place(){const r=markBox.getBoundingClientRect(),m=$("#imark"),cx=r.left+r.width/2;
   Object.assign(m.style,{left:r.left+"px",top:r.top+"px",width:r.width+"px",height:r.height+"px"});
   const ls=Math.max(14,r.width*.1),as=Math.max(18,r.width*.119),vh=innerHeight,top=Math.min(r.bottom+r.width*.06,vh-ls-as*1.4-24);
@@ -1259,7 +1198,6 @@ const intro={running:false,el:$("#intro"),
   if(skipped)stage.focus({preventScroll:true});else if(document.activeElement===$("#skipIntro"))document.activeElement.blur()}};
 $("#replay").addEventListener("click",()=>{if(RM.matches)return;store("nj-intro",null);intro.start()});
 
-/* ================= motion layer: header state, scrollspy, accent, progress, card tilt ================= */
 const nav=$(".nav"),ind=$("#ind"),prog=$("#prog"),linksEl=$("#links"),navLinks=[...document.querySelectorAll(".links a")];
 const ACC={tester:"#3D7F7A",teacher:"#34473B",volunteer:"#A3573B",professional:"#5A1E26",about:"#3D7F7A",experience:"#3D7F7A",projects:"#3D7F7A",certificates:"#3D7F7A",posts:"#3D7F7A"};
 let act="top",accNow="";
@@ -1279,20 +1217,17 @@ addEventListener("scroll",()=>{if(!sc)sc=requestAnimationFrame(onScroll)},{passi
 addEventListener("resize",placeInd);
 new MutationObserver(()=>requestAnimationFrame(placeInd)).observe(D,{attributes:true,attributeFilter:["lang"]});
 document.fonts.ready.then(placeInd);
-/* language toggle morph: the new label rises in, the button squashes once, the page breathes */
 $("#langBtn").addEventListener("click",()=>{if(RM.matches)return;const b=$("#langBtn"),v=[...b.children].find(x=>getComputedStyle(x).display!=="none");
  if(v)v.animate([{opacity:0,transform:"translateY(70%) rotateX(-80deg)"},{opacity:1,transform:"none"}],{duration:400,easing:"cubic-bezier(.16,1,.3,1)"});
  b.animate([{transform:"scaleX(.88)"},{transform:"none"}],{duration:400,easing:"cubic-bezier(.16,1,.3,1)"});
  $("main").animate([{opacity:.35},{opacity:1}],{duration:400,easing:"cubic-bezier(.05,.7,.1,1)"})});
 document.addEventListener("touchstart",()=>{},{passive:true}); /* lets iOS Safari apply :active press states */
-/* cards: pointer tilt and light, written as CSS variables (transform stays on the compositor) */
 document.querySelectorAll(".panel,.cell").forEach(el=>{el.setAttribute("data-tilt","");
  el.addEventListener("pointermove",e=>{if(e.pointerType==="touch"||RM.matches)return;const r=el.getBoundingClientRect(),x=(e.clientX-r.left)/r.width,y=(e.clientY-r.top)/r.height;
   el.style.setProperty("--rx",((.5-y)*7).toFixed(2)+"deg");el.style.setProperty("--ry",((x-.5)*9).toFixed(2)+"deg");
   el.style.setProperty("--mx",(x*100).toFixed(1)+"%");el.style.setProperty("--my",(y*100).toFixed(1)+"%")});
  el.addEventListener("pointerleave",()=>{el.style.removeProperty("--rx");el.style.removeProperty("--ry")})});
 
-/* ================= boot ================= */
 applyLang(lang(),false);setTag(false);label();
 /* The page paints first and is never covered on its own. A first-time visitor sees a "Play the intro" button for this visit
    only (the visit is counted as seen at once); pressing it plays the intro. Reduced motion: no button, no intro. */
@@ -1316,7 +1251,6 @@ else D.dataset.intro="skipped";
   card.addEventListener("pointerenter",e=>{if(e.pointerType==="mouse"&&FINE.matches&&!RM.matches)play(f)});
   card.addEventListener("pointerleave",e=>{if(e.pointerType==="mouse"&&f.classList.contains("playing"))stop(f)});
   btn(f).addEventListener("click",()=>f.classList.contains("playing")?stop(f):play(f))})})();
-/* header tint near the title: Tester, then Teacher, Volunteer, Professional, looping; each shade eases in over 960 ms */
 (()=>{const D=document.documentElement,nav=document.querySelector(".nav"),h1=document.getElementById("name"),SH=["#3D7F7A","#34473B","#A3573B","#5A1E26"];let on=false,k=0,timer=0,raf=0,touchT=0;
  const step=()=>{D.style.setProperty("--navtint",SH[k]);k=(k+1)%SH.length};
  const start=()=>{if(on)return;on=true;k=0;step();nav.classList.add("is-tinted");timer=setInterval(step,1600)};
