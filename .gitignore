@@ -1,0 +1,9 @@
+.review/
+work/
+*.bak
+*.map
+*.log
+.env*
+*.tmp
+Thumbs.db
+.DS_Store
