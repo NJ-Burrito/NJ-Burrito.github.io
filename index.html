@@ -6,6 +6,9 @@
 <title>Nader Alzghoul: QA Automation Engineer in Amman, Jordan</title>
 <meta name="description" content="Nader Alzghoul (نادر الزغول), QA Automation Engineer in Amman, Jordan. Tests with Playwright, Selenium, Cypress and Postman. Builds free tools: NJ-Kit, QA-Wrap, Profile-Wrap.">
 <link rel="canonical" href="https://nj-burrito.github.io/">
+<link rel="alternate" hreflang="en" href="https://nj-burrito.github.io/">
+<link rel="alternate" hreflang="ar" href="https://nj-burrito.github.io/ar/">
+<link rel="alternate" hreflang="x-default" href="https://nj-burrito.github.io/">
 <meta name="author" content="Nader Alzghoul">
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
 <link rel="alternate" type="text/markdown" href="https://nj-burrito.github.io/llms.txt" title="llms.txt">
@@ -38,14 +41,19 @@
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "@id": "https://nj-burrito.github.io/#faq", "inLanguage": "en", "mainEntity": [{"@type": "Question", "name": "Who is Nader Alzghoul?", "acceptedAnswer": {"@type": "Answer", "text": "Nader Alzghoul is a QA Automation Engineer in Amman, Jordan. He has delivered QA work for 100+ government e-services. Outside work he teaches AI and robotics to youth, volunteers, and builds his own free tools."}}, {"@type": "Question", "name": "Where does Nader Alzghoul work?", "acceptedAnswer": {"@type": "Answer", "text": "In Amman, Jordan, as a QA Automation Engineer. He writes end-to-end tests, SRS documents and Arabic and English manuals for government portals."}}, {"@type": "Question", "name": "What has Nader Alzghoul built?", "acceptedAnswer": {"@type": "Answer", "text": "He builds free, open-source tools: Profile-Wrap (plans, writes and checks LinkedIn posts), NJ-Kit (a working method for Claude Code with 40 skills) and QA-Wrap (a browser extension that writes bug reports from a test session)."}}, {"@type": "Question", "name": "Which testing tools does Nader Alzghoul use?", "acceptedAnswer": {"@type": "Answer", "text": "He uses Playwright, Selenium, Cypress and Appium for UI tests, Postman and REST Assured for APIs and JMeter for load tests, with Java, Python and SQL in GitHub Actions and Azure DevOps. He holds ISTQB CTFL, ISTQB Advanced Test Automation Engineering and ISTQB AI Testing."}}, {"@type": "Question", "name": "Does Nader Alzghoul teach?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. He teaches AI and robotics to youth at schools, cultural centers and businesses, and he facilitates sport-for-peace sessions with Generations For Peace."}}, {"@type": "Question", "name": "Which languages does Nader Alzghoul speak?", "acceptedAnswer": {"@type": "Answer", "text": "He is trilingual: Arabic is his native language, his English is at C2 level, and he is learning Spanish."}}, {"@type": "Question", "name": "How can I contact Nader Alzghoul?", "acceptedAnswer": {"@type": "Answer", "text": "Through LinkedIn at linkedin.com/in/nader-alzghoul, or on GitHub as NJ-Burrito."}}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "@id": "https://nj-burrito.github.io/#website", "name": "Nader Alzghoul", "url": "https://nj-burrito.github.io/", "inLanguage": ["en", "ar"], "author": {"@id": "https://nj-burrito.github.io/#nader"}}</script>
 <script>
-/* Before first paint: language (?lang=, then the saved choice, else English) and whether the intro plays.
-   The intro plays once per visitor (localStorage "nj-intro"), never under reduced motion, never without JS. */
+/* Before first paint: language (?lang=, then the saved choice, else English) and whether the intro is due.
+   The intro plays once per visitor (localStorage "nj-intro"), never under reduced motion, never without JS.
+   It never blocks or delays the first paint. It is not started by a timer either (measured 2026-10-27: an overlay that
+   starts after load still becomes the LCP element, 3.9 s); a first-time visitor gets a "Play the intro" button and the
+   intro runs when it is pressed (see "boot").
+   /ar/index.html is generated from this page by sync_links.py (render_ar): it rewrites the language line below and the
+   #langBtn handler. Keep those two lines as they are, or the Arabic page is not rebuilt. */
 (function(){var d=document.documentElement,q=null,s=null,seen=null;
  try{q=new URLSearchParams(location.search).get("lang")}catch(e){}
  try{s=localStorage.getItem("nj-lang");seen=localStorage.getItem("nj-intro")}catch(e){}
  var l=(q==="ar"||q==="en")?q:(s==="ar"?"ar":"en");if(l==="ar"){d.lang="ar";d.dir="rtl"}
  d.classList.add("js");
- if(!seen&&!matchMedia("(prefers-reduced-motion: reduce)").matches)d.classList.add("intro-on")})();
+ if(!seen&&!matchMedia("(prefers-reduced-motion: reduce)").matches)d.dataset.introDue="1"})();
 </script>
 <style>
 @font-face{font-family:"Thmanyah Serif Display";font-weight:700;font-style:normal;font-display:swap;src:url("fonts/thmanyahserifdisplay-Bold.woff2") format("woff2")}
@@ -385,6 +393,7 @@ html[lang="ar"] .pc-hook,.pc[dir="rtl"] .pc-hook{line-height:1.6}
 .foot a:hover,.btn-ghost:hover{background:rgba(239,234,224,.1)}
 html:not(.js) .btn-ghost{display:none}
 @media (prefers-reduced-motion:reduce){.btn-ghost{display:none}}
+#playIntro{display:none}html[data-intro="offered"] #playIntro{display:inline-flex}
 
 @media (prefers-reduced-motion:reduce){.hero,.mark .face{transition-duration:.2s}}
 
@@ -631,6 +640,7 @@ html[lang="ar"] #iunder{transform-origin:100% 50%}
         <div class="cta">
           <a class="btn btn-paper" href="https://www.linkedin.com/in/nader-alzghoul" rel="me noopener">LinkedIn</a>
           <a class="btn btn-ink" href="https://github.com/NJ-Burrito" rel="me noopener">GitHub</a>
+          <button type="button" class="btn-ghost" id="playIntro"><span data-l="en">Play the 9-second intro</span><span data-l="ar">تشغيل المقدمة</span></button>
         </div>
       </div>
       <div class="hero-mark">
@@ -1228,7 +1238,7 @@ const intro={running:false,el:$("#intro"),
   $("#iarname").style.clipPath=`inset(0 0 0 ${100*(1-E.settle(cl((f-145)/10)))}%)`;
   $("#iGlint").setAttribute("transform",`translate(${lerp(-60,460,E.move(cl((f-168)/40)))} 0)`);
   const bp=100*(1-E.move(cl((f-174)/40)))+"% 0";$("#ilatinSheen").style.backgroundPosition=bp;$("#iarSheen").style.backgroundPosition=bp},
- start(){if(this.running)return;this.running=true;D.classList.add("intro-on");scrollTo(0,0);
+ start(){if(this.running)return;this.running=true;idleOn=false;D.classList.add("intro-on");scrollTo(0,0);
   if(!this.built){this.build();this.built=true}this.text();this.place();
   [".skip","header","main","footer"].forEach(s=>$(s).inert=true);
   const skip=$("#skipIntro");skip.tabIndex=0;this.el.removeAttribute("aria-hidden");this.el.setAttribute("role","dialog");this.el.setAttribute("aria-label",lang()==="ar"?"المقدمة":"Intro");
@@ -1284,8 +1294,12 @@ document.querySelectorAll(".panel,.cell").forEach(el=>{el.setAttribute("data-til
 
 /* ================= boot ================= */
 applyLang(lang(),false);setTag(false);label();
-if(D.classList.contains("intro-on"))intro.start();
-else{D.dataset.intro="skipped";idleStart();heroIn()}
+/* The page paints first and is never covered on its own. A first-time visitor sees a "Play the intro" button for this visit
+   only (the visit is counted as seen at once); pressing it plays the intro. Reduced motion: no button, no intro. */
+idleStart();heroIn();
+if(D.dataset.introDue){D.dataset.intro="offered";store("nj-intro","1");
+ $("#playIntro").addEventListener("click",()=>{if(RM.matches)return;D.dataset.intro="playing";intro.start()})}
+else D.dataset.intro="skipped";
 })();
 /* post previews: a muted, looping 540 px video of the post plays on mouse hover, or when the play button is pressed (touch, keyboard,
    reduced motion). One at a time; the file (about 0.5 MB) is fetched on the first play only (preload none); it is removed on stop and when

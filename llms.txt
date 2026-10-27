@@ -52,4 +52,4 @@ Through LinkedIn at linkedin.com/in/nader-alzghoul, or on GitHub as NJ-Burrito.
 
 ## Optional
 
-- [Sitemap of all four sites](https://nj-burrito.github.io/sitemap-sites.xml)
+- [Sitemap of all four sites](https://nj-burrito.github.io/sitemap.xml)
