@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!-- All four sites on this host. sitemap.xml is rewritten by the post sync with two URLs; this file is not, so submit both in Search Console. -->
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://nj-burrito.github.io/</loc><lastmod>2026-10-24</lastmod></url>
-  <url><loc>https://nj-burrito.github.io/QA-Wrap/</loc></url>
-  <url><loc>https://nj-burrito.github.io/NJ-Kit/</loc></url>
-  <url><loc>https://nj-burrito.github.io/Profile-Wrap/</loc></url>
-</urlset>
