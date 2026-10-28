@@ -1,6 +1,6 @@
 # Nader Alzghoul (نادر الزغول)
 
-> Nader Alzghoul is a QA Automation Engineer in Amman, Jordan. He tests government e-services with Playwright, Selenium, Cypress, Postman, REST Assured, JMeter and Appium. Outside work he teaches AI and robotics to youth, volunteers, and builds three free, open-source (MIT) tools: NJ-Kit, QA-Wrap and Profile-Wrap. This site is his portfolio, in English and Arabic.
+> Nader Alzghoul is a QA Automation Engineer in Amman, Jordan. He tests government e-services with Playwright, Selenium, Cypress, Postman, REST Assured, JMeter and Appium. Outside work he teaches AI and robotics to youth, volunteers, and builds four free, open-source (MIT) tools: NJ-Kit, QA-Wrap, Profile-Wrap and Business-Wrap. This site is his portfolio, in English and Arabic.
 
 - [Portfolio](https://nj-burrito.github.io/): about, quick answers, work, teaching, volunteering, experience, organisations, projects, certificates, latest LinkedIn posts
 - [LinkedIn](https://www.linkedin.com/in/nader-alzghoul)
@@ -11,6 +11,7 @@
 - [QA-Wrap](https://nj-burrito.github.io/QA-Wrap/): browser extension that records a manual test session, links each failure to the click behind it and writes the bug report. Arabic and English. Source: https://github.com/NJ-Burrito/QA-Wrap
 - [NJ-Kit](https://nj-burrito.github.io/NJ-Kit/): Claude Code plugin with one working method and 40 skills, each ending in a PASS or FAIL gate. Source: https://github.com/NJ-Burrito/NJ-Kit
 - [Profile-Wrap](https://nj-burrito.github.io/Profile-Wrap/): free, open-source LinkedIn post manager and scheduler. Nothing goes out until you tap Allow. Source: https://github.com/NJ-Burrito/Profile-Wrap
+- [Business-Wrap](https://nj-burrito.github.io/Business-Wrap/): Claude Code plugin and MCP server that turns a process model or a walk through a live e-service into an Arabic and English requirements document, edited on the page that prints and exported to PDF and DOCX. Source: https://github.com/NJ-Burrito/Business-Wrap
 - [Shalwa Automation Project](https://github.com/NJ-Burrito/Shalwa-Automation-Project-SAP-): Java, Selenium WebDriver, Maven and JUnit test automation framework (Page Object Model) for SauceDemo
 
 ## Facts
@@ -36,7 +37,7 @@ Nader Alzghoul is a QA Automation Engineer in Amman, Jordan. He has delivered QA
 In Amman, Jordan, as a QA Automation Engineer. He writes end-to-end tests, SRS documents and Arabic and English manuals for government portals.
 
 ### What has Nader Alzghoul built?
-He builds free, open-source tools: Profile-Wrap (plans, writes and checks LinkedIn posts), NJ-Kit (a working method for Claude Code with 40 skills) and QA-Wrap (a browser extension that writes bug reports from a test session).
+He builds free, open-source tools: Profile-Wrap (plans, writes and checks LinkedIn posts), NJ-Kit (a working method for Claude Code with 40 skills), QA-Wrap (a browser extension that writes bug reports from a test session) and Business-Wrap (Arabic and English requirements documents from evidence).
 
 ### Which testing tools does Nader Alzghoul use?
 He uses Playwright, Selenium, Cypress and Appium for UI tests, Postman and REST Assured for APIs and JMeter for load tests, with Java, Python and SQL in GitHub Actions and Azure DevOps. He holds ISTQB CTFL, ISTQB Advanced Test Automation Engineering and ISTQB AI Testing.
@@ -52,4 +53,4 @@ Through LinkedIn at linkedin.com/in/nader-alzghoul, or on GitHub as NJ-Burrito.
 
 ## Optional
 
-- [Sitemap of all four sites](https://nj-burrito.github.io/sitemap.xml)
+- [Sitemap of all the sites](https://nj-burrito.github.io/sitemap.xml)
