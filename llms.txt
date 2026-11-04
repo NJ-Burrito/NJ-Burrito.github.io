@@ -1,6 +1,6 @@
-# Nader Alzghoul (نادر الزغول)
+# Nader Alzghoul (نادر الزغول), also known as NJ-Burrito
 
-> Nader Alzghoul is a QA Automation Engineer in Amman, Jordan. He tests government e-services with Playwright, Selenium, Cypress, Postman, REST Assured, JMeter and Appium. Outside work he teaches AI and robotics to youth, volunteers, and builds four free, open-source (MIT) tools: NJ-Kit, QA-Wrap, Profile-Wrap and Business-Wrap. This site is his portfolio, in English and Arabic.
+> Nader Alzghoul, who also uses the handle NJ-Burrito, is a QA Automation Engineer in Amman, Jordan. He tests government e-services with Playwright, Selenium, Cypress, Postman, REST Assured, JMeter and Appium. Outside work he teaches AI and robotics to youth, volunteers, and builds four free, open-source (MIT) tools: NJ-Kit, QA-Wrap, Profile-Wrap and Business-Wrap. This site is his portfolio, in English and Arabic.
 
 - [Portfolio](https://nj-burrito.github.io/): about, quick answers, work, teaching, volunteering, experience, organisations, projects, certificates, latest LinkedIn posts
 - [LinkedIn](https://www.linkedin.com/in/nader-alzghoul)
@@ -12,6 +12,7 @@
 - [NJ-Kit](https://nj-burrito.github.io/NJ-Kit/): Claude Code plugin with one working method and 40 skills, each ending in a PASS or FAIL gate. Source: https://github.com/NJ-Burrito/NJ-Kit
 - [Profile-Wrap](https://nj-burrito.github.io/Profile-Wrap/): free, open-source LinkedIn post manager and scheduler. Nothing goes out until you tap Allow. Source: https://github.com/NJ-Burrito/Profile-Wrap
 - [Business-Wrap](https://nj-burrito.github.io/Business-Wrap/): Claude Code plugin and MCP server that turns a process model or a walk through a live e-service into an Arabic and English requirements document, edited on the page that prints and exported to PDF and DOCX. Source: https://github.com/NJ-Burrito/Business-Wrap
+- [Story-Wrap, The Lost Property Office (مكتب المفقودات)](https://nj-burrito.github.io/story-wrap/): his animated Arabic series, with episode 1, the cast and where each character is from
 - [Shalwa Automation Project](https://github.com/NJ-Burrito/Shalwa-Automation-Project-SAP-): Java, Selenium WebDriver, Maven and JUnit test automation framework (Page Object Model) for SauceDemo
 
 ## Facts
