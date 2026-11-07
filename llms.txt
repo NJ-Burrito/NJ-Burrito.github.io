@@ -20,7 +20,7 @@
 - Role: QA Automation Engineer, Amman, Jordan.
 - Delivered QA work for 100+ government e-services: end-to-end tests, SRS documents, Arabic and English manuals.
 - Tools: Playwright, Selenium, Cypress, Appium, Postman, REST Assured, JMeter, Java, Python, SQL, GitHub Actions, Azure DevOps.
-- Certificates: ISTQB CTFL, ISTQB Advanced Test Automation Engineering, ISTQB AI Testing, AWS Certified Cloud Practitioner, PSM I.
+- Certificates: ISTQB CTFL (CT-TAE and CT-AI expected 2027), AWS Certified Cloud Practitioner, PSM I.
 - Education: Diploma in AI and Robotics Engineering, Al-Balqa Applied University.
 - Teaches: AI and robotics to youth, at schools, cultural centers and businesses.
 - Volunteers: session facilitator with Generations For Peace (sport for peace); poverty alleviation with 3am3dna since 2019.
@@ -41,7 +41,7 @@ In Amman, Jordan, as a QA Automation Engineer. He writes end-to-end tests, SRS d
 He builds free, open-source tools: Profile-Wrap (plans, writes and checks LinkedIn posts), NJ-Kit (a working method for Claude Code with 40 skills), QA-Wrap (a browser extension that writes bug reports from a test session) and Business-Wrap (Arabic and English requirements documents from evidence).
 
 ### Which testing tools does Nader Alzghoul use?
-He uses Playwright, Selenium, Cypress and Appium for UI tests, Postman and REST Assured for APIs and JMeter for load tests, with Java, Python and SQL in GitHub Actions and Azure DevOps. He holds ISTQB CTFL, ISTQB Advanced Test Automation Engineering and ISTQB AI Testing.
+He uses Playwright, Selenium, Cypress and Appium for UI tests, Postman and REST Assured for APIs and JMeter for load tests, with Java, Python and SQL in GitHub Actions and Azure DevOps. He holds ISTQB CTFL and is preparing for ISTQB CT-TAE and CT-AI (expected 2027).
 
 ### Does Nader Alzghoul teach?
 Yes. He teaches AI and robotics to youth at schools, cultural centers and businesses, and he facilitates sport-for-peace sessions with Generations For Peace.
