@@ -2,3 +2,10 @@ User-agent: *
 Allow: /
 
 Sitemap: https://nj-burrito.github.io/sitemap.xml
+Sitemap: https://nj-burrito.github.io/sitemap-portfolio.xml
+Sitemap: https://nj-burrito.github.io/QA-Wrap/sitemap.xml
+Sitemap: https://nj-burrito.github.io/Business-Wrap/sitemap.xml
+Sitemap: https://nj-burrito.github.io/NJ-Kit/sitemap.xml
+Sitemap: https://nj-burrito.github.io/NJ-Whip/sitemap.xml
+Sitemap: https://nj-burrito.github.io/NJ-Flush/sitemap.xml
+Sitemap: https://nj-burrito.github.io/Profile-Wrap/sitemap.xml
