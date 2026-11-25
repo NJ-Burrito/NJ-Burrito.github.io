@@ -9,7 +9,7 @@
 ## Projects
 
 - [QA-Wrap](https://nj-burrito.github.io/QA-Wrap/): browser extension that records a manual test session, links each failure to the click behind it and writes the bug report. Arabic and English. Source: https://github.com/NJ-Burrito/QA-Wrap
-- [NJ-Kit](https://nj-burrito.github.io/NJ-Kit/): Claude Code plugin with one working method and 41 skills, each ending in a PASS or FAIL gate. Source: https://github.com/NJ-Burrito/NJ-Kit
+- [NJ-Kit](https://nj-burrito.github.io/NJ-Kit/): Claude Code plugin with one working method and 49 skills, each ending in a PASS or FAIL gate. Source: https://github.com/NJ-Burrito/NJ-Kit
 - [Profile-Wrap](https://nj-burrito.github.io/Profile-Wrap/): free, open-source LinkedIn post manager and scheduler. Nothing goes out until you tap Allow. Source: https://github.com/NJ-Burrito/Profile-Wrap
 - [Business-Wrap](https://nj-burrito.github.io/Business-Wrap/): Claude Code plugin and MCP server that turns a process model or a walk through a live e-service into an Arabic and English requirements document, edited on the page that prints and exported to PDF and DOCX. Source: https://github.com/NJ-Burrito/Business-Wrap
 - [NJ-Whip](https://nj-burrito.github.io/NJ-Whip/): free, open-source (MIT) on-screen whip for Claude Code on Windows. Swing it with the mouse or press a hotkey and it cracks and types a short message that steers how Claude works. 15 whips, one exe of about 6.5 MB, no installer. Source: https://github.com/NJ-Burrito/NJ-Whip Arabic page: https://nj-burrito.github.io/NJ-Whip/ar/
@@ -44,7 +44,7 @@ Nader Alzghoul is a QA Automation Engineer in Amman, Jordan. He has delivered QA
 In Amman, Jordan, as a QA Automation Engineer. He writes end-to-end tests, SRS documents and Arabic and English manuals for government portals.
 
 ### What has Nader Alzghoul built?
-He builds free, open-source tools: Profile-Wrap (plans, writes and checks LinkedIn posts), NJ-Kit (a working method for Claude Code with 41 skills), QA-Wrap (a browser extension that writes bug reports from a test session), Business-Wrap (Arabic and English requirements documents from evidence), Story-Wrap (Arabic animated story reels made with Claude Code) NJ-Whip (an on-screen whip for Claude Code on Windows that types a short message to steer how Claude works) and NJ-Flush (a free Windows RAM cleaner you run with one double-click). He is now building Voice-Wrap, a voice studio that clones your own voice with consent.
+He builds free, open-source tools: Profile-Wrap (plans, writes and checks LinkedIn posts), NJ-Kit (a working method for Claude Code with 49 skills), QA-Wrap (a browser extension that writes bug reports from a test session), Business-Wrap (Arabic and English requirements documents from evidence), Story-Wrap (Arabic animated story reels made with Claude Code) NJ-Whip (an on-screen whip for Claude Code on Windows that types a short message to steer how Claude works) and NJ-Flush (a free Windows RAM cleaner you run with one double-click). He is now building Voice-Wrap, a voice studio that clones your own voice with consent.
 
 ### Which testing tools does Nader Alzghoul use?
 He uses Playwright, Selenium, Cypress and Appium for UI tests, Postman and REST Assured for APIs and JMeter for load tests, with Java, Python and SQL in GitHub Actions and Azure DevOps. He holds ISTQB CTFL and is preparing for ISTQB CT-TAE and CT-AI (expected 2027).
