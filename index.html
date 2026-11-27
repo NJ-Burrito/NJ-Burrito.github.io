@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
 <head>
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-5Mi8kY5ovLhy/ZPjuEs/00MSwOxR76fp/lFYW73mL2M=' 'sha256-/gEovfYd6Ofm02g9Bk7AT1MtbC0bagqxxopvOrT7TKo=' 'sha256-1485xrBzlVeuTCUXif/B5YpiJhgu0asQ4/2x/uZWttY='; style-src 'self' 'unsafe-inline'; img-src 'self' data:; media-src 'self'; font-src 'self'; connect-src 'none'; base-uri 'none'; form-action 'none'; object-src 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-23mgqyn0d9UemoMwCTYj3dj8aztTLCfMI1tAQSTzGlU=' 'sha256-3RfCsiwnn7lBOUiDnVD6r98XA4KZtc5J3D9uNCq1B5k=' 'sha256-1485xrBzlVeuTCUXif/B5YpiJhgu0asQ4/2x/uZWttY='; style-src 'self' 'unsafe-inline'; img-src 'self' data:; media-src 'self'; font-src 'self'; connect-src 'none'; base-uri 'none'; form-action 'none'; object-src 'none'">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Nader Alzghoul (NJ-Burrito) | QA Automation Engineer, Amman</title>
@@ -47,8 +47,9 @@
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "@id": "https://nj-burrito.github.io/#website", "name": "Nader Alzghoul", "url": "https://nj-burrito.github.io/", "inLanguage": ["en", "ar"], "author": {"@id": "https://nj-burrito.github.io/#person"}, "alternateName": ["NJ-Burrito", "NJ Burrito", "نادر الزغول"]}</script>
 <script>
 /* Before first paint: language (?lang=, then the saved choice, else English), and whether the intro covers the page.
-   The intro plays on every visit, never under reduced motion, never without JS, and not again right after a language switch
-   (sessionStorage "nj-switch", set by the language button, read once). "nj-intro" only says the visitor has seen it before: later
+   The intro plays on a fresh visit only: the first load in a browser tab session (sessionStorage "nj-played"), so not on reload and
+   not on a deep link (#section). Never under reduced motion, never without JS, and not again right after a language switch
+   (sessionStorage "nj-switch", set by the language button, read once). The replay buttons always play it on demand. "nj-intro" only says the visitor has seen it before: later
    visits play the same cut 1.8x faster. The cover is a class set here so the page never flashes before it; the page itself is
    painted underneath. If the main script has not started by 8 s, the cover is taken off.
    /ar/index.html is generated from this page by sync_links.py (render_ar): it rewrites the language line below and the
@@ -59,7 +60,9 @@
  var l=(q==="ar"||q==="en")?q:(s==="ar"?"ar":"en");if(l==="ar"){d.lang="ar";d.dir="rtl"}
  d.classList.add("js");
  var sw=0;try{sw=+sessionStorage.getItem("nj-switch")||0;sessionStorage.removeItem("nj-switch")}catch(e){}
- if(!(sw&&Date.now()-sw<4000)&&!matchMedia("(prefers-reduced-motion: reduce)").matches){
+ var pl=0,dl=location.hash.length>1;try{pl=sessionStorage.getItem("nj-played")}catch(e){}
+ if(!pl&&!dl&&!(sw&&Date.now()-sw<4000)&&!matchMedia("(prefers-reduced-motion: reduce)").matches){
+  try{sessionStorage.setItem("nj-played","1")}catch(e){}
   d.dataset.introDue="1";if(seen)d.dataset.introFast="1";d.classList.add("intro-on");
   setTimeout(function(){if(!d.dataset.intro)d.classList.remove("intro-on")},8000)}})();
 </script>
@@ -1514,8 +1517,8 @@ document.querySelectorAll(".panel,.cell").forEach(el=>{el.setAttribute("data-til
  el.addEventListener("pointerleave",()=>{el.style.removeProperty("--rx");el.style.removeProperty("--ry")})});
 
 applyLang(lang(),false);setTag(false);label();
-/* The page is painted first; the intro is an overlay on top of it (class set before paint). Every visit plays it, 1.8x after the
-   first ever, unless reduced motion or a language switch just happened. */
+/* The page is painted first; the intro is an overlay on top of it (class set before paint). A fresh visit plays it, 1.8x after the
+   first ever, unless reduced motion, a reload, a deep link or a language switch. */
 if(D.dataset.introDue&&!RM.matches){D.dataset.intro="playing";intro.start(!!D.dataset.introFast)}
 else{D.dataset.intro="skipped";D.classList.remove("intro-on");idleStart();heroIn()}
 })();
