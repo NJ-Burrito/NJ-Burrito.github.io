@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
 <head>
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-5Mi8kY5ovLhy/ZPjuEs/00MSwOxR76fp/lFYW73mL2M=' 'sha256-92jB9eJe5JxD8rNq+HVbynCCSbxIKDFUMQwfUNNcRkQ=' 'sha256-1485xrBzlVeuTCUXif/B5YpiJhgu0asQ4/2x/uZWttY='; style-src 'self' 'unsafe-inline'; img-src 'self' data:; media-src 'self'; font-src 'self'; connect-src 'none'; base-uri 'none'; form-action 'none'; object-src 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-5Mi8kY5ovLhy/ZPjuEs/00MSwOxR76fp/lFYW73mL2M=' 'sha256-/gEovfYd6Ofm02g9Bk7AT1MtbC0bagqxxopvOrT7TKo=' 'sha256-1485xrBzlVeuTCUXif/B5YpiJhgu0asQ4/2x/uZWttY='; style-src 'self' 'unsafe-inline'; img-src 'self' data:; media-src 'self'; font-src 'self'; connect-src 'none'; base-uri 'none'; form-action 'none'; object-src 'none'">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Nader Alzghoul (NJ-Burrito) | QA Automation Engineer, Amman</title>
@@ -157,6 +157,7 @@ html[lang="ar"] .tag{font:700 1.75rem/1.3 var(--display)}
 html[lang="ar"] .verb{line-height:1.3}
 .verb>span{display:block}
 .num{font:900 clamp(3.25rem,7vw,5.5rem)/1 var(--sans);letter-spacing:-.02em;margin:0;font-variant-numeric:lining-nums tabular-nums}
+html[dir="rtl"] .num{text-align:end}
 .cap{font:700 1.5rem/1.3 var(--display);margin:10px 0 0;max-width:22ch}
 html[lang="ar"] .cap{line-height:1.6}
 .lead{font:400 clamp(1.25rem,1.8vw,1.5rem)/1.5 var(--text);margin:0 0 24px;max-width:36ch}
@@ -420,7 +421,7 @@ html[dir="rtl"] .pc,.pc[dir="rtl"]{--dir:-1}
  @keyframes sdOut{from{opacity:1;translate:0 0}to{opacity:0;translate:0 -12px}}
  @keyframes sdVerb{from{transform:translateX(calc(var(--dir) * -105%));animation-timing-function:var(--e-settle)}to{transform:none}}
  @keyframes sdLine{from{transform:scaleY(0)}to{transform:scaleY(1)}}
- @keyframes sdPar{from{translate:0 -4%}to{translate:0 4%}}
+ @keyframes sdPar{from{translate:0 -3%}to{translate:0 3%}}
  @keyframes seam{from{transform:scaleX(0)}to{transform:scaleX(1)}}
  @keyframes unwipe{from{transform:scaleX(1)}to{transform:scaleX(0)}}
  @keyframes heroOut{to{opacity:0;translate:0 -24px}}
@@ -441,17 +442,17 @@ html[dir="rtl"] .pc,.pc[dir="rtl"]{--dir:-1}
   .foot::after{content:"";position:absolute;inset:0 0 auto 0;height:6px;background:var(--ink);pointer-events:none;transform-origin:calc(50% + var(--dir) * 50%) 50%;
    animation:unwipe linear both;animation-timeline:--ft;animation-range:entry 0% entry 70%}
   @media (min-width:700px){
-   .pj .pw :is(img,.pc-vid):not(.shot-fit){scale:1.1;animation:sdPar linear both;animation-timeline:view();animation-range:cover}
+   .pj .pw :is(img,.pc-vid):not(.shot-fit){scale:1.07;animation:sdPar linear both;animation-timeline:view();animation-range:cover}
   }
  }
  .fb [data-reveal],.fb [data-st]{opacity:0;translate:0 12px}
- @media (min-width:700px){.fb .pj .pw :is(img,.pc-vid):not(.shot-fit){scale:1.1;translate:0 var(--par,0%)}}
+ @media (min-width:700px){.fb .pj .pw :is(img,.pc-vid):not(.shot-fit){scale:1.07;translate:0 var(--par,0%)}}
  .fb .tl::before{transform-origin:top;transform:scaleY(var(--tp,0))}
  [data-ph]{opacity:0;translate:0 24px}
  [data-ph].in{opacity:1;translate:0 0;transition:opacity 500ms var(--e-settle),translate 500ms var(--e-settle)}
  @media (hover:hover) and (pointer:fine) and (min-width:700px){
   .pj .pw :is(img,.pc-vid):not(.shot-fit){transition:scale 400ms var(--e-settle)}
-  .pj:is(:hover,:focus-within) .pw :is(img,.pc-vid):not(.shot-fit){scale:1.16}
+  .pj:is(:hover,:focus-within) .pw :is(img,.pc-vid):not(.shot-fit){scale:1.09}
  }
  .nav-in{animation:navIn .72s var(--e-enter) backwards}
  .links li{animation:navItem .56s var(--e-enter) backwards}
@@ -554,7 +555,7 @@ html[lang="ar"] .faq-a{line-height:1.6}
 .faq-i details[open] .faq-ch{transform:rotate(180deg)}
 .faq-i details[open] .faq-a{color:var(--ra)}
 .faq-body{max-width:62ch;padding-block:0 24px;padding-inline-end:44px}
-.faq-body a{text-underline-offset:3px;text-decoration-thickness:1px}
+.faq-body a{white-space:nowrap;text-underline-offset:3px;text-decoration-thickness:1px}
 .faq-body a:is(:hover,:focus-visible){text-decoration-thickness:3px}
 .faq-tools{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:16px 0 0;padding:0}
 .faq-tools li{display:inline-flex;align-items:center;min-height:44px;padding:0 14px;border-radius:999px;background:rgba(22,23,27,.07);font:500 .9375rem/1 var(--sans)}
@@ -1392,7 +1393,7 @@ document.querySelectorAll(".facts,.chips,.grid4,.tl,.pj-grid,.badges,.faq-list")
   C.forEach(c=>{const vt=c.t-y,s=Math.min(c.i,7)*.06*c.h,e=Math.min(c.h,s+c.er),ti=cl((vh-vt-s)/Math.max(e-s,1)),eh=Math.min(c.h,96),to=cl((PAD+eh-(vt+c.h))/eh),p=ease(ti);
    c.e.style.opacity=(p*(1-to)).toFixed(3);c.e.style.translate=((1-p)*c.sx).toFixed(1)+"px "+((1-p)*c.ry-12*to).toFixed(1)+"px"});
   V.forEach(v=>{const p=ease(cl((vh-(v.t-y))/Math.min(v.h,240)));v.e.style.transform="translateX("+(-v.dir*105*(1-p)).toFixed(1)+"%)"});
-  W.forEach(w=>{w.e.style.setProperty("--par",narrow?"0%":(-4+8*cl((vh-(w.t-y))/(vh+w.h))).toFixed(2)+"%")});
+  W.forEach(w=>{w.e.style.setProperty("--par",narrow?"0%":(-3+6*cl((vh-(w.t-y))/(vh+w.h))).toFixed(2)+"%")});
   T.forEach(t=>t.e.style.setProperty("--tp",cl((vh-(t.t-y))/((vh+t.h)/2)).toFixed(3)))}
  const go=()=>{if(!busy){busy=true;requestAnimationFrame(paint)}},again=()=>{if(!mb){mb=true;requestAnimationFrame(measure)}};
  addEventListener("scroll",go,{passive:true});addEventListener("resize",again);RM.addEventListener("change",again);
@@ -1459,7 +1460,7 @@ const intro={running:false,el:$("#intro"),
  finish(skipped){if(!this.running)return;this.running=false;cancelAnimationFrame(this.raf);
   removeEventListener("keydown",this.onKey);removeEventListener("resize",this.onResize);this.el.removeEventListener("click",this.onClick);document.removeEventListener("visibilitychange",this.onVis);
   [".skip","header","main","footer"].forEach(s=>$(s).inert=false);
-  const hash=this.hash,el=this.el,done=()=>{D.classList.remove("intro-on");el.style.opacity="";
+  const hash=this.hash,el=this.el,done=()=>{D.classList.remove("intro-on");el.style.opacity="";requestAnimationFrame(()=>requestAnimationFrame(placeInd));
    if(hash&&hash.length>1){try{const t=document.getElementById(decodeURIComponent(hash.slice(1)));if(t)t.scrollIntoView({behavior:"instant",block:"start"})}catch(e){}}el.setAttribute("aria-hidden","true");el.removeAttribute("role");$("#skipIntro").tabIndex=-1};
   D.dataset.intro="done";idleStart();heroIn();
   const a=el.animate([{opacity:1},{opacity:0}],{duration:skipped?200:480,easing:skipped?"cubic-bezier(.3,0,.8,.15)":"cubic-bezier(.65,0,.35,1)",fill:"forwards"});
@@ -1482,7 +1483,8 @@ function setAccent(){const c=act==="top"?PER[pi].c:SEC[act];if(c&&c!==accNow){ac
  const tc=document.querySelector('meta[name="theme-color"]');if(tc)tc.content=c}}
 function placeInd(){if(!linksEl.offsetParent){ind.style.opacity="0";return}
  const a=navLinks.find(l=>l.getAttribute("href")==="#"+act)||navLinks[0];
- ind.style.transform=`translateX(${linksEl.offsetLeft+a.offsetLeft+12}px) scaleX(${Math.max(8,a.offsetWidth-24)/100})`;
+ let ax=0,n=a;while(n&&n!==linksEl.offsetParent){ax+=n.offsetLeft;n=n.offsetParent}
+ ind.style.transform=`translateX(${ax+12}px) scaleX(${Math.max(8,a.offsetWidth-24)/100})`;
  ind.style.opacity=navLinks.includes(a)&&a.getAttribute("href")==="#"+act?"1":"0"}
 function setActive(id){act=id;nav.dataset.cur=id;setAccent();placeInd();
  navLinks.forEach(l=>{if(l.getAttribute("href")==="#"+id)l.setAttribute("aria-current","location");else l.removeAttribute("aria-current")})}
@@ -1499,7 +1501,7 @@ measureMax();window.ResizeObserver?new ResizeObserver(()=>{measureMax();onScroll
 addEventListener("scroll",()=>{if(!sc)sc=requestAnimationFrame(onScroll)},{passive:true});onScroll();
 addEventListener("resize",placeInd);
 new MutationObserver(()=>requestAnimationFrame(placeInd)).observe(D,{attributes:true,attributeFilter:["lang"]});
-document.fonts.ready.then(placeInd);
+document.fonts.ready.then(placeInd);if("ResizeObserver"in window){const ro=new ResizeObserver(()=>placeInd());ro.observe(linksEl);navLinks.forEach(l=>ro.observe(l))}
 $("#langBtn").addEventListener("click",()=>{if(RM.matches)return;const b=$("#langBtn"),v=[...b.children].find(x=>getComputedStyle(x).display!=="none");
  if(v)v.animate([{opacity:0,transform:"translateY(70%) rotateX(-80deg)"},{opacity:1,transform:"none"}],{duration:400,easing:"cubic-bezier(.16,1,.3,1)"});
  b.animate([{transform:"scaleX(.88)"},{transform:"none"}],{duration:400,easing:"cubic-bezier(.16,1,.3,1)"});
