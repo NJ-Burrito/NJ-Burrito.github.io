@@ -2,121 +2,131 @@
 <html lang="en" dir="ltr">
 <head>
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'none'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; media-src 'self'; font-src 'self'; connect-src 'none'; base-uri 'none'; form-action 'none'; object-src 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-OLQcJaK6z+l5d0x61hOTXDjaUaPG5WSioXTFrqwYV7M='; style-src 'self' 'unsafe-inline'; img-src 'self' data:; media-src 'self'; font-src 'self'; connect-src 'none'; base-uri 'none'; form-action 'none'; object-src 'none'">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Story-Wrap: The Lost Property Office, Arabic animated series | NJ-Burrito</title>
-<meta name="description" content="«مكتب المفقودات» (The Lost Property Office): an animated, interactive Arabic story series by Nader Alzghoul, made with the open-source Story-Wrap toolkit for Claude Code. Watch episode 1 and meet the seven characters.">
+<title>Story-Wrap: Claude Code toolkit for Arabic story reels</title>
+<meta name="description" content="Story-Wrap is a free, open-source (MIT) Claude Code toolkit that turns a story idea into a short animated Arabic reel: script, voice, sound, compose and publish.">
 <link rel="canonical" href="https://nj-burrito.github.io/story-wrap/">
 <meta name="author" content="Nader Alzghoul (NJ-Burrito)">
-<meta property="og:site_name" content="NJ-Burrito">
 <link rel="alternate" hreflang="en" href="https://nj-burrito.github.io/story-wrap/">
 <link rel="alternate" hreflang="ar" href="https://nj-burrito.github.io/story-wrap/ar/">
 <link rel="alternate" hreflang="x-default" href="https://nj-burrito.github.io/story-wrap/">
 <meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:site_name" content="NJ-Burrito">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Story-Wrap: The Lost Property Office, Arabic animated series | NJ-Burrito">
-<meta property="og:description" content="«مكتب المفقودات» (The Lost Property Office): an animated, interactive Arabic story series by Nader Alzghoul, made with the open-source Story-Wrap toolkit for Claude Code. Watch episode 1 and meet the seven characters.">
+<meta property="og:title" content="Story-Wrap: Claude Code toolkit for Arabic story reels">
+<meta property="og:description" content="Story-Wrap is a free, open-source (MIT) Claude Code toolkit that turns a story idea into a short animated Arabic reel: script, voice, sound, compose and publish.">
 <meta property="og:url" content="https://nj-burrito.github.io/story-wrap/">
-<meta property="og:image" content="https://nj-burrito.github.io/img/story-wrap-e01.webp">
-<meta property="og:image:width" content="540">
-<meta property="og:image:height" content="960">
-<meta property="og:image:alt" content="Suha at the counter of the Lost Property Office, a frame from episode 1">
+<meta property="og:image" content="https://nj-burrito.github.io/story-wrap/media/og-card.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Story-Wrap: Make Arabic story reels with Claude Code. Six stages: script, voice, animate, sound, compose, publish.">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Story-Wrap: The Lost Property Office, Arabic animated series | NJ-Burrito">
-<meta name="twitter:description" content="«مكتب المفقودات» (The Lost Property Office): an animated, interactive Arabic story series by Nader Alzghoul, made with the open-source Story-Wrap toolkit for Claude Code. Watch episode 1 and meet the seven characters.">
-<meta name="twitter:image" content="https://nj-burrito.github.io/img/story-wrap-e01.webp">
-<meta name="twitter:image:alt" content="Suha at the counter of the Lost Property Office, a frame from episode 1">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "CreativeWorkSeries", "@id": "https://nj-burrito.github.io/story-wrap/#series", "name": "مكتب المفقودات (The Lost Property Office)", "alternateName": "Story-Wrap", "url": "https://nj-burrito.github.io/story-wrap/", "inLanguage": "ar", "description": "An animated, interactive Arabic series about a lost-property office for things lost in other worlds, made with the Story-Wrap toolkit.", "image": "https://nj-burrito.github.io/img/story-wrap-e01.webp", "author": {"@id": "https://nj-burrito.github.io/#person"}, "creator": {"@id": "https://nj-burrito.github.io/#person"}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://nj-burrito.github.io/story-wrap/", "inLanguage": "en"}, "genre": ["Animation", "Interactive fiction"], "isBasedOn": {"@id": "https://github.com/NJ-Burrito/Story-Wrap#app"}, "sameAs": ["https://github.com/NJ-Burrito/Story-Wrap", "https://www.instagram.com/nj.story.ar/"]}</script>
+<meta name="twitter:title" content="Story-Wrap: Claude Code toolkit for Arabic story reels">
+<meta name="twitter:description" content="Story-Wrap is a free, open-source (MIT) Claude Code toolkit that turns a story idea into a short animated Arabic reel: script, voice, sound, compose and publish.">
+<meta name="twitter:image" content="https://nj-burrito.github.io/story-wrap/media/og-card.jpg">
+<meta name="twitter:image:alt" content="Story-Wrap: Make Arabic story reels with Claude Code. Six stages: script, voice, animate, sound, compose, publish.">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": ["SoftwareApplication", "SoftwareSourceCode"], "@id": "https://nj-burrito.github.io/story-wrap/#app", "name": "Story-Wrap", "url": "https://nj-burrito.github.io/story-wrap/", "description": "Story-Wrap is a free, open-source (MIT) Claude Code toolkit that turns a story idea into a short animated Arabic reel: script, voice, sound, compose and publish.", "applicationCategory": "MultimediaApplication", "operatingSystem": "Windows", "softwareRequirements": "Claude Code, Python 3.10+, uv, Node 18+, Chromium, ffmpeg, NVIDIA GPU with about 4 GB free VRAM for the local voice engine", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "license": "https://opensource.org/licenses/MIT", "codeRepository": "https://github.com/NJ-Burrito/Story-Wrap", "programmingLanguage": ["Python", "JavaScript"], "inLanguage": ["ar", "en"], "image": "https://nj-burrito.github.io/story-wrap/media/og-card.jpg", "author": {"@id": "https://nj-burrito.github.io/#person"}, "creator": {"@id": "https://nj-burrito.github.io/#person"}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://nj-burrito.github.io/story-wrap/", "inLanguage": "en"}, "sameAs": ["https://github.com/NJ-Burrito/Story-Wrap"]}</script>
 <link rel="preload" href="../fonts/thmanyahseriftext-Regular.woff2" as="font" type="font/woff2" crossorigin>
 <style>
 @font-face{font-family:"Thmanyah Serif Display";font-weight:700;font-style:normal;font-display:swap;src:url("../fonts/thmanyahserifdisplay-Bold.woff2") format("woff2")}
 @font-face{font-family:"Thmanyah Serif Text";font-weight:400;font-style:normal;font-display:swap;src:url("../fonts/thmanyahseriftext-Regular.woff2") format("woff2")}
 @font-face{font-family:"Thmanyah Sans";font-weight:500;font-style:normal;font-display:swap;src:url("../fonts/thmanyahsans-Medium.woff2") format("woff2")}
 @font-face{font-family:"Thmanyah Sans";font-weight:900;font-style:normal;font-display:swap;src:url("../fonts/thmanyahsans-Black.woff2") format("woff2")}
-:root{--paper:#F4F2EE;--burg:#7A1F3D;--ink:#16171B;--mute:#4A4C50;--line:rgba(22,23,27,.16);--card:#FBFAF7;--display:"Thmanyah Serif Display",serif;--text:"Thmanyah Serif Text",serif;--sans:"Thmanyah Sans",sans-serif;--pad:clamp(20px,5vw,72px)}
-*{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--paper);color:var(--ink);font:400 1.125rem/1.7 var(--text)}
-html[lang="ar"] body{line-height:1.95}
-:lang(ar){letter-spacing:0!important}
-a{color:var(--burg);text-underline-offset:3px}
-:focus-visible{outline:3px solid var(--ink);outline-offset:3px;border-radius:6px}
-.skip{position:absolute;inset-inline-start:-999px;top:8px;background:var(--ink);color:var(--paper);padding:10px 16px;border-radius:999px;font:500 1rem var(--sans)}
-.skip:focus{inset-inline-start:8px;z-index:9}
-header.top{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;padding:16px var(--pad);border-bottom:1px solid var(--line)}
-.pill,.btn{display:inline-flex;align-items:center;min-height:44px;padding:0 20px;border-radius:999px;font:500 1rem/1 var(--sans);text-decoration:none;color:var(--ink);border:1px solid var(--line)}
-.pill:hover{background:rgba(22,23,27,.06)}
-.btn{background:var(--burg);color:#fff;border-color:var(--burg)}
-.btn:hover{background:#5F1730}
-main{max-width:1080px;margin:0 auto;padding:0 var(--pad) 72px}
-section{margin-top:64px}
-h1,h2,h3{font-family:var(--display);font-weight:700;line-height:1.25;margin:0}
-h1{font-size:clamp(2.4rem,8vw,4.5rem);color:var(--burg)}
-h1 small{display:block;font:500 clamp(1rem,3vw,1.25rem)/1.5 var(--sans);color:var(--mute);margin-top:6px}
-h2{font-size:clamp(1.6rem,4.5vw,2.2rem);margin-bottom:8px}
-h3{font-size:1.35rem}
-.kick{font:900 .85rem/1 var(--sans);text-transform:uppercase;letter-spacing:.12em;color:var(--burg);margin:0 0 12px}
-:lang(ar).kick,html[lang="ar"] .kick{letter-spacing:0;text-transform:none;font-size:1rem}
-.hero{display:grid;gap:32px;align-items:center;padding-top:40px}
-.hero p.hook{font:500 clamp(1.25rem,3.5vw,1.6rem)/1.5 var(--sans);margin:20px 0 0}
-.poster{display:block;border-radius:18px;overflow:hidden;border:1px solid var(--line);max-width:340px;justify-self:center;width:100%;background:#2a1f1a}
-.poster img{display:block;width:100%;height:auto}
-ul.plain{list-style:none;padding:0;margin:16px 0 0}
-ul.plain li{padding:8px 0;font-size:1.15rem}
-.sub{color:var(--mute);margin:0 0 20px}
-.cards{display:grid;gap:16px;grid-template-columns:1fr}
-.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 22px}
-.card p{margin:6px 0 0}
-.reel .btn{margin-top:14px}
-.reel .ty{font:500 .95rem/1.4 var(--sans);color:var(--mute);margin:2px 0 0}
-.who h3 span.en{font:500 1rem var(--sans);color:var(--mute);margin-inline-start:8px}
-.from{margin-top:12px!important;padding-top:12px;border-top:1px dashed var(--line);font-size:1rem}
-.from b{font:900 .8rem var(--sans);color:var(--burg);display:block;text-transform:uppercase;letter-spacing:.1em}
-html[lang="ar"] .from b{letter-spacing:0;text-transform:none;font-size:.95rem}
-.vote{background:var(--burg);color:#fff;border-radius:20px;padding:28px var(--pad)}
-.vote h2{color:#fff}
-.vote ul{color:#fff}
-.follow{display:flex;flex-wrap:wrap;gap:12px;margin-top:16px}
-.note{color:var(--mute);font-size:1rem;margin-top:20px}
-footer.foot{background:var(--ink);color:var(--paper);padding:36px var(--pad)}
-footer.foot h2{font-size:1.25rem;color:var(--paper)}
-footer.foot ul{list-style:none;padding:0;margin:12px 0 0;display:grid;gap:8px}
-footer.foot a{color:var(--paper)}
-footer.foot li{font:500 1rem/1.7 var(--sans)}
-footer.foot li span{opacity:.75}
-@media(min-width:760px){.hero{grid-template-columns:1.3fr 1fr}.cards.reels{grid-template-columns:repeat(3,1fr)}.cards.cast{grid-template-columns:repeat(2,1fr)}}
-@media(min-width:1040px){.cards.cast{grid-template-columns:repeat(3,1fr)}}
-@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+:root{--paper:#F4F2EE;--card:#FBFAF7;--ink:#16171B;--mute:#4A4C50;--line:rgba(22,23,27,.16);--burg:#7A1F3D;--amber:#D98A3D;--night:#16171B;--pad:clamp(16px,5vw,72px);--d:"Thmanyah Serif Display",Georgia,serif;--t:"Thmanyah Serif Text",Georgia,serif;--s:"Thmanyah Sans",system-ui,sans-serif;--mono:ui-monospace,Consolas,monospace}
+*{box-sizing:border-box}html{overflow-x:hidden;scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 1.125rem/1.7 var(--t);-webkit-font-smoothing:antialiased}
+[lang=ar] body{line-height:1.95}[lang=ar] *{letter-spacing:0!important}
+h1,h2,h3{font-family:var(--d);margin:0;line-height:1.2}
+[lang=ar] h1,[lang=ar] h2{line-height:1.5}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--burg);outline-offset:3px;border-radius:4px}
+.skip{position:absolute;inset-inline-start:12px;top:-60px;background:var(--ink);color:#fff;padding:10px 16px;border-radius:8px;font:500 1rem var(--s);z-index:9}.skip:focus{top:12px}
+header.top{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px var(--pad);font:500 1rem var(--s);max-width:1440px;margin:0 auto}
+header.top nav{display:flex;gap:20px;align-items:center}header.top a{text-decoration:none;display:inline-flex;align-items:center;min-height:44px}
+header.top .brand{font:900 1.2rem var(--s)}
+header.top .lang{border:1px solid var(--line);border-radius:999px;padding:0 16px}
+header.top .inst{background:var(--burg);color:#fff;border-radius:999px;padding:0 18px;font-weight:900;transition:background-color .15s ease-out,transform .15s ease-out}
+header.top .inst:active,.btn:active{transform:scale(.97)}
+@media(max-width:600px){header.top nav a.nv{display:none}header.top nav{gap:10px}}
+.k{font:900 .85rem/1 var(--s);text-transform:uppercase;letter-spacing:.12em;color:var(--burg);margin:0 0 14px}[lang=ar] .k{font-size:1rem;text-transform:none}
+.hero{display:grid;gap:36px;padding:20px var(--pad) 64px;max-width:1440px;margin:0 auto;align-items:center}
+@media(min-width:960px){.hero{grid-template-columns:7fr 6fr;gap:56px}}
+.hero h1{font-size:clamp(1.9rem,4.8vw,4.2rem);text-wrap:balance}
+[lang=ar] .hero h1{font-size:clamp(1.9rem,4.2vw,3.5rem)}
+.hero .sub{font:500 clamp(1.05rem,1.8vw,1.4rem)/1.6 var(--s);margin:18px 0 0;color:var(--mute)}
+.hero .bring{margin:14px 0 0;font:500 1.05rem/1.6 var(--s)}.hero .bring b{font-weight:900}
+.hero .notfor{margin:6px 0 0;color:var(--mute);font:500 .95rem/1.6 var(--s)}
+.acts{display:flex;flex-wrap:wrap;gap:12px 24px;align-items:center;margin-top:28px}
+.btn{display:inline-flex;align-items:center;min-height:60px;padding:0 32px;border-radius:999px;background:var(--burg);color:#fff;font:900 1.1rem var(--s);text-decoration:none;transition:background-color .15s ease-out,transform .15s ease-out}
+.txt{font:500 1.05rem var(--s);min-height:44px;display:inline-flex;align-items:center;text-decoration:underline;text-underline-offset:4px}
+.proof{list-style:none;padding:0;margin:24px 0 0;display:flex;flex-wrap:wrap;gap:8px}
+.proof li{font:500 .9rem/1.3 var(--s);padding:10px 14px;border:1px solid var(--line);border-radius:999px;background:var(--card)}
+.stage{margin:0;background:var(--night);border-radius:20px;overflow:hidden;aspect-ratio:1/1;width:100%;max-width:640px;justify-self:center}
+.stage video{display:block;width:100%;height:100%;object-fit:cover}
+section.s{padding:72px var(--pad) 0;max-width:1180px;margin:0 auto}
+section.s h2{font-size:clamp(1.6rem,4vw,2.6rem);max-width:20em;text-wrap:balance}
+.grid{display:grid;gap:16px;margin-top:26px}@media(min-width:900px){.grid.c3{grid-template-columns:repeat(3,1fr)}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px 24px}.card h3{font-size:1.3rem}.card p{margin:8px 0 0;color:var(--mute);font-size:1.05rem}
+.strip{list-style:none;padding:0;margin:28px 0 0;display:grid;border-top:1px solid var(--line)}
+@media(min-width:900px){.strip{grid-template-columns:repeat(6,1fr);border-top:0}}
+.strip li{padding:16px 0;border-bottom:1px solid var(--line);min-width:0}
+@media(min-width:900px){.strip li{border-bottom:0;border-top:3px solid var(--ink);padding:16px 14px 0 0}[dir=rtl] .strip li{padding:16px 0 0 14px}}
+.strip h3{font-size:1.2rem}.strip p{margin:6px 0 10px;font-size:.98rem;line-height:1.55;color:var(--mute)}
+.strip code{display:block;direction:ltr;text-align:left;font:500 .78rem/1.5 var(--mono);background:#E9E6DF;border-radius:8px;padding:8px 10px;overflow-wrap:anywhere}
+.strip .doc{font:500 .85rem var(--s);margin-top:8px;display:block;color:var(--burg)}.strip .doc a{display:inline-block;min-height:24px}
+table.need{width:100%;border-collapse:collapse;margin-top:24px;font-size:1.02rem}
+table.need th,table.need td{text-align:start;vertical-align:top;padding:12px 10px;border-bottom:1px solid var(--line)}table.need th{font:900 1rem var(--s);width:11em}
+@media(max-width:600px){table.need th,table.need td{display:block;width:auto;padding:6px 0}table.need th{padding-top:14px;border:0}}
+.cost{margin:16px 0 0;font:500 1.05rem var(--s)}
+.code{position:relative;margin:22px 0 0}
+pre{direction:ltr;text-align:left;background:var(--night);color:#F4F2EE;border-radius:14px;padding:18px 22px;font:500 .88rem/1.75 var(--mono);margin:0;white-space:pre-wrap;overflow-wrap:anywhere}
+.code pre{padding-top:62px}
+.code button{position:absolute;top:10px;right:10px;font:500 .85rem var(--s);background:#2B2D34;color:#F4F2EE;border:1px solid #4a4c55;border-radius:999px;padding:0 14px;min-height:44px;cursor:pointer;transition:background-color .15s ease-out,transform .15s ease-out}
+.code button:active{transform:scale(.96)}
+.note{margin:14px 0 0;color:var(--mute);font:500 1rem/1.6 var(--s)}
+.made{background:#1B120D;color:#F1DDB5;border-radius:20px;padding:28px;display:grid;gap:18px;margin-top:22px}
+.made h3{font-size:1.9rem;color:#F1DDB5}.made .b2{font:500 1rem var(--s);color:#DF985A;margin:2px 0 8px}.made p{margin:0}
+.made .btns{display:flex;flex-wrap:wrap;gap:10px}.made a{display:inline-flex;min-height:50px;align-items:center;padding:0 24px;border-radius:999px;font:900 1rem var(--s);text-decoration:none;transition:background-color .15s ease-out,transform .15s ease-out}
+.made a:active{transform:scale(.97)}.made :focus-visible{outline-color:#DF985A}
+.made a.p{background:#DF985A;color:#1B120D}.made a.q{border:1px solid #DF985A;color:#F1DDB5}
+.made small{font:500 .85rem var(--s);color:#C9B48A}
+details{border-bottom:1px solid var(--line);padding:8px 0}summary{font:700 1.2rem var(--d);cursor:pointer;min-height:44px;display:flex;align-items:center}details p{margin:4px 0 10px;color:var(--mute)}
+.end{margin:72px auto 0;max-width:1180px;padding:0 var(--pad);text-align:center}
+footer{background:var(--night);color:#F4F2EE;margin-top:72px;padding:36px var(--pad)}footer>div{max-width:1180px;margin:0 auto}footer h2{font-size:1.3rem}
+footer ul{list-style:none;display:grid;gap:10px 32px;padding:0;margin:16px 0 0;font:500 1rem/1.5 var(--s)}@media(min-width:900px){footer ul{grid-template-columns:1fr 1fr}}
+footer a{font-weight:900}footer span{color:#B8BAC2}footer .by{margin:22px 0 0;color:#B8BAC2;font:500 .9rem var(--s)}
+@media(hover:hover){.btn:hover,header.top .inst:hover{background:#5f1830}.txt:hover{color:var(--burg)}.made a.p:hover{background:#ECAE7D}.made a.q:hover{background:rgba(241,221,181,.1)}.code button:hover{background:#3a3c45}footer a:hover,.strip .doc a:hover{text-decoration:underline}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-<header class="top">
-  <a class="pill" href="../">Nader Alzghoul</a>
-  <a class="pill" href="https://nj-burrito.github.io/story-wrap/ar/" hreflang="ar" lang="ar">العربية</a>
-</header>
+<header class="top"><a class="brand" href="./" dir="ltr">Story-Wrap</a><nav aria-label="Main"><a class="nv" href="#how">How it works</a><a class="inst" href="#install">Install</a><a class="nv" href="#faq">FAQ</a><a class="lang" href="https://nj-burrito.github.io/story-wrap/ar/" hreflang="ar" lang="ar">العربية</a></nav></header>
 <main id="main">
-<div class="hero">
-  <div>
-    <p class="kick">Animated Arabic series</p>
-    <h1><span lang="ar">مكتب المفقودات</span><small lang="en">The Lost Property Office</small></h1>
-    <p class="hook">🧳 A bag arrived on the wind. It has her name on it.</p>
-  </div>
-  <a class="poster" href="https://www.instagram.com/reel/De9yBzEjueN/" rel="noopener"><img src="../img/story-wrap-e01.webp" width="540" height="960" alt="Suha at the counter of the Lost Property Office, a frame from episode 1" decoding="async"></a>
-</div>
-<section aria-labelledby="h-prem"><h2 id="h-prem">The idea</h2><ul class="plain"><li>🏢 A lost-property office receives things lost in other worlds.</li><li>🧳 A new clerk finds a bag with her name on it.</li><li>📅 It was lost on a day that has not come yet.</li></ul></section>
-<section aria-labelledby="h-reels"><h2 id="h-reels">Watch episode 1</h2><p class="sub">Pick where you like to watch. Each one opens the platform.</p><div class="cards reels"><article class="card reel"><h3>Instagram</h3><p class="ty">Reel</p><a class="btn" href="https://www.instagram.com/reel/De9yBzEjueN/" rel="noopener">Watch the Reel</a></article><article class="card reel"><h3>YouTube</h3><p class="ty">Short</p><a class="btn" href="https://www.youtube.com/shorts/E5_Amg97q7k" rel="noopener">Watch the Short</a></article><article class="card reel"><h3>Facebook</h3><p class="ty">Reel</p><a class="btn" href="https://www.facebook.com/reel/1378921270724489/" rel="noopener">Watch the Reel</a></article></div></section>
-<section aria-labelledby="h-cast"><h2 id="h-cast">The cast</h2><p class="sub">Seven people. Seven places.</p><div class="cards cast"><article class="card who"><h3 lang="en">Suha<span class="en" lang="ar">سهى</span></h3><p>The new clerk. She finds a bag with her own name on it.</p><p class="from"><b>From</b>An Omani family with a Swahili mother (Swahili: the language and coast culture of East Africa)</p></article><article class="card who"><h3 lang="en">Aminata<span class="en" lang="ar">أمينتا</span></h3><p>The inspector of a city where nothing is ever lost.</p><p class="from"><b>From</b>Senegal (Wolof, a people of Senegal)</p></article><article class="card who"><h3 lang="en">Han<span class="en" lang="ar">هان</span></h3><p>The harbour diver. She brings up what the sea takes.</p><p class="from"><b>From</b>Korea, the island of Jeju</p></article><article class="card who"><h3 lang="en">Dato<span class="en" lang="ar">داتو</span></h3><p>The courier. He carries each thing back to its owner.</p><p class="from"><b>From</b>The Philippines</p></article><article class="card who"><h3 lang="en">Elias<span class="en" lang="ar">إلياس</span></h3><p>The regular who is never late.</p><p class="from"><b>From</b>Finland</p></article><article class="card who"><h3 lang="en">Inti<span class="en" lang="ar">إنتي</span></h3><p>He climbs into the office through the floor drain.</p><p class="from"><b>From</b>The Andes mountains (Aymara, a native people of the Andes)</p></article><article class="card who"><h3 lang="en">Ishwar<span class="en" lang="ar">إيشوار</span></h3><p>The office manager. He puts a price on everything.</p><p class="from"><b>From</b>India, Gujarat (a state in western India)</p></article></div><p class="note">The characters are fictional; each one&#x27;s origin is their family&#x27;s roots.</p></section>
-<section class="vote" aria-labelledby="h-vote"><h2 id="h-vote">You choose what happens next</h2><ul class="plain"><li>👀 Watch the episode.</li><li>💬 Comment under the Instagram Reel: your choice, and why.</li><li>➡️ The next episode follows what you write.</li></ul></section>
-<section aria-labelledby="h-tool"><h2 id="h-tool">Made with Story-Wrap</h2><p class="sub">Story-Wrap is a free, open-source (MIT) Claude Code toolkit for automated Arabic animated story reels: script, voice, sound, compose and publish through the official APIs. This series is the first thing made with it. <a href="https://github.com/NJ-Burrito/Story-Wrap" rel="noopener">Story-Wrap on GitHub</a>.</p></section>
-<section aria-labelledby="h-follow"><h2 id="h-follow">Follow the series</h2><div class="follow"><a class="pill" href="https://www.instagram.com/nj.story.ar/" rel="noopener">Instagram</a><a class="pill" href="https://www.youtube.com/channel/UCO98fbyoU2_KHJnsxp6C1vw" rel="noopener">YouTube</a><a class="pill" href="https://www.facebook.com/profile.php?id=1391777744024606" rel="noopener">Facebook</a></div></section>
+<div class="hero"><div>
+<h1>Make Arabic story reels with Claude Code.</h1><p class="sub">Story-Wrap takes a story from script to voice, animation, sound and publishing. Free, MIT licence.</p><p class="bring"><b>Free and MIT.</b> You bring: Claude Code, a GPU, your own fonts and characters.</p><p class="notfor">Command line and Claude Code required. Not a point-and-click editor.</p>
+<div class="acts"><a class="btn" href="https://github.com/NJ-Burrito/Story-Wrap" rel="noopener"><span>Get Story-Wrap on GitHub</span></a><a class="txt" href="#install"><span>Install and check it runs</span></a></div>
+<ul class="proof"><li>MIT licence</li><li>No paid services beyond your Claude Code plan</li><li>Official Instagram, Facebook Page and YouTube APIs</li><li>Built for Arabic</li></ul></div>
+<figure class="stage">
+<video autoplay muted loop playsinline preload="metadata" width="1080" height="1080" poster="media/hero-poster.jpg" aria-label="Looping clip of the Story-Wrap pipeline: an idea passes through six stages (script, voice, animate, sound, compose, publish) and becomes a reel on a phone."><source src="media/hero.webm" type="video/webm"><source src="media/hero.mp4" type="video/mp4"></video>
+</figure></div>
+<section class="s" aria-labelledby="h-makes"><p class="k">What you get</p><h2 id="h-makes">A toolkit that runs the whole reel, and checks each stage.</h2><div class="grid c3"><div class="card"><h3>Built for Arabic</h3><p>Fully voweled voice text, caption shaping and right-to-left layout. Other languages are possible but untested.</p></div><div class="card"><h3>Checked before it posts</h3><p>Script, voice, every shot and the final reel pass machine gates, with a critic and a heal loop. Posting is a dry run until you pass <bdi style="white-space:nowrap">--go</bdi>.</p></div><div class="card"><h3>You own everything it makes</h3><p>No fonts, characters, voices or art are bundled. Your episodes, audience data and accounts stay in your own projects.</p></div></div></section>
+<section class="s" id="how" aria-labelledby="h-how"><p class="k">How it works</p><h2 id="h-how">Six stages. Each leaves a file the next one reads.</h2><ol class="strip"><li><h3>Script</h3><p>A script and a plan, checked by machine before anything is drawn.</p><code>script.json</code><span class="doc">Doc: <a href="https://github.com/NJ-Burrito/Story-Wrap/blob/main/pipelines/WRITING.md" rel="noopener">WRITING</a></span></li><li><h3>Voice</h3><p>A local voice engine on your GPU. One take per line.</p><code>work/voice/&lt;ep&gt;/&lt;line&gt;.wav</code><span class="doc">Doc: <a href="https://github.com/NJ-Burrito/Story-Wrap/blob/main/pipelines/VOICE.md" rel="noopener">VOICE</a></span></li><li><h3>Animate</h3><p>2D characters and sets. Each shot runs nine checked steps.</p><code>shot.json</code><span class="doc">Doc: <a href="https://github.com/NJ-Burrito/Story-Wrap/blob/main/pipelines/RUNBOOK.md" rel="noopener">RUNBOOK</a></span></li><li><h3>Sound</h3><p>Sound design, mix and audio checks.</p><code>sfx.json</code><span class="doc">Doc: <a href="https://github.com/NJ-Burrito/Story-Wrap/blob/main/bible/sound/SOUND.md" rel="noopener">SOUND</a></span></li><li><h3>Compose</h3><p>Captions follow the voice. Gates, a critic and a heal loop run until it passes.</p><code>captions.json, episode.mp4</code><span class="doc">Doc: <a href="https://github.com/NJ-Burrito/Story-Wrap/blob/main/pipelines/COMPOSE.md" rel="noopener">COMPOSE</a>, <a href="https://github.com/NJ-Burrito/Story-Wrap/blob/main/pipelines/HEAL.md" rel="noopener">HEAL</a></span></li><li><h3>Publish</h3><p>Dry run first. Then <bdi style="white-space:nowrap">--go</bdi> posts to your Instagram, Facebook Page and YouTube.</p><code>post.json</code><span class="doc">Doc: <a href="https://github.com/NJ-Burrito/Story-Wrap/blob/main/pipelines/AUDIENCE.md" rel="noopener">AUDIENCE</a></span></li></ol></section>
+<section class="s" aria-labelledby="h-need"><h2 id="h-need">What you need</h2><table class="need"><tr><th scope="row">Claude Code</th><td>Your own plan. The toolkit runs inside it.</td></tr><tr><th scope="row">Python and uv</th><td>Python 3.10 or newer (3.11 for some scripts), run through uv.</td></tr><tr><th scope="row">Node and a browser</th><td>Node 18 or newer, and a Chromium for rendering.</td></tr><tr><th scope="row">ffmpeg</th><td>For audio and video.</td></tr><tr><th scope="row">A GPU</th><td>NVIDIA, about 4 GB of free video memory, for the local voice engine. It installs into its own environment; the steps are in VOICE.md.</td></tr><tr><th scope="row">Your own assets</th><td>Fonts, characters, worlds, and one CC0 reference clip per voice with its provenance.</td></tr><tr><th scope="row">Accounts, to post</th><td>Meta and Google developer apps and tokens for Instagram, a Facebook Page and YouTube. Skip them and nothing posts.</td></tr><tr><th scope="row">System</th><td>Developed and tested on Windows. macOS and Linux are not tested.</td></tr></table><p class="cost">The toolkit is free (MIT) and calls no paid service. Your Claude Code usage is yours.</p></section>
+<section class="s" id="install" aria-labelledby="h-inst"><h2 id="h-inst">Install and check it runs</h2><div class="code"><pre dir="ltr" lang="en" aria-label="Install commands">git clone https://github.com/NJ-Burrito/Story-Wrap
+cd Story-Wrap
+mkdir -p ~/.config/story-wrap
+cp config/story-wrap.example.env ~/.config/story-wrap/story-wrap.env
+uv run tools/daily.py --help</pre><button type="button" data-done="Copied">Copy</button></div><p class="note">These five lines run on a clean checkout and print the command list. They do not make a reel.</p><p class="note">Before your first reel you supply: fonts, characters and worlds, a voice reference clip, account tokens. Each has an example file in config/. <b>No sample reel ships yet.</b></p></section>
+<section class="s" aria-labelledby="h-made"><h2 id="h-made">Made with Story-Wrap</h2><div class="made"><div><h3>The Lost Property Office</h3><p class="b2" lang="ar">مكتب المفقودات</p><p>An animated Arabic story series made with the toolkit. One example of what you can make.</p></div><div class="btns"><a class="p" href="https://www.instagram.com/reel/De9yBzEjueN/" rel="noopener">Watch episode 1</a><a class="q" href="lost-property-office/">About the series</a></div><small>Example project, not part of the toolkit.</small></div></section>
+<section class="s" id="faq" aria-labelledby="h-faq"><h2 id="h-faq">Questions</h2><details><summary>Is it free?</summary><p>The toolkit is MIT and calls no paid service. You still need a Claude Code plan, and Meta and Google developer accounts if you post.</p></details><details><summary>Do I need to code?</summary><p>You work in a terminal with Claude Code. There is no editor window to click through.</p></details><details><summary>Does it run on Mac or Linux?</summary><p>Built and tested on Windows only.</p></details><details><summary>Do I need a GPU?</summary><p>For the local voice engine, yes: it checks for about 4 GB of free video memory before it starts.</p></details><details><summary>Does it post by itself?</summary><p>No. Posting is a dry run until you pass --go, and only to accounts you own, with your own tokens.</p></details></section>
+<div class="end"><a class="btn" href="https://github.com/NJ-Burrito/Story-Wrap" rel="noopener"><span>Get Story-Wrap on GitHub</span></a></div>
 </main>
-<footer class="foot">
-  <h2>More from Nader</h2>
-  <ul><li><a href="https://nj-burrito.github.io/">Portfolio</a> <span>· Nader&#x27;s work</span></li><li><a href="https://nj-burrito.github.io/NJ-Kit/">NJ-Kit</a> <span>· a free working method for Claude Code</span></li><li><a href="https://nj-burrito.github.io/QA-Wrap/">QA-Wrap</a> <span>· test the page, get the bug report</span></li><li><a href="https://nj-burrito.github.io/Profile-Wrap/">Profile-Wrap</a> <span>· your LinkedIn on autopilot, you stay the boss</span></li><li><a href="https://nj-burrito.github.io/Business-Wrap/">Business-Wrap</a> <span>· evidence in, one document in two languages</span></li><li><a href="https://nj-burrito.github.io/NJ-Whip/">NJ-Whip</a> <span>· an on-screen whip for Claude Code</span></li><li><a href="https://nj-burrito.github.io/NJ-Flush/">NJ-Flush</a> <span>· a free Windows RAM cleaner</span></li><li><a href="https://nj-burrito.github.io/NJ-Sort/">NJ-Sort</a> <span>· keeps your Windows desktop icons where you put them, even after File Explorer restarts</span></li><li><a href="https://github.com/NJ-Burrito/Story-Wrap" rel="noopener">Story-Wrap</a> <span>· the toolkit behind this series</span></li><li><a href="https://github.com/NJ-Burrito" rel="me noopener">GitHub</a> · <a href="https://www.linkedin.com/in/nader-alzghoul" rel="me noopener">LinkedIn</a></li></ul>
-  <p class="by">By Nader Alzghoul (NJ-Burrito)</p>
-</footer>
+<footer><div><h2>More tools by Nader Alzghoul</h2><ul><li><a href="https://nj-burrito.github.io/">Portfolio</a> <span>· Nader's work</span></li><li><a href="https://nj-burrito.github.io/QA-Wrap/">QA-Wrap</a> <span>· test the page, get the bug report</span></li><li><a href="https://nj-burrito.github.io/Business-Wrap/">Business-Wrap</a> <span>· evidence in, one document in two languages</span></li><li><a href="https://nj-burrito.github.io/NJ-Kit/">NJ-Kit</a> <span>· a free working method for Claude Code</span></li><li><a href="https://nj-burrito.github.io/NJ-Whip/">NJ-Whip</a> <span>· an on-screen whip for Claude Code</span></li><li><a href="https://nj-burrito.github.io/Profile-Wrap/">Profile-Wrap</a> <span>· your LinkedIn on autopilot, you stay the boss</span></li><li><a href="https://nj-burrito.github.io/NJ-Flush/">NJ-Flush</a> <span>· a free Windows RAM cleaner</span></li><li><a href="https://nj-burrito.github.io/NJ-Sort/">NJ-Sort</a> <span>· keeps your Windows desktop icons where you put them, even after File Explorer restarts</span></li></ul><p class="by">By Nader Alzghoul (NJ-Burrito)</p></div></footer>
+<script>(function(){var b=document.querySelector('.code button'),p=document.querySelector('.code pre');if(b&&p&&navigator.clipboard){b.addEventListener('click',function(){var o=b.textContent;navigator.clipboard.writeText(p.textContent).then(function(){b.textContent=b.dataset.done;setTimeout(function(){b.textContent=o},1600)})})}else if(b){b.hidden=true}var v=document.querySelector('.stage video');if(v&&window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches){v.removeAttribute('autoplay');v.pause()}})();</script>
 </body>
 </html>
