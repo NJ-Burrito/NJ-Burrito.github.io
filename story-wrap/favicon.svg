@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+<defs>
+<linearGradient id="bbg" x1="0.1" y1="0" x2="0.9" y2="1"><stop offset="0" stop-color="#A2315A"/><stop offset="0.55" stop-color="#7A1F3D"/><stop offset="1" stop-color="#3E0C20"/></linearGradient>
+<linearGradient id="bpg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFF8E8"/><stop offset="1" stop-color="#EAD2A0"/></linearGradient>
+<linearGradient id="brb" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFC878"/><stop offset="1" stop-color="#D9822B"/></linearGradient>
+<radialGradient id="bgl" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#E39A4D" stop-opacity="0.55"/><stop offset="1" stop-color="#E39A4D" stop-opacity="0"/></radialGradient>
+<linearGradient id="brim" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#D98AA6" stop-opacity="0.7"/><stop offset="1" stop-color="#E39A4D" stop-opacity="0.55"/></linearGradient>
+</defs>
+<rect width="512" height="512" rx="112" fill="url(#bbg)"/>
+<g transform="translate(256 262) scale(1.2) translate(-256 -266)">
+<path d="M256 196 C222 166 150 158 84 176 L84 360 C150 342 222 350 256 384 Z" fill="url(#bpg)"/><path d="M256 196 C290 166 362 158 428 176 L428 360 C362 342 290 350 256 384 Z" fill="url(#bpg)"/>
+<path d="M226 150 H286 V352 L256 322 L226 352 Z" fill="url(#brb)"/>
+</g></svg>
